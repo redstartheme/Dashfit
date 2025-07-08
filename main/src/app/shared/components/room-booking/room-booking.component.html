@@ -1,0 +1,172 @@
+<table mat-table [dataSource]="dataSource" matSort class="mat-cell advance-table">
+
+    @for (column of columnDefinitions; track column) {
+    <!-- Skip rendering if column.label is "select" or "action" -->
+    @if ( column.type === 'actionBtn') {
+    <!-- Skip this column -->
+    } @else {
+    @if (column.def === 'guestName') {
+    <ng-container [matColumnDef]="column.def">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <span class="truncate-text">{{
+                column.label
+                }}</span></mat-header-cell>
+        <mat-cell *matCellDef="let row" [matTooltip]="row[column.def]">
+            <span class="mobile-label">{{ column.label }}:</span> <img [src]="row.img" class="table-img"
+                alt="image" /><span class="truncate-text">
+                {{ row[column.def] }} </span></mat-cell>
+    </ng-container>
+    } @else {
+    @if (column.type === 'date') {
+    <ng-container [matColumnDef]="column.def">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            <span class="truncate-text">{{ column.label }}</span>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            <span class="mobile-label">{{ column.label }}:</span>
+            <span class="truncate-text">
+                {{ row[column.def] | date: 'MM/dd/yyyy' }}
+            </span>
+        </mat-cell>
+    </ng-container>
+    } @else {
+    @if (column.def === 'status') {
+    <ng-container [matColumnDef]="column.def">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            <span class="truncate-text">{{ column.label }}</span>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            <span class="mobile-label">{{ column.label }}:</span>
+            <div>
+                @switch (row[column.def]) {
+                @case ('Booked') {
+                <div>
+                    <span class="badge badge-solid-green">{{ row[column.def] }}</span>
+                </div>
+                }
+                @case ('Cancelled') {
+                <div>
+                    <span class="badge badge-solid-orange">{{ row[column.def] }}</span>
+                </div>
+                }
+                @case ('CheckIn') {
+                <div>
+                    <span class="badge badge-solid-blue">{{ row[column.def] }}</span>
+                </div>
+                }
+                @case ('CheckOut') {
+                <div>
+                    <span class="badge badge-solid-purple">{{ row[column.def] }}</span>
+                </div>
+                }
+                }
+            </div>
+        </mat-cell>
+    </ng-container>
+    } @else {
+    @if (column.def === 'payment') {
+    <ng-container [matColumnDef]="column.def">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            <span class="truncate-text">{{ column.label }}</span>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            <span class="mobile-label">{{ column.label }}:</span>
+            <div>
+                @switch (row[column.def]) {
+                @case ('Paid') {
+                <div>
+                    <span class="badge badge-solid-green">{{ row[column.def] }}</span>
+                </div>
+                }
+                @case ('Unpaid') {
+                <div>
+                    <span class="badge badge-solid-orange">{{ row[column.def] }}</span>
+                </div>
+                }
+                }
+            </div>
+        </mat-cell>
+    </ng-container>
+    } @else {
+    @if (column.type === 'phone') {
+    <ng-container [matColumnDef]="column.def">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            <span class="truncate-text">{{ column.label }}</span>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" [matTooltip]="row[column.def]">
+            <span class="mobile-label">{{ column.label }}:</span> <mat-icon
+                class="tbl-icon material-icons-outlined col-green">call</mat-icon><span class="truncate-text">
+                {{ row[column.def] }}</span></mat-cell>
+    </ng-container>
+    } @else {
+    @if (column.type === 'email') {
+    <ng-container [matColumnDef]="column.def">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            <span class="truncate-text">{{ column.label }}</span>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" [matTooltip]="row[column.def]">
+            <span class="mobile-label">{{ column.label }}:</span> <mat-icon
+                class="tbl-icon material-icons-outlined col-red">mail</mat-icon><span class="truncate-text">
+                {{ row[column.def] }}</span></mat-cell>
+    </ng-container>
+    } @else {
+    <ng-container [matColumnDef]="column.def">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            <span class="truncate-text">{{ column.label }}</span>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            <span class="mobile-label">{{ column.label }}:</span>
+            <span class="truncate-text">{{ row[column.def] }}</span>
+        </mat-cell>
+    </ng-container>
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    <!-- For User with image -->
+    <!-- For Date Columns -->
+    <!-- For Status Columns -->
+    <!-- For Payment Columns -->
+    <!-- For Mobile Columns -->
+    <!-- For Email Columns -->
+    <!-- Rest all columns -->
+    }
+
+    <!-- actions -->
+    <ng-container matColumnDef="actions">
+        <mat-header-cell class="pr-0" *matHeaderCellDef>Actions
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row; let i=index;" class="pr-0">
+            <button mat-icon-button [matMenuTriggerFor]="actionMenu" (click)="$event.stopPropagation()">
+                <mat-icon>more_horiz</mat-icon>
+            </button>
+            <mat-menu #actionMenu="matMenu">
+                <button mat-menu-item class="tblActnDropdownBtn">
+                    <app-feather-icons [icon]="'edit'"
+                        [class]="'tblActionMenuIcon align-middle m-r-4'"></app-feather-icons>
+                    <span>Edit Booking</span>
+                </button>
+                <button mat-menu-item class="tblActnDropdownBtn">
+                    <app-feather-icons [icon]="'trash-2'"
+                        [class]="'tblActionMenuIcon text-red align-middle m-r-4'"></app-feather-icons>
+                    <span>Delete Booking</span>
+                </button>
+                <button mat-menu-item class="tblActnDropdownBtn">
+                    <app-feather-icons [icon]="'log-out'"
+                        [class]="'tblActionMenuIcon align-middle m-r-4'"></app-feather-icons>
+                    <span>Check Out</span>
+                </button>
+                <button mat-menu-item class="tblActnDropdownBtn">
+                    <app-feather-icons [icon]="'x-circle'"
+                        [class]="'tblActionMenuIcon align-middle m-r-4'"></app-feather-icons>
+                    <span>Cancel Booking</span>
+                </button>
+            </mat-menu>
+        </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="getDisplayedColumns()"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: getDisplayedColumns();" [style.cursor]="'pointer'" matRipple>
+    </mat-row>
+</table>

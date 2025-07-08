@@ -1,0 +1,24 @@
+<div class="plain-card">
+    <div class="card-inner">
+        <p class="tx-primary m-t-0 m-b-20 f-w-500 f-s-20">{{ heading }}</p>
+        <div class="row">
+            <div class="col-4">
+                <label class="f-w-500 f-s-16">Today</label>
+                <p>{{ todayCount }}</p>
+            </div>
+            <div class="col-4">
+                <label class="f-w-500 f-s-16">This Week</label>
+                <p>{{ weekCount }}</p>
+            </div>
+            <div class="col-4">
+                <label class="f-w-500 f-s-16">This Month</label>
+                <p>{{ monthCount }}</p>
+            </div>
+        </div>
+        <div class="progress shadow-style">
+            <mat-progress-bar class="progress-bar-small" [class]="'progress-'+progressColor" mode="determinate"
+                [value]="progressPercentage">
+            </mat-progress-bar>
+        </div>
+    </div>
+</div>

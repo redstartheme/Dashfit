@@ -1,0 +1,313 @@
+<div class="row m-t-48">
+  <div class="col-sm-8">
+    <div class="welcome-card">
+      <div class="text-content">
+        <h2>Welcome</h2>
+        <h3>John Deo</h3>
+        <p>
+          You have 5 task to finish today. You already completed 47% task for today. Your progress is very
+          good.
+        </div>
+        <div class="image-content">
+          <img src="assets/images/welcome.png" alt="User Image" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <app-attendance-card></app-attendance-card>
+        </div>
+        <div class="col-sm-4">
+          <!-- Average Hours Card -->
+          <mat-card class="dailyStatus-card">
+            <mat-card-content>
+              <div class="icon-container clock">
+                <mat-icon [inline]="true">history_toggle_off</mat-icon>
+              </div>
+              <div class="dailyStatus-info">
+                <div class="dailyStatus-label">Average hours</div>
+                <div class="dailyStatus-value color1">7h 42mins</div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- On-time Arrival Card -->
+          <mat-card class="dailyStatus-card">
+            <mat-card-content>
+              <div class="icon-container timer">
+                <mat-icon [inline]="true">alarm</mat-icon>
+              </div>
+              <div class="dailyStatus-info">
+                <div class="dailyStatus-label">On-time arrival</div>
+                <div class="dailyStatus-value color2">99.45%</div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <mat-card>
+        <mat-card-header class="header-style">
+          <mat-card-title>Working History</mat-card-title>
+          <a mat-button color="primary" href="#">View All</a>
+        </mat-card-header>
+        <mat-card-content>
+          <ng-scrollbar style="height: 260px" visibility="hover">
+            <div class="responsive_table">
+              <table mat-table [dataSource]="dataSource" class="working-history">
+
+                <!-- Date Column -->
+                <ng-container matColumnDef="date">
+                  <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                  <mat-cell *matCellDef="let element"><mat-icon
+                  class="material-icons-outlined col-blue">mail</mat-icon> {{element.date
+                | date}} </mat-cell>
+              </ng-container>
+
+              <!-- Arrival Time Column -->
+              <ng-container matColumnDef="arrivalTime">
+                <mat-header-cell *matHeaderCellDef> Arrival Time </mat-header-cell>
+                <mat-cell *matCellDef="let element"> <mat-icon
+                class="material-icons-outlined col-orange">schedule</mat-icon>
+                {{element.arrivalTime |
+              date:'shortTime'}} </mat-cell>
+            </ng-container>
+
+            <!-- Departure Time Column -->
+            <ng-container matColumnDef="departureTime">
+              <mat-header-cell *matHeaderCellDef> Departure Time </mat-header-cell>
+              <mat-cell *matCellDef="let element"> <mat-icon
+              class="material-icons-outlined col-orange">schedule</mat-icon>{{element.departureTime
+              | date:'shortTime'}}
+            </mat-cell>
+          </ng-container>
+
+          <!-- Effective Hours Column -->
+          <ng-container matColumnDef="effectiveHours">
+            <mat-header-cell *matHeaderCellDef> Effective Hours </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.effectiveHours}}</mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+      </div>
+    </ng-scrollbar>
+  </mat-card-content>
+</mat-card>
+</div>
+<div class="col-sm-4">
+  <mat-card class="emp-profile-card">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <div class="profile-header-left">
+        <h3>My Profile</h3>
+        <p><span class="text-green">75%</span> Completed your profile.</p>
+      </div>
+      <mat-icon>more_vert</mat-icon>
+    </div>
+
+    <!-- Profile Picture Section -->
+    <div class="profile-picture">
+      <img src="assets/images/avatars/avatar-1.jpg" alt="Profile Picture" />
+    </div>
+
+    <!-- User Information -->
+    <div class="user-info">
+      <h2>Sarah Smith</h2>
+      <p class="m-0">Manager</p>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+      <div class="stat-item">
+        <mat-icon>emoji_events</mat-icon>
+        <p class="m-0">10 Achieve</p>
+      </div>
+      <div class="stat-item">
+        <mat-icon>people</mat-icon>
+        <p class="m-0">2 Team</p>
+      </div>
+    </div>
+
+    <!-- Ongoing Task Section -->
+    <div class="tasks-header">
+      <h4>Ongoing Task</h4>
+      <a href="#">View All</a>
+    </div>
+
+    <div class="task-list-card">
+      <!-- Task List for Day 1 -->
+      <div class="task-day-header">
+        <p>Oct 20, 2021</p>
+        <mat-icon>more_vert</mat-icon>
+      </div>
+
+      <mat-list>
+        <!-- Task 1 -->
+        <mat-list-item>
+          <div class="emp-task-list d-flex">
+            <div class="task-time">10:00</div>
+            <div class="task-info">
+              <div class="task-category">
+                <span class="category-line" style="background-color: #ff631d;"></span>
+                <div>
+                  <div class="task-title">Team Meeting</div>
+                  <small>Team meeting regarding new guest..</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <div class="emp-task-list d-flex">
+            <div class="task-time">14:30</div>
+            <div class="task-info">
+              <div class="task-category">
+                <span class="category-line" style="background-color: #6366f1;"></span>
+                <div>
+                  <div class="task-title">Arranging reservations</div>
+                  <small>Meeting with client regarding reservation</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="task-list-card">
+      <!-- Task List for Day 1 -->
+      <div class="task-day-header">
+        <p>Oct 22, 2021</p>
+        <mat-icon>more_vert</mat-icon>
+      </div>
+      <mat-list>
+        <!-- Task 1 -->
+        <mat-list-item>
+          <div class="emp-task-list d-flex">
+            <div class="task-time">12:30</div>
+            <div class="task-info">
+              <div class="task-category">
+                <span class="category-line" style="background-color: #07aa34;"></span>
+                <div>
+                  <div class="task-title">Room Cleaning Check</div>
+                  <small>Check all room for proper cleaning.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <div class="emp-task-list d-flex">
+            <div class="task-time">18:10</div>
+            <div class="task-info">
+              <div class="task-category">
+                <span class="category-line" style="background-color: #ff0000;"></span>
+                <div>
+                  <div class="task-title">Stock Check</div>
+                  <small>Check all items stock order new.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-card>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <mat-card>
+      <mat-card-header class="header-style">
+        <mat-card-title>Leave Balance</mat-card-title>
+        <a mat-button color="primary" href="#">View All</a>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="leave-container">
+          <div class="progress-section">
+            <div class="progress-bars">
+              @for (type of leaveTypes; track type) {
+                <div class="progress-item">
+                  <div class="progress-label">
+                    <span class="code">{{type.name}}</span>
+                    <span class="value">{{type.value}}/{{type.total}}</span>
+                  </div>
+                  <mat-progress-bar mode="determinate" [value]="(type.value / type.total) * 100"
+                    class="custom-progress">
+                  </mat-progress-bar>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card>
+      <mat-card-header class="header-style">
+        <mat-card-title>Upcomming Holidays</mat-card-title>
+        <a mat-button color="primary" href="#">View All</a>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="holiday-list">
+          @for (holiday of holidays; track holiday) {
+            <div class="holiday-item">
+              <div class="holiday-date">{{ holiday.date }}</div>
+              <div class="holiday-event">{{ holiday.event }}</div>
+              <div class="holiday-days">{{ holiday.daysLeft }} days left</div>
+            </div>
+          }
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Todo List</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ng-scrollbar style="height: 370px" visibility="hover">
+          <div cdkDropList class="task-list" (cdkDropListDropped)="drop($event)">
+            @for (task of tasks; track task) {
+              <div class="task-box" cdkDrag>
+                <div>
+                  <div class="task-handle m-r-20" cdkDragHandle>
+                    <mat-icon aria-hidden="false">drag_indicator</mat-icon>
+                  </div>
+                </div>
+                <mat-checkbox (change)="toggle(task)" [checked]="!!task.done" class="m-r-15"
+                  color="primary">
+                </mat-checkbox>
+                <div class="task-custom-placeholder" *cdkDragPlaceholder></div>
+                <div matTooltip="Title" [ngClass]="{done:task.done}">
+                {{task.title}}</div>
+                <div
+                  [ngClass]="{'task-low': task.priority==='Low', 'task-high': task.priority==='High','task-normal': task.priority==='Normal'}">
+                  @if (task?.priority === 'Low') {
+                    <mat-icon matTooltip="Low" aria-hidden="false" class="lbl-low">
+                      arrow_downward
+                    </mat-icon>
+                  }
+                  @if (task?.priority === 'High') {
+                    <mat-icon matTooltip="High" aria-hidden="false" class="lbl-high">
+                      arrow_upward
+                    </mat-icon>
+                  }
+                  @if (task?.priority === 'Normal') {
+                    <mat-icon matTooltip="Normal" aria-hidden="false" class="lbl-normal">
+                    remove</mat-icon>
+                  }
+                  {{task.priority}}
+                </div>
+              </div>
+            }
+          </div>
+        </ng-scrollbar>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

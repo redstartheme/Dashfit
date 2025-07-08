@@ -1,0 +1,20 @@
+@use "variables";
+@use "sass:math";
+
+$utilities: (
+  "width": (
+    property: width,
+    class: w,
+    values: variables.$sizes,
+  ),
+  "height": (
+    property: height,
+    class: h,
+    values: variables.$sizes,
+  ),
+);
+@for $i from 0 through 100 {
+  .tbl-col-width-per-#{$i} {
+    max-width: math.round(math.percentage(math.div($i, 100)));
+  }
+}

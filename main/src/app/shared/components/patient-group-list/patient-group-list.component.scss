@@ -1,0 +1,32 @@
+.patient-group-list {
+  display: flex;
+  align-items: center;
+  padding: 12px 12px;
+  border-radius: 6px;
+  .lbl-bedge {
+    padding: 10px;
+    margin: 0px 5px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    .lbl-bedge-title {
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .group-details {
+    line-height: 38px;
+    padding-left: 10px;
+    font-weight: 500;
+  }
+}

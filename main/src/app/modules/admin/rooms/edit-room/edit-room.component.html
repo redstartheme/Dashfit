@@ -1,0 +1,182 @@
+<app-page-header></app-page-header>
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-subtitle>Edit Room</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <form class="form-field-full" [formGroup]="roomForm">
+                    <div class="row m-b-24">
+                        <div class="col-sm-6">
+                            <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+                                <mat-label>Room No</mat-label>
+                                <input matInput formControlName="roomNo" required>
+                                @if (roomForm.get('roomNo')?.hasError('required') ||
+                                roomForm.get('roomNo')?.touched) {
+                                <mat-error>
+                                    Please enter a valid roomNo address
+                                </mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+                                <mat-label>Select Room Type</mat-label>
+                                <mat-select formControlName="roomType" required>
+                                    <mat-option [value]="'Delux'">
+                                        Delux
+                                    </mat-option>
+                                    <mat-option [value]="'Super Delux'">
+                                        Super Delux
+                                    </mat-option>
+                                    <mat-option [value]="'Vila'">
+                                        Vila
+                                    </mat-option>
+                                    <mat-option [value]="'Double'">
+                                        Double
+                                    </mat-option>
+                                    <mat-option [value]="'Single'">
+                                        Single
+                                    </mat-option>
+                                </mat-select>
+                                @if (roomForm.get('roomType')?.hasError('required')) {
+                                <mat-error>
+                                    Room type is required
+                                </mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row m-b-24">
+                        <div class="col-sm-6">
+                            <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+                                <mat-label>AC/Non AC</mat-label>
+                                <mat-select formControlName="acNonac" required>
+                                    <mat-option [value]="'AC'">
+                                        AC
+                                    </mat-option>
+                                    <mat-option [value]="'Non AC'">
+                                        Non AC
+                                    </mat-option>
+                                </mat-select>
+                                @if (roomForm.get('acNonac')?.hasError('required')) {
+                                <mat-error>
+                                    AC/Non AC is required
+                                </mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+                                <mat-label>Select Meal</mat-label>
+                                <mat-select formControlName="meal" required>
+                                    <mat-option [value]="'None'">
+                                        None
+                                    </mat-option>
+                                    <mat-option [value]="'Lunch'">
+                                        Lunch
+                                    </mat-option>
+                                    <mat-option [value]="'Dinner'">
+                                        Dinner
+                                    </mat-option>
+                                    <mat-option [value]="'Breakfast'">
+                                        Breakfast
+                                    </mat-option>
+                                    <mat-option [value]="'All'">
+                                        All
+                                    </mat-option>
+                                </mat-select>
+                                @if (roomForm.get('meal')?.hasError('required')) {
+                                <mat-error>
+                                    Meal type is required
+                                </mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row m-b-24">
+                        <div class="col-sm-6">
+                            <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+                                <mat-label>Capacity</mat-label>
+                                <input matInput formControlName="capacity" type="number">
+                                @if (roomForm.get('capacity')?.hasError('required')) {
+                                <mat-error>
+                                    Capacity is required
+                                </mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+                                <mat-label>Status</mat-label>
+                                <mat-select formControlName="status" required>
+                                    <mat-option [value]="'Open'">
+                                        Open
+                                    </mat-option>
+                                    <mat-option [value]="'Booked'">
+                                        Booked
+                                    </mat-option>
+                                    <mat-option [value]="'Inactive'">
+                                        Inactive
+                                    </mat-option>
+                                </mat-select>
+                                @if (roomForm.get('status')?.hasError('required')) {
+                                <mat-error>
+                                    Status is required
+                                </mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                    <div class="row m-b-24">
+                        <div class="col-sm-6">
+                            <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+                                <mat-label>Rent</mat-label>
+                                <input matInput formControlName="rent" type="number">
+                                @if (roomForm.get('rent')?.hasError('required')) {
+                                <mat-error>
+                                    Rent is required
+                                </mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+                                <mat-label>Mobile</mat-label>
+                                <input matInput formControlName="mobile" type="number">
+                                @if (roomForm.get('mobile')?.hasError('required')) {
+                                <mat-error>
+                                    Mobile is required
+                                </mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row m-b-32">
+                        <div class="col-sm-12">
+                            <mat-label>Upload</mat-label>
+                            <app-file-upload formControlName="uploadFile"></app-file-upload>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Note</mat-label>
+                                <textarea matInput formControlName="note"></textarea>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button class="m-l-8 m-r-8" [disabled]="!roomForm.valid " mat-flat-button
+                                color="primary">Submit</button>
+                            <button type="button" mat-flat-button color="warn">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

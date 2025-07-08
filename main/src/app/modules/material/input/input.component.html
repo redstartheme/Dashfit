@@ -1,0 +1,77 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Inputs</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <h4>Basic input box </h4>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Favorite food</mat-label>
+          <input matInput placeholder="Ex. Pizza" value="Sushi">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Leave a comment</mat-label>
+          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+      </form>
+    </section>
+    <section>
+      <h4>Input with hint (e.g. password field)</h4>
+      <mat-form-field hideRequiredMarker>
+        <mat-label>Password</mat-label>
+        <input matInput [type]="passwordType" [(ngModel)]="password" required #passwordModel="ngModel">
+        <button mat-icon-button matSuffix [attr.aria-label]="passwordToggleLabel"
+          (click)="showPassword = !showPassword">
+          <mat-icon>{{passwordToggleIcon}}</mat-icon>
+        </button>
+        <mat-hint>Hint: favorite color</mat-hint>
+        @if (passwordModel.hasError('required')) {
+        <mat-error>You must enter your password.
+        </mat-error>
+        }
+      </mat-form-field>
+    </section>
+    <section>
+      <h4>Input with error message (e.g. email field)</h4>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="email" required email #emailModel="ngModel">
+        @if (emailModel.hasError('required')) {
+        <mat-error>You must enter your email.</mat-error>
+        }
+        @if (emailModel.hasError('email')) {
+        <mat-error>Not a valid email address.</mat-error>
+        }
+      </mat-form-field>
+    </section>
+    <section>
+      <h4>Input with a clear button</h4>
+      <mat-form-field class="example-form-field">
+        <mat-label>Clearable input</mat-label>
+        <input matInput type="text" [(ngModel)]="value">
+        @if (value) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+        }
+      </mat-form-field>
+    </section>
+    <section>
+      <h4>Inputs with prefixes and suffixes</h4>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Telephone</mat-label>
+          <span matPrefix>+1 &nbsp;</span>
+          <input type="tel" matInput placeholder="555-555-1234">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+      </form>
+    </section>
+    <div class="alert alert-primary m-t-16">
+      If you want more examples please visit angular material design components <a
+        href="https://material.angular.io/components/input/examples" target="_blank">here</a>
+    </div>
+  </mat-card-content>
+</mat-card>

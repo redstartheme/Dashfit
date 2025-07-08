@@ -1,0 +1,38 @@
+<!-- company-strength.component.html -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Company Strength</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="progressCard">
+      <ul class="p-0 m-b-0">
+        @for (strength of strengths; track strength) {
+          <li class="m-b-16">
+            <div class="row d-flex align-items-center justify-content-between">
+              <div class="col-sm-3">
+                <p class="m-0">{{ strength.skill }}</p>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center justify-content-between">
+                  <mat-progress-bar [color]="strength.color || 'primary'" mode="determinate"
+                    [value]="strength.progress">
+                  </mat-progress-bar>
+                  <span class="m-l-8 m-r-8">{{ strength.progress }}%</span>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="userImgGroup">
+                  @for (avatar of strength.team; track avatar) {
+                    <a href="#" class="userImg">
+                      <img [src]="avatar" alt="Team Member">
+                    </a>
+                  }
+                </div>
+              </div>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>

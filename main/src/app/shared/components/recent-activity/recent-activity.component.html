@@ -1,0 +1,11 @@
+@for (activity of activities; track activity) {
+<div class="sl-item {{ activity.statusClass }}">
+  <div class="sl-content">
+    <small class="text-muted">
+      <i class="material-icons position-left">
+        person
+      </i>{{ activity.timestamp }}</small>
+    <p>{{ activity.message }}</p>
+  </div>
+</div>
+}

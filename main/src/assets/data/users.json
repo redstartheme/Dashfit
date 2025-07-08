@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "name": "admin",
+      "email": "admin@163.com",
+      "role": [
+        {
+          "name": "ADMIN",
+          "priority": 1
+        }
+      ],
+      "permissions": ["canAdd", "canDelete", "canEdit", "canRead"],
+      "avatar": "./assets/images/admin.jpg"
+    },
+    {
+      "id": 2,
+      "username": "employee",
+      "password": "employee",
+      "name": "employee",
+      "email": "employee@gmail.com",
+      "role": [
+        {
+          "name": "EMPLOYEE",
+          "priority": 2
+        }
+      ],
+      "permissions": ["canAdd", "canEdit", "canRead"],
+      "avatar": "./assets/images/avatars/employee.jpg",
+      "refresh_token": true
+    }
+    
+  ]
+  

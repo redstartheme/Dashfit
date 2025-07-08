@@ -1,0 +1,47 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Radio buttons</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <h4>Radio buttons in group</h4>
+      <mat-radio-group name="seasons" [(ngModel)]="favoriteSeason" aria-label="Seasons">
+        @for (season of seasonOptions; track season) {
+        <mat-radio-button [value]="season">
+          {{season}}
+        </mat-radio-button>
+        }
+      </mat-radio-group>
+    </section>
+    <section>
+      <h4>Radio buttons with align-end label position</h4>
+      <mat-radio-group name="bread" align="end" aria-label="Breads">
+        <mat-radio-button value="toast">Toast</mat-radio-button>
+        <mat-radio-button value="biscuit">Biscuit</mat-radio-button>
+        <mat-radio-button value="bagel">Bagel</mat-radio-button>
+      </mat-radio-group>
+    </section>
+    <section>
+      <h4>Disabled radio buttons</h4>
+      <p>
+        This section contains three radio buttons for "Yes", "No", and "Maybe".
+        The "Maybe" radio button is disabled.
+      </p>
+      <mat-radio-button name="disable">Yes</mat-radio-button>
+      <mat-radio-button name="disable">No</mat-radio-button>
+      <mat-radio-button name="disable" [disabled]="true">Maybe</mat-radio-button>
+    </section>
+    <section>
+      <h4>Radio buttons with different colors</h4>
+      <mat-radio-button name="color">Default (accent)</mat-radio-button>
+      <mat-radio-button name="color" color="primary">Primary</mat-radio-button>
+      <mat-radio-button name="color" color="accent">Accent</mat-radio-button>
+      <mat-radio-button name="color" color="warn">Warn</mat-radio-button>
+    </section>
+    <div class="alert alert-primary m-t-16">
+      If you want more examples please visit angular material design components <a
+        href="https://material.angular.io/components/radio/examples" target="_blank">here</a>
+    </div>
+  </mat-card-content>
+</mat-card>

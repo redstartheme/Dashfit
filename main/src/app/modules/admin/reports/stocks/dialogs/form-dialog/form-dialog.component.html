@@ -1,0 +1,133 @@
+<div class="dialogContainer">
+  <div class="modalHeader">
+    <div class="avatarDetails">
+      <div class="modalTitle">
+        {{dialogTitle}}
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="form-field-full" [formGroup]="stocksForm">
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Product Code</mat-label>
+            <input matInput formControlName="pCode" required>
+            @if (stocksForm.get('pCode')?.hasError('required') || stocksForm.get('pCode')?.touched) {
+            <mat-error>
+              Please enter a valid Product Code
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Product Name</mat-label>
+            <input matInput formControlName="pName" required>
+            @if (stocksForm.get('pName')?.hasError('required') || stocksForm.get('pName')?.touched) {
+            <mat-error>
+              Please enter a valid Product Name
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" required>
+              <mat-option [value]="'In Stock'">
+                In Stock
+              </mat-option>
+              <mat-option [value]="'Low Stock'">
+                Low Stock
+              </mat-option>
+              <mat-option [value]="'Out of Stock'">
+                Out of Stock
+              </mat-option>
+            </mat-select>
+            @if (stocksForm.get('status')?.hasError('required')) {
+            <mat-error>
+              Status Name is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category" required>
+              <mat-option [value]="'Room Service'">
+                Room Service
+              </mat-option>
+              <mat-option [value]="'Bathroom Supplies'">
+                Bathroom Supplies
+              </mat-option>
+              <mat-option [value]="'Beverages'">
+                Beverages
+              </mat-option>
+              <mat-option [value]="'Health & Safety'">
+                Health & Safety
+              </mat-option>
+              <mat-option [value]="'Cleaning Supplies'">
+                Cleaning Supplies
+              </mat-option>
+              <mat-option [value]="'Electronics'">
+                Electronics
+              </mat-option>
+              <mat-option [value]="'Dining Supplies'">
+                Dining Supplies
+              </mat-option>
+              <mat-option [value]="'Maintenance Supplies'">
+                Maintenance Supplies
+              </mat-option>
+            </mat-select>
+            @if (stocksForm.get('category')?.hasError('required')) {
+            <mat-error>
+              Category is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>price</mat-label>
+            <input matInput formControlName="price" type="number">
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>phone</mat-icon>
+            @if (stocksForm.get('price')?.hasError('required')) {
+            <mat-error>
+              price is required
+            </mat-error>
+            }
+          </mat-form-field>
+
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Quantity</mat-label>
+            <input matInput formControlName="qty" type="number">
+            @if (stocksForm.get('qty')?.hasError('required')) {
+            <mat-error>
+              Quantity is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [disabled]="!stocksForm.valid" (click)="submit()">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

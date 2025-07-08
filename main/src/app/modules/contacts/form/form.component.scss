@@ -1,0 +1,14 @@
+.contact-details {
+  .contact-details-field {
+    display: flex;
+
+    .material-icons-two-tone {
+      margin: 0 20px 0 10px;
+    }
+
+    .color-icon {
+      filter: invert(14%) sepia(0%) saturate(5141%) hue-rotate(101deg)
+        brightness(95%) contrast(97%);
+    }
+  }
+}

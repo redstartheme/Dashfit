@@ -1,0 +1,13 @@
+/* user-profile.component.scss */
+.cpCard {
+  margin-bottom: 1rem;
+
+  .followCard {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}

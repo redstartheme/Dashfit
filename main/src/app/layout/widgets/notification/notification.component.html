@@ -1,0 +1,46 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" class="m-4">
+  <i-feather name="bell" class="header_icons"></i-feather>
+</button>
+<mat-menu #menu="matMenu" class="notification-menu">
+  <div class="notification-header primaryColorBG">
+    <h5 class="mb-0">Notifications</h5>
+    <a class="nfc-mark-as-read">Mark all as read</a>
+  </div>
+  <mat-nav-list class="p-0">
+    <ng-scrollbar [style.height]="'330px'" visibility="hover">
+      @for (message of notifications; track message) {
+      <mat-list-item class="notification-list" [ngClass]="[message.status]">
+        <div class="notification-body">
+          <div class="notification-image">
+            @if (message.icontype === 'image') {
+            <div>
+              <img alt="Flora" src="{{ 'assets/images/avatars/' + message.image }}" class="img-style" />
+            </div>
+            }
+            @if (message.icontype === 'icon') {
+            <div>
+              <div class="notification-icon" [ngClass]="[message.color]">
+                <mat-icon class="material-icons-outlined">{{message.icon}}</mat-icon>
+              </div>
+            </div>
+            }
+          </div>
+          <div class="notification-content">
+            <p class="notification-heading">
+              {{ message.header }}
+            </p>
+            <p class="notification-detail">
+              {{ message.details }}
+            </p>
+          </div>
+          <span class="notification-datetime"> {{ message.datetime }}</span>
+        </div>
+      </mat-list-item>
+      }
+    </ng-scrollbar>
+  </mat-nav-list>
+  <div class="nfc-footer">
+    <a class="nfc-read-all">Read
+      All Notifications</a>
+  </div>
+</mat-menu>

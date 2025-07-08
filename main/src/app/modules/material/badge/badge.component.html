@@ -1,0 +1,166 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Badge Examples</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div matBadge="4" matBadgeOverlap="false" class="demo-section d-table m-b-4">Text with a badge</div>
+    <br>
+    <div matBadge="1" matBadgeSize="small" class="demo-section d-table m-b-4">Text with small badge</div>
+    <br>
+    <div matBadge="1" matBadgeSize="large" class="demo-section d-table m-b-4">Text with large badge</div>
+
+    <div class="demo-section">
+      Button with a badge on the left
+      <button mat-raised-button color="primary" matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+        Action
+      </button>
+    </div>
+
+    <div class="demo-section">
+      Button toggles badge visibility
+      <button mat-raised-button matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
+        Hide
+      </button>
+    </div>
+
+    <div class="demo-section">
+      Icon with a badge
+      <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+      <!-- Include text description of the icon's meaning for screen-readers -->
+      <span class="cdk-visually-hidden">
+        Example with a home icon with overlaid badge showing the number 15
+      </span>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Badge Color</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-sm-3">
+        <div matBadge="4" matBadgeOverlap="false" class="d-table primary-badge">Badge primary</div>
+      </div>
+      <div class="col-sm-3">
+        <div matBadge="4" matBadgeOverlap="false" class="d-table secondary-badge">Badge secondary</div>
+      </div>
+      <div class="col-sm-3">
+        <div matBadge="4" matBadgeOverlap="false" class="d-table tertiary-badge">Badge tertiary</div>
+      </div>
+      <div class="col-sm-3">
+        <div matBadge="4" matBadgeOverlap="false" class="d-table error-badge">Badge error</div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Solid Badge Examples</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="badge badge-solid-red">Badge Red</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-solid-purple">Badge Purple</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-solid-green">Badge Green</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-solid-blue">Badge Blue</div>
+      </div>
+    </div>
+    <div class="row m-t-8">
+      <div class="col-sm-3">
+        <div class="badge badge-solid-pink">Badge Pink</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-solid-orange">Badge Orange</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-solid-cyan">Badge Cyan</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-solid-brown">Badge Brown</div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Outline Badge Examples</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="badge badge-outline-red">Badge Red</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-outline-purple">Badge Purple</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-outline-green">Badge Green</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-outline-blue">Badge Blue</div>
+      </div>
+    </div>
+    <div class="row m-t-8">
+      <div class="col-sm-3">
+        <div class="badge badge-outline-pink">Badge Pink</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-outline-orange">Badge Orange</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-outline-cyan">Badge Cyan</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="badge badge-outline-brown">Badge Brown</div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Icon Badge Examples</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="icon-badge badge-solid-red"><mat-icon>delete_outline</mat-icon></div>
+      </div>
+      <div class="col-sm-3">
+        <div class="icon-badge badge-solid-purple"><mat-icon>delete_outline</mat-icon></div>
+      </div>
+      <div class="col-sm-3">
+        <div class="icon-badge badge-solid-green"><mat-icon>delete_outline</mat-icon></div>
+      </div>
+      <div class="col-sm-3">
+        <div class="icon-badge badge-solid-blue"><mat-icon>delete_outline</mat-icon></div>
+      </div>
+    </div>
+    <div class="row m-t-8">
+      <div class="col-sm-3">
+        <div class="icon-badge badge-solid-pink"><mat-icon>delete_outline</mat-icon></div>
+      </div>
+      <div class="col-sm-3">
+        <div class="icon-badge badge-solid-orange"><mat-icon>delete_outline</mat-icon></div>
+      </div>
+      <div class="col-sm-3">
+        <div class="icon-badge badge-solid-cyan"><mat-icon>delete_outline</mat-icon></div>
+      </div>
+      <div class="col-sm-3">
+        <div class="icon-badge badge-solid-brown"><mat-icon>delete_outline</mat-icon></div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<div class="alert alert-primary">
+  If you want more examples please visit angular material design components <a
+    href="https://material.angular.io/components/badge/examples" target="_blank">here</a>
+</div>

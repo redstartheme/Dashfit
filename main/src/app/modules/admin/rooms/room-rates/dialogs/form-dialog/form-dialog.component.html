@@ -1,0 +1,182 @@
+<div class="dialogContainer">
+  <div class="modalHeader">
+    <div class="avatarDetails">
+      <div class="modalTitle">
+        {{dialogTitle}}
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="form-field-full" [formGroup]="roomRatesForm">
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Room Type</mat-label>
+            <mat-select formControlName="roomType" required>
+              <mat-option [value]="'Single'">
+                Single
+              </mat-option>
+              <mat-option [value]="'Double'">
+                Double
+              </mat-option>
+              <mat-option [value]="'Suite'">
+                Suite
+              </mat-option>
+            </mat-select>
+            @if (roomRatesForm.get('roomType')?.hasError('required') || roomRatesForm.get('roomType')?.touched) {
+              <mat-error
+                >
+                Please enter a valid Room Type
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Rate Plan</mat-label>
+            <mat-select formControlName="ratePlan" required>
+              <mat-option [value]="'Standard'">
+                Standard
+              </mat-option>
+              <mat-option [value]="'Promotional'">
+                Promotional
+              </mat-option>
+              <mat-option [value]="'Corporate'">
+                Corporate
+              </mat-option>
+              <mat-option [value]="'Weekend'">
+                Weekend
+              </mat-option>
+              <mat-option [value]="'Early Bird'">
+                Early Bird
+              </mat-option>
+              <mat-option [value]="'Holiday'">
+                Holiday
+              </mat-option>
+              <mat-option [value]="'Last Minute'">
+                Last Minute
+              </mat-option>
+            </mat-select>
+            @if (roomRatesForm.get('ratePlan')?.hasError('required') || roomRatesForm.get('ratePlan')?.touched) {
+              <mat-error
+                >
+                Please enter a valid Rate Plan
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Base Rate</mat-label>
+            <input matInput formControlName="baseRate" type="number" required>
+            @if (roomRatesForm.get('baseRate')?.hasError('required') || roomRatesForm.get('baseRate')?.touched) {
+              <mat-error
+                >
+                Base Rate is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Seasonal Rate</mat-label>
+            <input matInput formControlName="seasonalRate" type="number">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Promotional Rate</mat-label>
+            <input matInput formControlName="promotionalRate" type="number">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Effective Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="effectiveDate" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            @if (roomRatesForm.get('effectiveDate')?.hasError('required') || roomRatesForm.get('effectiveDate')?.touched) {
+              <mat-error
+                >
+                Scheduled date is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>End Date</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="endDate" required>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            @if (roomRatesForm.get('endDate')?.hasError('required') || roomRatesForm.get('endDate')?.touched) {
+              <mat-error
+                >
+                Scheduled date is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" required>
+              <mat-option [value]="'Active'">Active</mat-option>
+              <mat-option [value]="'Inactive'">Inactive</mat-option>
+            </mat-select>
+            @if (roomRatesForm.get('status')?.hasError('required')) {
+              <mat-error>
+                Status is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Booking Window</mat-label>
+            <input matInput formControlName="bookingWindow">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Cancellation Policy</mat-label>
+            <input matInput formControlName="cancellationPolicy">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Minimum Stay</mat-label>
+            <input matInput formControlName="minimumStay">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Max Occupancy</mat-label>
+            <input matInput formControlName="maxOccupancy">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [disabled]="!roomRatesForm.valid" (click)="submit()">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

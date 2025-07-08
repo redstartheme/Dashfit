@@ -1,0 +1,156 @@
+.emp-profile-card {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-weight: 600;
+      margin: 0px;
+    }
+
+    p {
+      color: #9b9b9b;
+      margin: 0px;
+    }
+  }
+
+  .profile-picture {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 4px solid #e0f7fa;
+    }
+  }
+
+  .user-info {
+    text-align: center;
+
+    h2 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #9b9b9b;
+    }
+  }
+
+  .stats-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    background: #8080801f;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #757575;
+
+      mat-icon {
+        color: #848484;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.task-list-card {
+  .task-day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-weight: 600;
+      font-size: 10px;
+      color: #6d6d6d;
+      margin: 0px;
+    }
+
+    mat-icon {
+      color: #6d6d6d;
+    }
+  }
+
+  mat-list {
+    mat-list-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      margin: 0px 0px 20px 0px;
+
+      .task-time {
+        font-weight: 600;
+        font-size: 1rem;
+        margin-right: 10px;
+      }
+
+      .task-info {
+        flex-grow: 1;
+
+        .task-category {
+          display: flex;
+          align-items: center;
+
+          .category-line {
+            width: 4px;
+            height: 40px;
+            border-radius: 4px;
+            margin-right: 8px;
+          }
+
+          small {
+            font-size: 0.8rem;
+            color: #9b9b9b;
+          }
+        }
+
+        .task-title {
+          font-weight: 600;
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    mat-divider {
+      margin: 10px 0;
+    }
+  }
+}
+.working-history {
+  .material-icons-outlined {
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    margin: 0px 5px;
+  }
+  .col-blue {
+    color: #008fff;
+  }
+  .col-orange {
+    color: #f3612d;
+  }
+}

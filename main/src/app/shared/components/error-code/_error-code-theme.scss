@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin theme($theme) {
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+
+  .error-code {
+    color: map.get($foreground, text);
+  }
+}

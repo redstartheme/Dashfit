@@ -1,0 +1,105 @@
+<app-page-header></app-page-header>
+
+<section>
+  <h4>Actions Buttons Left Align</h4>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Card Title</mat-card-title>
+      <mat-card-subtitle>Card Subtitle</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <h4>card content</h4>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
+
+<section>
+  <h4>Actions Buttons Right Align</h4>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Card Title</mat-card-title>
+      <mat-card-subtitle>Card Subtitle</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <h4>card content</h4>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
+
+<section>
+  <h4>Card with sub-title</h4>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>This card indeterminates progress bar.</p>
+      <p>{{longText}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
+
+<section>
+  <h4>Card with footer</h4>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-title>Shiba Inu</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>This card has divider and indeterminate progress as footer</p>
+      <p>{{ longText }}</p>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</section>
+
+
+<section>
+  <h4>Card with multiple sections</h4>
+  <mat-card class="demo-card">
+    <mat-card-header>
+      <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+        aria-label="Shiba Inu avatar" alt="image">
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" aria-label="Shiba Inu"
+      alt="image">
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="openSnackbar('Liked Shiba Inu')">like</button>
+      <button mat-button (click)="openSnackbar('Shared Shiba Inu')">share</button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="alert alert-primary m-t-16">
+    If you want more examples please visit angular material design components <a
+      href="https://material.angular.io/components/card/examples" target="_blank">here</a>
+  </div>
+</section>

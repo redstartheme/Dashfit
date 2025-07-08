@@ -1,0 +1,40 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin theme($theme) {
+  $is-dark-theme: map.get($theme, theme-type);
+  $primary: mat.get-theme-color($theme, primary, 50);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+
+  .topmenu {
+    background: map.get($background, app-bar);
+
+    .mat-mdc-button {
+      color: map.get($foreground, text);
+
+      &.active {
+        background-color: rgba(
+          mat.get-theme-color($theme, primary),
+          0.15
+        ) !important;
+      }
+    }
+    .menu-badge-color {
+      background: mat.get-theme-color($theme, primary);
+    }
+    .mat-mdc-tab-link-container {
+      border-bottom-color: transparent;
+    }
+  }
+
+  .topmenu-panel {
+    .mat-mdc-menu-item {
+      color: map.get($foreground, text);
+
+      &.active > .mdc-list-item__primary-text {
+        color: mat.get-theme-color($theme, secondary);
+      }
+    }
+  }
+}

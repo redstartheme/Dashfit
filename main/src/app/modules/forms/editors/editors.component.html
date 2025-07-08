@@ -1,0 +1,27 @@
+<app-page-header></app-page-header>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>NgxEditor</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="form">
+            <div class="editor">
+                <ngx-editor-menu [editor]="editor!" [toolbar]="toolbar">
+                </ngx-editor-menu>
+                <ngx-editor class="editor-content" [editor]="editor!" formControlName="editorContent">
+                </ngx-editor>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>CKEditor</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <ckeditor [editor]="Editor" data={{content}}></ckeditor>
+    </mat-card-content>
+</mat-card>

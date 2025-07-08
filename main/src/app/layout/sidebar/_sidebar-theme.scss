@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin theme($theme) {
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+  $primary: mat.get-theme-color($theme, primary, 50);
+
+  .sidebar-header {
+    color: map.get($foreground, text);
+    background: map.get($background, base);
+  }
+
+  .user-panel {
+    border-bottom: 1px solid map.get($foreground, divider-off);
+  }
+  .side-Toggle {
+    color: mat.get-theme-color($theme, primary);
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+  }
+}

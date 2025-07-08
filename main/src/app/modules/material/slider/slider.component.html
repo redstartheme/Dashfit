@@ -1,0 +1,120 @@
+<app-page-header></app-page-header>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Configurable slider</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <section class="example-section">
+        <mat-form-field class="example-margin example-width">
+          <mat-label>Value</mat-label>
+          <input matInput type="number" [(ngModel)]="value">
+        </mat-form-field>
+        <mat-form-field class="example-margin example-width">
+          <mat-label>Min value</mat-label>
+          <input matInput type="number" [(ngModel)]="min">
+        </mat-form-field>
+        <mat-form-field class="example-margin example-width">
+          <mat-label>Max value</mat-label>
+          <input matInput type="number" [(ngModel)]="max">
+        </mat-form-field>
+        <mat-form-field class="example-margin example-width">
+          <mat-label>Step size</mat-label>
+          <input matInput type="number" [(ngModel)]="step">
+        </mat-form-field>
+      </section>
+
+      <section class="example-section">
+        <mat-checkbox [(ngModel)]="showTicks">Show ticks</mat-checkbox>
+      </section>
+
+      <section class="example-section">
+        <mat-checkbox [(ngModel)]="thumbLabel">Show thumb label</mat-checkbox>
+      </section>
+
+      <section class="example-section">
+        <mat-checkbox [(ngModel)]="disabled">Disabled</mat-checkbox>
+      </section>
+
+      <h2>Result</h2>
+
+      <div class="example-label-container">
+        <label id="example-name-label" class="example-name-label">Value</label>
+        <label class="example-value-label">{{slider.value}}</label>
+      </div>
+      <mat-slider class="example-margin" [disabled]="disabled" [max]="max" [min]="min" [step]="step"
+        [discrete]="thumbLabel" [showTickMarks]="showTicks">
+        <input matSliderThumb [(ngModel)]="value" #slider>
+      </mat-slider>
+
+    </section>
+  </mat-card-content>
+</mat-card>
+
+
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Sliders</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <h4>Slider with custom thumb label.</h4>
+      <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
+        <input matSliderThumb>
+      </mat-slider>
+    </section>
+
+    <section>
+      <h4>Range slider</h4>
+      <div class="demo-volume-container">
+        <mat-slider min="200" max="500">
+          <input value="300" matSliderStartThumb>
+          <input value="400" matSliderEndThumb>
+        </mat-slider>
+      </div>
+    </section>
+    <section>
+      <h4>Continuous slider</h4>
+      <p>Move the red, green, and blue sliders to choose a color.</p>
+      <div class="demo-color-container">
+        <div class="demo-color-sliders">
+          <div>
+            <label class="demo-color-label" for="r-slider">Red</label>
+            <mat-slider aria-label="Red" id="r-slider" min="0" max="255" discrete>
+              <input matSliderThumb [(ngModel)]="red">
+            </mat-slider>
+          </div>
+          <div>
+            <label class="demo-color-label" for="g-slider">Green</label>
+            <mat-slider aria-label="Green" id="g-slider" min="0" max="255" discrete>
+              <input matSliderThumb [(ngModel)]="green">
+            </mat-slider>
+          </div>
+          <div>
+            <label class="demo-color-label" for="b-slider">Blue</label>
+            <mat-slider aria-label="Blue" id="b-slider" min="0" max="255" discrete>
+              <input matSliderThumb [(ngModel)]="blue">
+            </mat-slider>
+          </div>
+        </div>
+        <div class="demo-color-swatch" [style.background]="swatchBackground"></div>
+      </div>
+    </section>
+
+    <section>
+      <h4>Discrete slider (e.g. rate a product)</h4>
+      <p>Please rate our product on a scale of 1 (not satisfied) to 5 (extremely satisfied).</p>
+      <mat-slider min="1" max="5" step="1" showTickMarks aria-label="Rating" discrete>
+        <input matSliderThumb>
+      </mat-slider>
+    </section>
+
+
+    <div class="alert alert-primary m-t-16">
+      If you want more examples please visit angular material design components <a
+        href="https://material.angular.io/components/slider/examples" target="_blank">here</a>
+    </div>
+  </mat-card-content>
+</mat-card>

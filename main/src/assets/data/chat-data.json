@@ -1,0 +1,93 @@
+{
+    "users": [
+      { "name": "William Smith", "status": "left 7 mins ago", "avatar": "assets/images/avatars/avatar-1.jpg", "chatHistory": [
+          { "name": "William Smith", "text": "Hi, I just left.", "time": "10:00 AM, Today", "type": "outgoing" },
+          { "name": "Robert", "text": "Okay, see you soon!", "time": "10:01 AM, Today", "type": "incoming" },
+          { "name": "William Smith", "text": "I’ll be back in an hour.", "time": "10:10 AM, Today", "type": "outgoing" },
+          { "name": "Robert", "text": "Got it, talk to you then.", "time": "10:15 AM, Today", "type": "incoming" }
+        ]
+      },
+      { "name": "Martha Williams", "status": "online", "avatar": "assets/images/avatars/avatar-2.jpg", "chatHistory": [
+          { "name": "Martha Williams", "text": "I am available now.", "time": "09:30 AM, Today", "type": "outgoing" },
+          { "name": "Robert", "text": "Great, let’s catch up.", "time": "09:32 AM, Today", "type": "incoming" },
+          { "name": "Martha Williams", "text": "Perfect, see you then!", "time": "09:45 AM, Today", "type": "outgoing" }
+        ]
+      },
+      { "name": "Joseph Clark", "status": "online", "avatar": "assets/images/avatars/avatar-3.jpg", "chatHistory": [
+          { "name": "Joseph Clark", "text": "Just got online.", "time": "11:00 AM, Today", "type": "outgoing" },
+          { "name": "Maria", "text": "Hi Joseph, how are you?", "time": "11:05 AM, Today", "type": "incoming" },
+          { "name": "Joseph Clark", "text": "I’m good, thanks for asking.", "time": "11:10 AM, Today", "type": "outgoing" },
+          { "name": "Maria", "text": "Any updates on the project?", "time": "11:15 AM, Today", "type": "incoming" },
+          { "name": "Joseph Clark", "text": "We’re almost done with the initial phase.", "time": "11:20 AM, Today", "type": "outgoing" }
+        ]
+      },
+      { "name": "Nancy Taylor", "status": "online", "avatar": "assets/images/avatars/avatar-4.jpg", "chatHistory": [
+          { "name": "Nancy Taylor", "text": "Let’s meet this afternoon.", "time": "12:00 PM, Today", "type": "outgoing" },
+          { "name": "Robert", "text": "I’m free at 3 PM.", "time": "12:15 PM, Today", "type": "incoming" },
+          { "name": "Nancy Taylor", "text": "Sounds good. I’ll see you then.", "time": "12:20 PM, Today", "type": "outgoing" },
+          { "name": "Robert", "text": "Looking forward to it.", "time": "12:25 PM, Today", "type": "incoming" },
+          { "name": "Nancy Taylor", "text": "Great, have a good day until then!", "time": "12:30 PM, Today", "type": "outgoing" }
+        ]
+      },
+      { "name": "Margaret Wilson", "status": "online", "avatar": "assets/images/avatars/avatar-5.jpg", "chatHistory": [
+          { "name": "Margaret Wilson", "text": "Can we discuss the project?", "time": "02:00 PM, Today", "type": "outgoing" },
+          { "name": "Maria", "text": "Sure, let’s do that.", "time": "02:05 PM, Today", "type": "incoming" },
+          { "name": "Margaret Wilson", "text": "How about a video call?", "time": "02:10 PM, Today", "type": "outgoing" },
+          { "name": "Maria", "text": "That works for me. What time?", "time": "02:15 PM, Today", "type": "incoming" },
+          { "name": "Margaret Wilson", "text": "Let’s say 3 PM.", "time": "02:20 PM, Today", "type": "outgoing" }
+        ]
+      },
+      { "name": "Joseph Jones", "status": "left 30 mins ago", "avatar": "assets/images/avatars/avatar-6.jpg", "chatHistory": [
+          { "name": "Joseph Jones", "text": "I need to leave now.", "time": "01:00 PM, Today", "type": "outgoing" },
+          { "name": "Joseph Jones", "text": "I’ll catch up with you tomorrow.", "time": "01:10 PM, Today", "type": "outgoing" },
+          { "name": "Robert", "text": "Sounds good. Have a good day!", "time": "01:15 PM, Today", "type": "incoming" },
+          { "name": "Joseph Jones", "text": "Thanks, you too!", "time": "01:20 PM, Today", "type": "outgoing" }
+        ]
+      },
+      { "name": "Jane Brown", "status": "left 10 hours ago", "avatar": "assets/images/avatars/avatar-7.jpg", "chatHistory": [
+          { "name": "Jane Brown", "text": "I’ll get back to you tomorrow.", "time": "08:00 PM, Yesterday", "type": "outgoing" },
+          { "name": "Maria", "text": "Alright, talk to you then.", "time": "08:10 PM, Yesterday", "type": "incoming" },
+          { "name": "Jane Brown", "text": "Great, talk to you tomorrow.", "time": "08:40 PM, Yesterday", "type": "outgoing" }
+        ]
+      },
+      { "name": "Eliza Johnson", "status": "online", "avatar": "assets/images/avatars/avatar-8.jpg", "chatHistory": [
+          { "name": "Eliza Johnson", "text": "Working on the report.", "time": "03:00 PM, Today", "type": "outgoing" },
+          { "name": "Robert", "text": "Let me know if you need help.", "time": "03:10 PM, Today", "type": "incoming" },
+          { "name": "Eliza Johnson", "text": "Thanks, I might need some assistance later.", "time": "03:15 PM, Today", "type": "outgoing" },
+          { "name": "Robert", "text": "Sure thing. Just ping me when you’re ready.", "time": "03:20 PM, Today", "type": "incoming" },
+          { "name": "Eliza Johnson", "text": "Will do. Thanks!", "time": "03:25 PM, Today", "type": "outgoing" }
+        ]
+      },
+      { "name": "Mike Clark", "status": "online", "avatar": "assets/images/avatars/avatar-3.jpg", "chatHistory": [
+          { "name": "Mike Clark", "text": "Ready for the meeting?", "time": "04:00 PM, Today", "type": "outgoing" },
+          { "name": "Mike Clark", "text": "Great, I’ll join in 5 minutes.", "time": "04:10 PM, Today", "type": "outgoing" },
+          { "name": "Maria", "text": "See you then.", "time": "04:15 PM, Today", "type": "incoming" },
+          { "name": "Mike Clark", "text": "Looking forward to it.", "time": "04:20 PM, Today", "type": "outgoing" }
+        ]
+      },
+      { "name": "Ann Henry", "status": "online", "avatar": "assets/images/avatars/avatar-4.jpg", "chatHistory": [
+          { "name": "Ann Henry", "text": "I have some updates.", "time": "05:00 PM, Today", "type": "outgoing" },
+          { "name": "Robert", "text": "Looking forward to it.", "time": "05:10 PM, Today", "type": "incoming" },
+          { "name": "Ann Henry", "text": "We’ve completed the initial draft.", "time": "05:15 PM, Today", "type": "outgoing" },
+          { "name": "Ann Henry", "text": "Let’s review it tomorrow.", "time": "05:25 PM, Today", "type": "outgoing" }
+        ]
+      },
+      { "name": "Nancy Smith", "status": "online", "avatar": "assets/images/avatars/avatar-5.jpg", "chatHistory": [
+          { "name": "Nancy Smith", "text": "Shall we reschedule?", "time": "06:00 PM, Today", "type": "outgoing" },
+          { "name": "Maria", "text": "Yes, let’s find a new time.", "time": "06:15 PM, Today", "type": "incoming" },
+          { "name": "Nancy Smith", "text": "How about tomorrow afternoon?", "time": "06:20 PM, Today", "type": "outgoing" },
+          { "name": "Maria", "text": "That works for me.", "time": "06:25 PM, Today", "type": "incoming" },
+          { "name": "Nancy Smith", "text": "Great, I’ll send a calendar invite.", "time": "06:30 PM, Today", "type": "outgoing" }
+        ]
+      },
+      { "name": "David Wilson", "status": "offline since Oct 28", "avatar": "assets/images/avatars/avatar-9.jpg", "chatHistory": [
+          { "name": "David Wilson", "text": "Sorry, I missed your call.", "time": "07:00 PM, Oct 28", "type": "outgoing" },
+          { "name": "Maria", "text": "No problem, we can catch up later.", "time": "07:05 PM, Oct 28", "type": "incoming" },
+          { "name": "David Wilson", "text": "I’m available for a call now if needed.", "time": "07:10 PM, Oct 28", "type": "outgoing" },
+          { "name": "Maria", "text": "I’m free now, let’s talk.", "time": "07:15 PM, Oct 28", "type": "incoming" },
+          { "name": "David Wilson", "text": "Okay, I’ll call you shortly.", "time": "07:20 PM, Oct 28", "type": "outgoing" }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,24 @@
+<div class="user-panel">
+  <label class="hoverable user-panel-block" for="fileInput1">
+    <img class="user-panel-avatar" [src]="url ? url : user.avatar" width="64" alt="image">
+    <div class="hover-text">Upload</div>
+    <div class="background"></div>
+  </label>
+  <input id="fileInput1" type='file' (change)="onSelectFile($event)">
+  <h4 class="user-panel-name">{{ user.name }}</h4>
+  <h5 class="user-panel-email">{{ user.email }}</h5>
+  <div class="user-panel-icons">
+    <button mat-icon-button routerLink="/profile/overview" matTooltip="{{ 'profile' | translate }}">
+      <i-feather name="user"></i-feather>
+    </button>
+    <button mat-icon-button routerLink="/profile/settings" matTooltip="{{ 'edit_profile' | translate }}">
+      <i-feather name="edit"></i-feather>
+    </button>
+    <button mat-icon-button routerLink="/task" matTooltip="{{ 'task' | translate }}">
+      <i-feather name="check-circle"></i-feather>
+    </button>
+    <button mat-icon-button (click)="logout()" matTooltip="{{ 'logout' | translate }}">
+      <i-feather name="log-out"></i-feather>
+    </button>
+  </div>
+</div>

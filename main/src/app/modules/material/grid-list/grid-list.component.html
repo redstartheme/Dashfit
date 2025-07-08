@@ -1,0 +1,74 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>fix-height grid-list</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-grid-list role="list" [cols]="fixedCols" [rowHeight]="fixedRowHeight">
+        @for (tile of tiles; track tile) {
+        <mat-grid-tile [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color" role="listitem">
+          {{tile.text}}
+        </mat-grid-tile>
+        }
+      </mat-grid-list>
+    </section>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>ratio-height grid list</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-grid-list role="list" cols="2" [rowHeight]="ratio" gutterSize="4px">
+        @for (tile of tiles; track tile) {
+        <mat-grid-tile [style.background]="'lightblue'" role="listitem">
+          {{tile.text}}
+        </mat-grid-tile>
+        }
+      </mat-grid-list>
+    </section>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>fit-height grid list</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-grid-list role="list" cols="2" rowHeight="fit" [gutterSize]="ratioGutter" [style.height]="fitListHeight">
+        @for (tile of tiles; track tile) {
+        <mat-grid-tile role="listitem" [style.background]="'#F1EBBA'">
+          {{tile.text}}
+        </mat-grid-tile>
+        }
+      </mat-grid-list>
+    </section>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Grid list with header and footer</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <h2>Angular team dogs (Grid list with header and footer)</h2>
+      <mat-grid-list role="list" cols="3" rowHeight="200px">
+        @for (dog of dogs; track dog) {
+        <mat-grid-tile role="listitem">
+          <mat-grid-tile-header>{{dog.name}}</mat-grid-tile-header>
+          <p>content</p>
+          <mat-grid-tile-footer>
+            <span mat-line>Human: {{dog.human}}</span>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+        }
+      </mat-grid-list>
+    </section>
+    <div class="alert alert-primary m-t-16">
+      If you want more examples please visit angular material design components <a
+        href="https://material.angular.io/components/grid-list/examples" target="_blank">here</a>
+    </div>
+  </mat-card-content>
+</mat-card>

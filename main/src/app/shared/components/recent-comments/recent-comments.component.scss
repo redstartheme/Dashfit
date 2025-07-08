@@ -1,0 +1,21 @@
+.notice-board {
+  display: flex;
+  -ms-flex-align: start;
+  -webkit-box-align: start;
+  align-items: flex-start;
+  .notice-body {
+    font-size: 13px;
+    padding: 0px 0px 15px 10px;
+    [dir="rtl"] & {
+      padding: 0 10px 5px 0;
+    }
+
+    p {
+      margin-bottom: 0px;
+      margin-top: 5px;
+    }
+    .notice-heading {
+      margin: 0px;
+    }
+  }
+}

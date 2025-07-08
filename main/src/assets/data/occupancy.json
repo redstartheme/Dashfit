@@ -1,0 +1,287 @@
+[
+    {
+        "id": 1,
+        "roomNo": 101,
+        "type": "Super Deluxe",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 2 Children",
+        "status": "Booked",
+        "guestDetails": {
+            "personalInfo": {
+                "name": "John Doe",
+                "address": "123 Elm Street, Springfield",
+                "phone": "+1-555-1234",
+                "email": "john.doe@example.com"
+            },
+            "reservationInfo": {
+                "checkInDate": "2024-08-01",
+                "checkOutDate": "2024-08-07",
+                "bookingReference": "AB123CD456"
+            },
+            "specialRequests": "Late check-in, extra pillows"
+        }
+    },
+    {
+        "id": 2,
+        "roomNo": 102,
+        "type": "Deluxe",
+        "bed": "Queen Bed",
+        "occupants": "2 Adults",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 3,
+        "roomNo": 103,
+        "type": "Standard",
+        "bed": "Double Bed",
+        "occupants": "1 Adult",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 4,
+        "roomNo": 104,
+        "type": "Deluxe",
+        "bed": "King Bed",
+        "occupants": "2 Adults",
+        "status": "Booked",
+        "guestDetails": {
+            "personalInfo": {
+                "name": "Jane Smith",
+                "address": "456 Oak Avenue, Springfield",
+                "phone": "+1-555-5678",
+                "email": "jane.smith@example.com"
+            },
+            "reservationInfo": {
+                "checkInDate": "2024-08-10",
+                "checkOutDate": "2024-08-15",
+                "bookingReference": "XY789YZ012"
+            },
+            "specialRequests": "Allergy-free room"
+        }
+    },
+    {
+        "id": 5,
+        "roomNo": 105,
+        "type": "Suite",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 1 Child",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 6,
+        "roomNo": 106,
+        "type": "Suite",
+        "bed": "Queen Bed",
+        "occupants": "2 Adults, 2 Children",
+        "status": "Booked",
+        "guestDetails": {
+            "personalInfo": {
+                "name": "Emily Brown",
+                "address": "789 Pine Road, Springfield",
+                "phone": "+1-555-8765",
+                "email": "emily.brown@example.com"
+            },
+            "reservationInfo": {
+                "checkInDate": "2024-08-20",
+                "checkOutDate": "2024-08-25",
+                "bookingReference": "LM345NO678"
+            },
+            "specialRequests": "Crib for infant"
+        }
+    },
+    {
+        "id": 7,
+        "roomNo": 201,
+        "type": "Family Suite",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 3 Children",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 8,
+        "roomNo": 202,
+        "type": "Business Room",
+        "bed": "Single Bed",
+        "occupants": "1 Adult",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 9,
+        "roomNo": 203,
+        "type": "Super Deluxe",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 2 Children",
+        "status": "Booked",
+        "guestDetails": {
+            "personalInfo": {
+                "name": "Michael Green",
+                "address": "321 Maple Street, Springfield",
+                "phone": "+1-555-4321",
+                "email": "michael.green@example.com"
+            },
+            "reservationInfo": {
+                "checkInDate": "2024-08-15",
+                "checkOutDate": "2024-08-22",
+                "bookingReference": "PQ901RS234"
+            },
+            "specialRequests": "Early check-in, room with a view"
+        }
+    },
+    {
+        "id": 10,
+        "roomNo": 204,
+        "type": "Super Deluxe",
+        "bed": "Single Bed",
+        "occupants": "1 Adult",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 11,
+        "roomNo": 205,
+        "type": "Suite",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 1 Child",
+        "status": "Booked",
+        "guestDetails": {
+            "personalInfo": {
+                "name": "Sophia Wilson",
+                "address": "654 Cedar Street, Springfield",
+                "phone": "+1-555-6789",
+                "email": "sophia.wilson@example.com"
+            },
+            "reservationInfo": {
+                "checkInDate": "2024-08-25",
+                "checkOutDate": "2024-08-30",
+                "bookingReference": "TU567VW890"
+            },
+            "specialRequests": "Vegetarian meals"
+        }
+    },
+    {
+        "id": 12,
+        "roomNo": 206,
+        "type": "Deluxe",
+        "bed": "Double Bed",
+        "occupants": "2 Adults",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 13,
+        "roomNo": 301,
+        "type": "Deluxe",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 2 Children",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 14,
+        "roomNo": 302,
+        "type": "Business Room",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 2 Children",
+        "status": "Booked",
+        "guestDetails": {
+            "personalInfo": {
+                "name": "James Taylor",
+                "address": "987 Birch Street, Springfield",
+                "phone": "+1-555-3456",
+                "email": "james.taylor@example.com"
+            },
+            "reservationInfo": {
+                "checkInDate": "2024-08-05",
+                "checkOutDate": "2024-08-12",
+                "bookingReference": "WX789YZ012"
+            },
+            "specialRequests": "No smoking room"
+        }
+    },
+    {
+        "id": 15,
+        "roomNo": 303,
+        "type": "Super Deluxe",
+        "bed": "Queen Bed",
+        "occupants": "2 Adults",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 16,
+        "roomNo": 304,
+        "type": "Suite",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 2 Children",
+        "status": "Booked",
+        "guestDetails": {
+            "personalInfo": {
+                "name": "Olivia Martinez",
+                "address": "345 Walnut Street, Springfield",
+                "phone": "+1-555-2345",
+                "email": "olivia.martinez@example.com"
+            },
+            "reservationInfo": {
+                "checkInDate": "2024-08-18",
+                "checkOutDate": "2024-08-24",
+                "bookingReference": "YZ123AB456"
+            },
+            "specialRequests": "High floor"
+        }
+    },
+    {
+        "id": 17,
+        "roomNo": 305,
+        "type": "Business Room",
+        "bed": "Double Bed",
+        "occupants": "2 Adults",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 18,
+        "roomNo": 306,
+        "type": "Family Suite",
+        "bed": "Queen Bed",
+        "occupants": "2 Adults, 1 Child",
+        "status": "Available",
+        "guestDetails": null
+    },
+    {
+        "id": 19,
+        "roomNo": 401,
+        "type": "Family Suite",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 2 Children",
+        "status": "Booked",
+        "guestDetails": {
+            "personalInfo": {
+                "name": "Lucas Anderson",
+                "address": "876 Oak Street, Springfield",
+                "phone": "+1-555-7890",
+                "email": "lucas.anderson@example.com"
+            },
+            "reservationInfo": {
+                "checkInDate": "2024-08-30",
+                "checkOutDate": "2024-09-05",
+                "bookingReference": "CD345EF678"
+            },
+            "specialRequests": "Pet-friendly room"
+        }
+    },
+    {
+        "id": 20,
+        "roomNo": 402,
+        "type": "Deluxe",
+        "bed": "King Bed",
+        "occupants": "2 Adults, 2 Children",
+        "status": "Available",
+        "guestDetails": null
+    }
+  ]
+  

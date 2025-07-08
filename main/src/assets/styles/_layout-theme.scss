@@ -1,0 +1,23 @@
+@use "@angular/material" as mat;
+
+@use "../../app/layout/admin-layout/admin-layout";
+@use "../../app/layout/header/header-theme";
+@use "../../app/layout/sidebar/sidebar-theme";
+@use "../../app/layout/sidemenu/sidemenu-theme";
+@use "../../app/layout/topmenu/topmenu-theme";
+@use "custom/custom-theme";
+
+@include mat.elevation-classes();
+@include mat.app-background();
+
+@include mat.typography-hierarchy(mat.m2-define-typography-config());
+
+// Styles for the app that are based on the current theme.
+@mixin theme($theme) {
+  @include header-theme.theme($theme);
+  @include sidebar-theme.theme($theme);
+  @include sidemenu-theme.theme($theme);
+  @include topmenu-theme.theme($theme);
+  @include admin-layout.theme($theme);
+  @include custom-theme.theme($theme);
+}

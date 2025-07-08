@@ -1,0 +1,92 @@
+#customizer {
+  overflow: hidden;
+  .customizer-form {
+    // width: 330px;
+    margin: 20px;
+  }
+}
+.customizer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  padding: 0rem 1.5rem;
+  width: 330px;
+  .customizer-text {
+    color: #ffffff;
+  }
+}
+.radioCircle {
+  height: 30px;
+  width: 30px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  border: 1px solid #dadada;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+
+  &.mat-mdc-radio-checked:before {
+    content: "\e5ca";
+    font-family: "Material Icons";
+    width: 27px;
+    height: 27px;
+    color: #ffffff;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  .mdc-radio {
+    display: none !important;
+  }
+}
+
+.color-picker {
+  background: #fff;
+  max-width: 340px;
+  border-radius: 5px;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 15px;
+  .mdc-radio {
+    display: none;
+  }
+  .mdc-label {
+    height: 30px;
+    width: 30px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+.dark {
+  .color-picker {
+    background: #1a202e;
+  }
+}
+
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.customizer-title {
+  margin-bottom: 10px;
+  h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
+  span {
+    font-size: 0.8rem;
+    color: #7e7e7e;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+    color: #545454;
+  }
+}

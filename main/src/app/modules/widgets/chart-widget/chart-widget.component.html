@@ -1,0 +1,636 @@
+<app-page-header></app-page-header>
+<div class="row">
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Chart Sample</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="circleChartOptions.series!" [chart]="circleChartOptions.chart!"
+                    [plotOptions]="circleChartOptions.plotOptions!" [labels]="circleChartOptions.labels!"
+                    [legend]="circleChartOptions.legend!" [colors]="circleChartOptions.colors!"
+                    [responsive]="circleChartOptions.responsive!"></apx-chart>
+                <div class="row">
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Target</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-up-circle"
+                                class="text-green w-15 h-15 m-2 d-flex align-items-center"></i-feather>
+                            $15.3k
+                        </h4>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Last
+                            week</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-down-circle"
+                                class="text-red w-15 h-15 m-2 d-flex align-items-center"></i-feather>$2.8k
+                        </h4>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Last
+                            Month</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-up-circle"
+                                class="text-green w-15 h-15 m-2 d-flex align-items-center"></i-feather>$12.5k
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Chart Sample</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="radarChartOptions.series!" [chart]="radarChartOptions.chart!"
+                    [xaxis]="radarChartOptions.xaxis!" [stroke]="radarChartOptions.stroke!"
+                    [markers]="radarChartOptions.markers!" [fill]="radarChartOptions.fill!"></apx-chart>
+                <div class="row">
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Target</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-up-circle"
+                                class="text-green w-15 h-15 m-2 d-flex align-items-center"></i-feather>
+                            $15.3k
+                        </h4>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Last
+                            week</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-down-circle"
+                                class="text-red w-15 h-15 m-2 d-flex align-items-center"></i-feather>$2.8k
+                        </h4>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Last
+                            Month</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-up-circle"
+                                class="text-green w-15 h-15 m-2 d-flex align-items-center"></i-feather>$12.5k
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Chart Sample</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="areaChartOptions.series!" [chart]="areaChartOptions.chart!"
+                    [xaxis]="areaChartOptions.xaxis!" [stroke]="areaChartOptions.stroke!"
+                    [tooltip]="areaChartOptions.tooltip!" [dataLabels]="areaChartOptions.dataLabels!">
+                </apx-chart>
+                <div class="row">
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Target</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-up-circle"
+                                class="text-green w-15 h-15 m-2 d-flex align-items-center"></i-feather>
+                            $15.3k
+                        </h4>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Last
+                            week</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-down-circle"
+                                class="text-red w-15 h-15 m-2 d-flex align-items-center"></i-feather>$2.8k
+                        </h4>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Last
+                            Month</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-up-circle"
+                                class="text-green w-15 h-15 m-2 d-flex align-items-center"></i-feather>$12.5k
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <app-statistic-card1 title="New Employees" value="1,025" percentage="10" [increase]="true"
+            imageUrl="assets/images/banner/1.png">
+        </app-statistic-card1>
+    </div>
+    <div class="col-sm-3">
+        <app-statistic-card1 title="Total Courses" value="47" percentage="09" [increase]="false"
+            imageUrl="assets/images/banner/2.png">
+        </app-statistic-card1>
+    </div>
+    <div class="col-sm-3">
+        <app-statistic-card1 title="Awards" value="128" percentage="18" [increase]="true"
+            imageUrl="assets/images/banner/3.png">
+        </app-statistic-card1>
+    </div>
+    <div class="col-sm-3">
+        <app-statistic-card1 title="Revenue" value="$48,697" percentage="42" [increase]="true"
+            imageUrl="assets/images/banner/4.png">
+        </app-statistic-card1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-12">
+        <app-statistic-card2 title="Total Sales" value="1500" description="Total sales this month"
+            img="assets/images/banner/img1.png" arrowIcon="trending_up">
+        </app-statistic-card2>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12">
+        <app-statistic-card2 title="Total Courses" value="125" description="Total course this month"
+            img="assets/images/banner/img2.png" arrowIcon="trending_down">
+        </app-statistic-card2>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12">
+        <app-statistic-card2 title="Total Teachers" value="89" description="12% Higher Then
+      Last Month" img="assets/images/banner/img3.png" arrowIcon="trending_up">
+        </app-statistic-card2>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12">
+        <app-statistic-card2 title="Fees Collection" value="$48,697" description="22% Less Then
+      Last
+      Month" img="assets/images/banner/img4.png" arrowIcon="trending_down">
+        </app-statistic-card2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-sm-6">
+        <app-order-info-box title="Total Order" value="2347" percentageText="18% Higher Than Last Month"
+            iconClass="inventory_2" bgClass="bg-blue-500">
+        </app-order-info-box>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <app-order-info-box title="Total Employee" value="258" percentageText="21% Higher Than Last Month"
+            iconClass="people_alt" bgClass="bg-green-500">
+        </app-order-info-box>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <app-order-info-box title="New Orders" value="148" percentageText="37% Higher Than Last Month"
+            iconClass="shopping_cart" bgClass="bg-orange-500">
+        </app-order-info-box>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <app-order-info-box title="Total Earning" value="$25,698" percentageText="10% Higher Than Last Month"
+            iconClass="attach_money" bgClass="bg-indigo-500">
+        </app-order-info-box>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-3">
+        <app-income-info-box title="Today's Income" subtitle="Income For Today" value="$170" valueClass="text-cyan"
+            [progress]="75" progressClass="bg-indigo-500" change="75%">
+        </app-income-info-box>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <app-income-info-box title="Total Revenue" subtitle="Total Income" value="$120" valueClass="text-green"
+            [progress]="45" progressClass="l-bg-orange" change="25%">
+        </app-income-info-box>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <app-income-info-box title="New Orders" subtitle="Fresh New Order" value="15" valueClass="text-red"
+            [progress]="45" progressClass="l-bg-cyan" change="50%">
+        </app-income-info-box>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <app-income-info-box title="New Users" subtitle="Joined New User" value="12" valueClass="text-blue"
+            [progress]="45" progressClass="l-bg-red" change="25%">
+        </app-income-info-box>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="info-box2">
+            <div class="p-12">
+                <h3 class="f-w-500 m-t-0 m-b-8">Revenue</h3>
+                <h2 class="f-w-500 m-0">$48,697</h2>
+            </div>
+            <apx-chart [series]="smallChart1Options.series!" [chart]="smallChart1Options.chart!"
+                [xaxis]="smallChart1Options.xaxis!" [yaxis]="smallChart1Options.yaxis!"
+                [colors]="smallChart1Options.colors!" [stroke]="smallChart1Options.stroke!"
+                [legend]="smallChart1Options.legend!" [tooltip]="smallChart1Options.tooltip!"
+                [dataLabels]="smallChart1Options.dataLabels!"></apx-chart>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="info-box2">
+            <div class="p-12">
+                <h3 class="f-w-500 m-t-0 m-b-8">New Clients</h3>
+                <h2 class="f-w-500 m-0">129</h2>
+            </div>
+            <apx-chart [series]="smallChart2Options.series!" [chart]="smallChart2Options.chart!"
+                [xaxis]="smallChart2Options.xaxis!" [yaxis]="smallChart2Options.yaxis!"
+                [colors]="smallChart2Options.colors!" [stroke]="smallChart2Options.stroke!"
+                [legend]="smallChart2Options.legend!" [tooltip]="smallChart2Options.tooltip!"
+                [dataLabels]="smallChart2Options.dataLabels!"></apx-chart>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="info-box2">
+            <div class="p-12">
+                <h3 class="f-w-500 m-t-0 m-b-8">Projects</h3>
+                <h2 class="f-w-500 m-0">154</h2>
+            </div>
+            <apx-chart [series]="smallChart3Options.series!" [chart]="smallChart3Options.chart!"
+                [xaxis]="smallChart3Options.xaxis!" [yaxis]="smallChart3Options.yaxis!"
+                [colors]="smallChart3Options.colors!" [stroke]="smallChart3Options.stroke!"
+                [legend]="smallChart3Options.legend!" [tooltip]="smallChart3Options.tooltip!"
+                [dataLabels]="smallChart3Options.dataLabels!"></apx-chart>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="info-box2">
+            <div class="p-12">
+                <h3 class="f-w-500 m-t-0 m-b-8">Employees</h3>
+                <h2 class="f-w-500 m-0">650</h2>
+            </div>
+            <apx-chart [series]="smallChart4Options.series!" [chart]="smallChart4Options.chart!"
+                [xaxis]="smallChart4Options.xaxis!" [yaxis]="smallChart4Options.yaxis!"
+                [colors]="smallChart4Options.colors!" [stroke]="smallChart4Options.stroke!"
+                [legend]="smallChart4Options.legend!" [tooltip]="smallChart4Options.tooltip!"
+                [dataLabels]="smallChart4Options.dataLabels!"></apx-chart>
+        </div>
+    </div>
+</div>
+<div class="row m-b-16">
+    <div class="col-sm-3">
+        <app-info-box2 [icon]="'shopping_cart'" [title]="'Total Sales'" [value]="'258'" [trendDirection]="'down'"
+            [trendPercentage]="'10%'" [trendText]="'Decrease'" [colorClass]="'purple'">
+        </app-info-box2>
+    </div>
+    <div class="col-sm-3">
+        <app-info-box2 [icon]="'people'" [title]="'Customers'" [value]="'1,287'" [trendDirection]="'up'"
+            [trendPercentage]="'25%'" [trendText]="'Increase'" [colorClass]="'orange'">
+        </app-info-box2>
+    </div>
+    <div class="col-sm-3">
+        <app-info-box2 [icon]="'local_activity'" [title]="'New Tickets'" [value]="'128'" [trendDirection]="'down'"
+            [trendPercentage]="'12%'" [trendText]="'Decrease'" [colorClass]="'green'">
+        </app-info-box2>
+    </div>
+    <div class="col-sm-3">
+        <app-info-box2 [icon]="'attach_money'" [title]="'Revenue'" [value]="'$48,697'" [trendDirection]="'up'"
+            [trendPercentage]="'08%'" [trendText]="'Increase'" [colorClass]="'blue'">
+        </app-info-box2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <app-info-box1 [cardClass]="'l-bg-green-dark'" [iconClass]="'local_mall'" [title]="'New Projects'" [value]="102"
+            [progressValue]="28" [progressClass]="'orange-progress'" [percentageChange]="10">
+        </app-info-box1>
+    </div>
+
+    <div class="col-sm-3">
+        <app-info-box1 [cardClass]="'l-bg-cyan-dark'" [iconClass]="'people_alt'" [title]="'New Customers'" [value]="154"
+            [progressValue]="55" [progressClass]="'purple-progress'" [percentageChange]="4">
+        </app-info-box1>
+    </div>
+
+    <div class="col-sm-3">
+        <app-info-box1 [cardClass]="'l-bg-purple-dark'" [iconClass]="'contact_phone'" [title]="'Inquiry'" [value]="524"
+            [progressValue]="80" [progressClass]="'green-progress'" [percentageChange]="23">
+        </app-info-box1>
+    </div>
+
+    <div class="col-sm-3">
+        <app-info-box1 [cardClass]="'l-bg-orange-dark'" [iconClass]="'paid'" [title]="'Earning'" [value]="'$2,453'"
+            [progressValue]="40" [progressClass]="'sky-progress'" [percentageChange]="-6">
+        </app-info-box1>
+    </div>
+</div>
+<app-info-box3 [infoData]="infoData"></app-info-box3>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="info-card2">
+            <div class="card-body">
+                <div class="top-block d-flex align-items-center justify-content-between">
+                    <h3 class="m-0 f-w-500">Investment</h3>
+                    <div class="badge badge-solid-indigo">Monthly</div>
+                </div>
+                <h2 class="m-0">$<span class="counter">47000</span></h2>
+                <div class="d-flex align-items-center justify-content-between m-t-16 m-b-8">
+                    <p class="m-0">Total Revenue</p>
+                    <span class="text-purple">55%</span>
+                </div>
+                <mat-progress-bar mode="determinate" value="55"></mat-progress-bar>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="info-card2">
+            <div class="card-body">
+                <div class="top-block d-flex align-items-center justify-content-between">
+                    <h3 class="m-0 f-w-500">Sales</h3>
+                    <div class="badge badge-solid-orange">Anual</div>
+                </div>
+                <h2 class="m-0">$<span class="counter">22784</span></h2>
+                <div class="d-flex align-items-center justify-content-between m-t-16 m-b-8">
+                    <p class="m-0">Total Revenue</p>
+                    <span class="text-orange">42%</span>
+                </div>
+                <mat-progress-bar mode="determinate" color="warn" value="42"></mat-progress-bar>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="info-card2">
+            <div class="card-body">
+                <div class="top-block d-flex align-items-center justify-content-between">
+                    <h3 class="m-0 f-w-500">Cost</h3>
+                    <div class="badge badge-solid-indigo">Today</div>
+                </div>
+                <h2 class="m-0">$<span class="counter">1587</span></h2>
+                <div class="d-flex align-items-center justify-content-between m-t-16 m-b-8">
+                    <p class="m-0">Total Revenue</p>
+                    <span class="text-purple">75%</span>
+                </div>
+                <mat-progress-bar mode="determinate" value="75"></mat-progress-bar>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="info-card2">
+            <div class="card-body">
+                <div class="top-block d-flex align-items-center justify-content-between">
+                    <h3 class="m-0 f-w-500">Profit</h3>
+                    <div class="badge badge-solid-orange">Weekly</div>
+                </div>
+                <h2 class="m-0">$<span class="counter">1400</span></h2>
+                <div class="d-flex align-items-center justify-content-between m-t-16 m-b-8">
+                    <p class="m-0">Total Revenue</p>
+                    <span class="text-orange">48%</span>
+                </div>
+                <mat-progress-bar color="warn" mode="determinate" value="48"></mat-progress-bar>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+        <app-attendance-chart></app-attendance-chart>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+        <app-chart-card4 [maleCount]="2078" [femaleCount]="1825">
+        </app-chart-card4>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+        <mat-card>
+            <mat-card-content>
+                <div class="expenseCard p-4">
+                    <div class="text-center">
+                        <i class="material-icons icon currencyIcon">monetization_on</i>
+                        <p class="m-t-4 f-s-20">Total Expenses</p>
+                    </div>
+                    <div class="d-flex m-t-16 m-b-16">
+                        <div class="">
+                            <p class="f-s-20 m-0">$1,587</p><small class="text-muted">Ongoing</small>
+                        </div>
+                        <i class="material-icons text-green icon">arrow_circle_up</i>
+                    </div>
+                    <div class="image mt-2">
+                        <apx-chart [series]="expenseChartOptions.series!" [chart]="expenseChartOptions.chart!"
+                            [colors]="expenseChartOptions.colors!" [yaxis]="expenseChartOptions.yaxis!"
+                            [plotOptions]="expenseChartOptions.plotOptions!" [tooltip]="expenseChartOptions.tooltip!"
+                            [xaxis]="expenseChartOptions.xaxis!"></apx-chart>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-content>
+                <div class="d-flex justify-center info-box3">
+                    <div class="p-4 w-full">
+                        <apx-chart [series]="dumbleChartOptions.series!" [chart]="dumbleChartOptions.chart!"
+                            [dataLabels]="dumbleChartOptions.dataLabels!"
+                            [plotOptions]="dumbleChartOptions.plotOptions!" [xaxis]="dumbleChartOptions.xaxis!"
+                            [colors]="dumbleChartOptions.colors!" [fill]="dumbleChartOptions.fill!"
+                            [yaxis]="dumbleChartOptions.yaxis!" [legend]="dumbleChartOptions.legend!"
+                            [tooltip]="dumbleChartOptions.tooltip!" [grid]="dumbleChartOptions.grid!"></apx-chart>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <apx-chart [series]="basicRadialChart.pieSeries!" [chart]="basicRadialChart.chart!"
+                        [plotOptions]="basicRadialChart.plotOptions!" [fill]="basicRadialChart.fill!"
+                        [labels]="basicRadialChart.labels!"></apx-chart>
+                </div>
+                <div class="col-md-8">
+                    <div class="m-t-4">
+                        <h4 class="m-0">ERP Syatem Java Project</h4>
+                        <p class="m-b-0">It is a advace java project for manage.....</p>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="col-sm-8">
+        <mat-card>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-8">
+                        <apx-chart [series]="revenueOptions.series!" [chart]="revenueOptions.chart!"
+                            [dataLabels]="revenueOptions.dataLabels!" [plotOptions]="revenueOptions.plotOptions!"
+                            [responsive]="revenueOptions.responsive!" [xaxis]="revenueOptions.xaxis!"
+                            [legend]="revenueOptions.legend!" [fill]="revenueOptions.fill!"
+                            [tooltip]="revenueOptions.tooltip!" [colors]="revenueOptions.colors!"></apx-chart>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chartData">
+                            <h4 class="m-0"><b>Total</b></h4>
+                            <h2 class="m-0"><b>$ 22000 </b></h2>
+                            <p>Total Sale For Last Week</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <apx-chart [series]="delChartOptions.series!" [chart]="delChartOptions.chart!"
+                                    [xaxis]="delChartOptions.xaxis!" [dataLabels]="delChartOptions.dataLabels!"
+                                    [grid]="delChartOptions.grid!" [stroke]="delChartOptions.stroke!"
+                                    [title]="delChartOptions.title!" [markers]="delChartOptions.markers!"
+                                    [tooltip]="delChartOptions.tooltip!" [yaxis]="delChartOptions.yaxis!"
+                                    [fill]="delChartOptions.fill!"></apx-chart>
+                            </div>
+                            <div class="chartFooter">
+                                <div class="d-flex align-items-center justify-content-between d1">
+                                    <p class="m-0">Product 1 sell</p>
+                                    <h4><b>78%</b></h4>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between d1">
+                                    <p class="m-0">Product 2 sell</p>
+                                    <h4><b>22%</b></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <mat-card>
+            <div class="chartCard1">
+                <div class="card-header">
+                    <div class="card-header-inner">
+                        <div class="d-flex">
+                            <i class="material-icons-outlined icon text-grey f-s-24">cloud_upload</i>
+                            <div class="f-w-500 f-s-18 m-l-8 m-r-8">Cloud Storage</div>
+                        </div>
+                    </div>
+                    <div class="icons2">
+                        <i class="material-icons icon text-grey f-s-24">star_outline</i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <apx-chart [series]="gaugeChartOptions1.pieSeries!" [chart]="gaugeChartOptions1.chart!"
+                        [plotOptions]="gaugeChartOptions1.plotOptions!" [labels]="gaugeChartOptions1.labels!"
+                        [colors]="gaugeChartOptions1.colors!" [fill]="gaugeChartOptions1.fill!"
+                        [stroke]="gaugeChartOptions1.stroke!"></apx-chart>
+                    <b class="my-storage">My storage</b>
+                </div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <div class="d-flex flex-col">
+                        <div class="bulletsGroup">
+                            <div class="bullets1"></div>
+                            <div class="bulletText">Used Space</div>
+                        </div>
+                        <div class="bulletsGroup">
+                            <div class="bullets2"></div>
+                            <div class="bulletText">Total Space</div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <button mat-raised-button color="primary">Buy More</button>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="col-sm-8">
+        <mat-card>
+            <div class="chartCard1">
+                <div class="card-header">
+                    <div class="card-header-inner">
+                        <div class="d-flex">
+                            <div class="f-w-500 f-s-18 m-l-8 m-r-8">Report Data</div>
+                        </div>
+                    </div>
+                    <div class="icons2">
+                        <i class="material-icons-outlined icon text-grey f-s-24">pending</i>
+                    </div>
+                </div>
+                <div class="card-body1">
+                    <apx-chart [series]="barchartOptions.series!" [chart]="barchartOptions.chart!"
+                        [dataLabels]="barchartOptions.dataLabels!" [plotOptions]="barchartOptions.plotOptions!"
+                        [legend]="barchartOptions.legend!" [yaxis]="barchartOptions.yaxis!"
+                        [xaxis]="barchartOptions.xaxis!" [fill]="barchartOptions.fill!"
+                        [tooltip]="barchartOptions.tooltip!" [colors]="barchartOptions.colors!"
+                        [title]="barchartOptions.title!"></apx-chart>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+        <app-chart-card1 [title]="title" [subtitle]="subtitle"></app-chart-card1>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+        <app-chart-card2 [title]="title2" [subtitle]="subtitle2"></app-chart-card2>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+        <app-chart-card3 [title]="title3" [subtitle]="subtitle3"></app-chart-card3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card class="sales-card">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="sales-header">
+                        <h4>Total Sales & Cost</h4>
+                        <p class="subtitle">Last 60 days</p>
+                    </div>
+
+                    <div class="sales-amount">
+                        <h3 class="amount">$956.82k</h3>
+                        <span class="growth-positive">
+                            <mat-icon>arrow_upward</mat-icon> +5.4%
+                        </span>
+                    </div>
+                    <p class="previous">+8.20k vs prev. 60 days</p>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="analytic-section">
+                        <div class="analytic-header">
+                            <span class="analytic-title">Analytic</span>
+                            <span class="analytic-growth">+5.4%</span>
+                        </div>
+
+                        <div class="chart-container">
+                            <apx-chart [series]="expenseChartOptions.series!" [chart]="expenseChartOptions.chart!"
+                                [colors]="expenseChartOptions.colors!" [yaxis]="expenseChartOptions.yaxis!"
+                                [plotOptions]="expenseChartOptions.plotOptions!"
+                                [tooltip]="expenseChartOptions.tooltip!"
+                                [xaxis]="expenseChartOptions.xaxis!"></apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="col-sm-6">
+        <mat-card class="revenuechart-card">
+            <div class="card-header">
+                <div class="card-info">
+                    <h1>$37.5K<span class="percentage-increase">▲ +2.45%</span></h1>
+                </div>
+            </div>
+            <div class="chart-container">
+                <apx-chart [series]="revenueSmallchartOptions.series!" [chart]="revenueSmallchartOptions.chart!"
+                    [xaxis]="revenueSmallchartOptions.xaxis!" [stroke]="revenueSmallchartOptions.stroke!"
+                    [tooltip]="revenueSmallchartOptions.tooltip!" [colors]="revenueSmallchartOptions.colors!"
+                    [dataLabels]="revenueSmallchartOptions.dataLabels!" [grid]="revenueSmallchartOptions.grid!">
+                </apx-chart>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <app-average-chart></app-average-chart>
+    </div>
+    <div class="col-sm-4">
+        <app-chart-card5 [bookingGaugeOptions]="bookingStatusOptions" [percentage]="percentage"
+            [footerText]="footerText">
+        </app-chart-card5>
+    </div>
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-content>
+                <app-small-card-chart [title]="'Profit'" [amount]="'$4,589'" [percentageChange]="'+7.5%'"
+                    [profitData]="[210, 235, 400, 201, 210, 140, 110, 135, 400]" [chartColor]="'#7E4DFC'"
+                    [chartCategories]="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']">
+                </app-small-card-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>

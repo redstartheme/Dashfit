@@ -1,0 +1,27 @@
+<div class="doc-file-type">
+  <ul class="p-0">
+    @for (document of documents; track document) {
+    <li class="d-flex m-b-4">
+      <span [ngClass]="['msr-3', 'align-self-center', 'img-icon', document.iconClass, document.textClass]">
+        <span class="material-icons-outlined">
+          {{document.icon}}
+        </span>
+      </span>
+      <div class="set-flex">
+        <div class="f-s-14 f-w-500 mb-1">{{ document.title }}</div>
+        <p class="m-t-2 m-b-0">{{ document.type }}, {{ document.size }} MB</p>
+      </div>
+      <div class="m-l-auto">
+        <td>
+          <i class="material-icons-outlined p-r-4 text-red" (click)="onDelete(document)">
+            delete
+          </i>
+          <span class="material-icons-outlined text-blue" (click)="onDownload(document)">
+            file_download
+          </span>
+        </td>
+      </div>
+    </li>
+    }
+  </ul>
+</div>

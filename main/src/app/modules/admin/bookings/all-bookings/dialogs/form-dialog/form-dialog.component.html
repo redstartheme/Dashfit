@@ -1,0 +1,206 @@
+<div class="dialogContainer">
+  <div class="modalHeader">
+    <div class="avatarDetails">
+      <label class="hoverable" for="tableFileInput">
+        <img [src]="url ? url : allBookings.img" alt="image">
+        <div class="hover-text">Upload</div>
+        <div class="background"></div>
+      </label>
+      <input id="tableFileInput" type='file' (change)="onSelectFile($event)">
+      <div class="modalTitle">
+        {{dialogTitle}}
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="form-field-full" [formGroup]="allBookingsForm" (ngSubmit)="submit()">
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="fName">
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>face</mat-icon>
+            @if (allBookingsForm.get('fName')?.hasError('required')) {
+            <mat-error>
+              First Name is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lName">
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>face</mat-icon>
+            @if (allBookingsForm.get('lName')?.hasError('required')) {
+            <mat-error>
+              Last Name is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Package</mat-label>
+            <mat-select formControlName="package" required>
+              <mat-option [value]="'All inclusive'">
+                All inclusive
+              </mat-option>
+              <mat-option [value]="'Business'">
+                Business
+              </mat-option>
+              <mat-option [value]="'Wedding'">
+                Wedding
+              </mat-option>
+              <mat-option [value]="'Strater'">
+                Strater
+              </mat-option>
+            </mat-select>
+            @if (allBookingsForm.get('package')?.hasError('required')) {
+            <mat-error>
+              Package is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="roomType" required>
+              <mat-option [value]="'Delux'">
+                Delux
+              </mat-option>
+              <mat-option [value]="'Super Delux'">
+                Super Delux
+              </mat-option>
+              <mat-option [value]="'Vila'">
+                Vila
+              </mat-option>
+              <mat-option [value]="'Double'">
+                Double
+              </mat-option>
+              <mat-option [value]="'Single'">
+                Single
+              </mat-option>
+              <mat-option [value]="'turkey'">
+                Turkey
+              </mat-option>
+              <mat-option [value]="'other'">
+                Other
+              </mat-option>
+            </mat-select>
+            @if (allBookingsForm.get('roomType')?.hasError('required')) {
+            <mat-error>
+              Room type is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-label class="msr-3">Payment:</mat-label>
+          <mat-radio-group aria-label="Select payment" formControlName="payment" required>
+            <mat-radio-button value="Paid" color="primary">Paid</mat-radio-button>
+            <mat-radio-button value="Unpaid" color="primary">Unpaid</mat-radio-button>
+            @if (allBookingsForm.get('payment')?.hasError('required')) {
+            <mat-error>
+              Select payment
+            </mat-error>
+            }
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" required>
+              <mat-option [value]="'Booked'">
+                Booked
+              </mat-option>
+              <mat-option [value]="'Cancelled'">
+                Cancelled
+              </mat-option>
+              <mat-option [value]="'CheckIn'">
+                CheckIn
+              </mat-option>
+              <mat-option [value]="'CheckOut'">
+                CheckOut
+              </mat-option>
+              <mat-option [value]="'Single'">
+                Single
+              </mat-option>
+            </mat-select>
+            @if (allBookingsForm.get('status')?.hasError('required')) {
+            <mat-error>
+              Booking Status is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Enter Check In & Check Out Date</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate formControlName="checkIn" placeholder="Check In date">
+              <input matEndDate formControlName="checkOut" placeholder="Check Out date">
+            </mat-date-range-input>
+            <mat-hint>MM-DD-YYYY – MM-DD-YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+            @if (allBookingsForm.get('checkIn')?.hasError('required')) {
+            <mat-error>
+              Please select date
+            </mat-error>
+            }
+            @if (allBookingsForm.get('checkOut')?.hasError('required')) {
+            <mat-error>
+              Please select date
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>email</mat-icon>
+            @if (allBookingsForm.get('email')?.hasError('required') || allBookingsForm.get('email')?.touched) {
+            <mat-error>
+              Please enter a valid email address
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Mobile</mat-label>
+            <input matInput formControlName="mobile" type="number">
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>phone</mat-icon>
+            @if (allBookingsForm.get('mobile')?.hasError('required')) {
+            <mat-error>
+              Mobile is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [disabled]="!allBookingsForm.valid" type="submit">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

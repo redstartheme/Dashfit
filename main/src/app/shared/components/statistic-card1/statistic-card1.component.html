@@ -1,0 +1,19 @@
+<mat-card class="statistic-card1">
+    <mat-card-content>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <p class="f-s-15 f-w-500">{{ title }}</p>
+                <p class="mb-3 f-s-18 f-w-500">{{ value }}</p>
+                <p class="mb-0 f-s-14">
+                    <span [ngClass]="increase ? 'text-green' : 'text-orange'">{{ percentage }}%</span>
+                    {{ increase ? 'Increase' : 'Decrease' }}
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="banner-img">
+                    <img [src]="imageUrl" alt="{{ title }}">
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

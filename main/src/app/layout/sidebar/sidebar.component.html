@@ -1,0 +1,23 @@
+@if (showHeader) {
+<div class="sidebar-header">
+  <app-branding class="app-branding"></app-branding>
+  @if (showToggle) {
+  <button mat-icon-button (click)="toggleCollapsed.emit()" class="sidemenu-collapse">
+    <mat-icon [ngClass]="{'menu-collapse': toggleChecked, 'menu-expand' : !toggleChecked}"
+      class="material-icons-outlined side-Toggle">expand_circle_down</mat-icon>
+  </button>
+  } @else {
+  <button mat-icon-button (click)="closeSidenav.emit()">
+    <mat-icon>close</mat-icon>
+  </button>
+  }
+</div>
+}
+<ng-scrollbar [style.height]="listMaxHeight + 'px'" visibility="hover">
+  <div class="sidebar-main">
+    @if (showUser) {
+    <app-user-panel></app-user-panel>
+    }
+    <app-sidemenu [ripple]="showToggle"></app-sidemenu>
+  </div>
+</ng-scrollbar>

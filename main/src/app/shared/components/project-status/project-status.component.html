@@ -1,0 +1,17 @@
+@for (project of projects; track project) {
+  <div class="m-2">
+    <div class="row">
+      <div class="col-lg-5 m-b-24">
+        <div>{{ project.name }}</div>
+      </div>
+      <div class="col-lg-7">
+        <div class="m-t-2">
+          {{ project.progress}}%
+          <mat-progress-bar class="progress-bar-extra-small" [class]="'progress-'+project.progressColor"
+            mode="determinate" [value]="project.progress">
+          </mat-progress-bar>
+        </div>
+      </div>
+    </div>
+  </div>
+}

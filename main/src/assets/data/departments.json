@@ -1,0 +1,162 @@
+[
+  {
+    "id": "001",
+    "img": "assets/images/avatars/avatar-1.jpg",
+    "no": "B123451",
+    "dName": "Housekeeping",
+    "hod": "Pooja Sarma",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "12"
+  },
+  {
+    "id": "002",
+    "img": "assets/images/avatars/avatar-2.jpg",
+    "no": "B123452",
+    "dName": "Food and Beverage",
+    "hod": "Sanjay Chohan",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "30"
+  },
+  {
+    "id": "003",
+    "img": "assets/images/avatars/avatar-3.jpg",
+    "no": "B123453",
+    "dName": "Kitchen",
+    "hod": "Sarah Smith",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "10"
+  },
+  {
+    "id": "004",
+    "img": "assets/images/avatars/avatar-4.jpg",
+    "no": "B123454",
+    "dName": "Accounts",
+    "hod": "Ashton Cox",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "30"
+  },
+  {
+    "id": "005",
+    "img": "assets/images/avatars/avatar-5.jpg",
+    "no": "B123455",
+    "dName": "Security",
+    "hod": "Rajesh Malhotra",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "20"
+  },
+  {
+    "id": "006",
+    "img": "assets/images/avatars/avatar-6.jpg",
+    "no": "B123456",
+    "dName": "Food and Beverage",
+    "hod": "Sanjana Patil",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "20"
+  },
+  {
+    "id": "007",
+    "img": "assets/images/avatars/avatar-7.jpg",
+    "no": "B123457",
+    "dName": "Transport",
+    "hod": "Airi Satou",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "15"
+  },
+  {
+    "id": "008",
+    "img": "assets/images/avatars/avatar-8.jpg",
+    "no": "B123458",
+    "dName": "Food and Beverage",
+    "hod": "Pooja Sarma",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "10"
+  },
+  {
+    "id": "009",
+    "img": "assets/images/avatars/avatar-9.jpg",
+    "no": "B123459",
+    "dName": "Accounts",
+    "hod": "Sarah Smith",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "10"
+  },
+  {
+    "id": "010",
+    "img": "assets/images/avatars/avatar-1.jpg",
+    "no": "B1234510",
+    "dName": "Purchase",
+    "hod": "Rajesh Malhotra",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "15"
+  },
+  {
+    "id": "011",
+    "img": "assets/images/avatars/avatar-2.jpg",
+    "no": "B1234511",
+    "dName": "Security",
+    "hod": "Sanjay Chohan",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "30"
+  },
+  {
+    "id": "012",
+    "img": "assets/images/avatars/avatar-3.jpg",
+    "no": "B1234512",
+    "dName": "Kitchen",
+    "hod": "Pooja Sarma",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "10"
+  },
+  {
+    "id": "013",
+    "img": "assets/images/avatars/avatar-4.jpg",
+    "no": "B1234513",
+    "dName": "Kitchen",
+    "hod": "Sanjana Patil",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "20"
+  },
+  {
+    "id": "014",
+    "img": "assets/images/avatars/avatar-8.jpg",
+    "no": "B1234514",
+    "dName": "Transport",
+    "hod": "Airi Satou",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "20"
+  },
+  {
+    "id": "015",
+    "img": "assets/images/avatars/avatar-6.jpg",
+    "no": "B1234515",
+    "dName": "Accounts",
+    "hod": "Ashton Cox",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "10"
+  },
+  {
+    "id": "016",
+    "img": "assets/images/avatars/avatar-5.jpg",
+    "no": "B1234516",
+    "dName": "Housekeeping",
+    "hod": "Sarah Smith",
+    "mobile": "123456789",
+    "email": "test@example.com",
+    "totalStaff": "20"
+  }
+]

@@ -1,0 +1,64 @@
+.ud-feature-icon .material-icons {
+  font-size: 48px;
+}
+
+.ud-single-feature .ud-feature-icon {
+  text-align: center;
+  display: inline-flex;
+}
+
+.ud-single-feature .ud-feature-icon.col-green {
+  background: #00c23e;
+}
+
+.ud-single-feature .ud-feature-icon.col-green::before {
+  background: #00c23e;
+}
+
+.ud-single-feature .ud-feature-icon.col-red {
+  background: #ff7272;
+}
+
+.ud-single-feature .ud-feature-icon.col-red::before {
+  background: #ff7272;
+}
+
+.ud-single-feature .ud-feature-icon.col-cyan {
+  background: #5c70ff;
+}
+
+.ud-single-feature .ud-feature-icon.col-cyan::before {
+  background: #5c70ff;
+}
+
+.ud-single-feature .ud-feature-icon.col-orange {
+  background: #ffad56;
+}
+
+.ud-single-feature .ud-feature-icon.col-orange::before {
+  background: #ffad56;
+}
+
+.ud-single-feature .ud-feature-icon.col-purple {
+  background: #c164ff;
+}
+
+.ud-single-feature .ud-feature-icon.col-purple::before {
+  background: #c164ff;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background: #d5e2f5;
+  border-radius: 5px;
+}
+
+.icon-font-contact {
+  font-size: 40px !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+@use "@angular/material" as mat;
+
+[class^="col"] {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.row + .row {
+  margin-top: 1rem;
+}

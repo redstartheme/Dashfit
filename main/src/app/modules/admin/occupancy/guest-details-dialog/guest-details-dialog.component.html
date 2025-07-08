@@ -1,0 +1,48 @@
+<div class="dialogContainer">
+    <div class="modalHeader">
+        <div class="avatarDetails">
+            <div class="modalTitle">
+                {{dialogTitle}}
+            </div>
+        </div>
+        <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <mat-dialog-content>
+        <mat-tab-group>
+            <!-- Personal Info Tab -->
+            <mat-tab label="Personal Info">
+                <div class="tab-content">
+                    <p><strong>Name:</strong> {{ roomData.guestDetails?.personalInfo?.name }}</p>
+                    <p><strong>Address:</strong> {{ roomData.guestDetails?.personalInfo?.address }}</p>
+                    <p><strong>Phone:</strong> {{ roomData.guestDetails?.personalInfo?.phone }}</p>
+                    <p><strong>Email:</strong> {{ roomData.guestDetails?.personalInfo?.email }}</p>
+                </div>
+            </mat-tab>
+
+            <!-- Reservation Info Tab -->
+            <mat-tab label="Reservation Info">
+                <div class="tab-content">
+                    <p><strong>Check-In Date:</strong> {{ roomData.guestDetails?.reservationInfo?.checkInDate }}</p>
+                    <p><strong>Check-Out Date:</strong> {{ roomData.guestDetails?.reservationInfo?.checkOutDate }}</p>
+                    <p><strong>Booking Reference:</strong> {{ roomData.guestDetails?.reservationInfo?.bookingReference
+                        }}
+                    </p>
+                </div>
+            </mat-tab>
+
+            <!-- Special Requests Tab -->
+            <mat-tab label="Special Requests">
+                <div class="tab-content">
+                    <p>{{ roomData.guestDetails?.specialRequests }}</p>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button mat-button (click)="editGuest()">Edit Guest</button>
+        <button mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+</div>

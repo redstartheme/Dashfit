@@ -1,0 +1,20 @@
+:host ::ng-deep .search-box {
+  .mat-mdc-text-field-wrapper {
+    height: 40px !important;
+  }
+
+  .mat-mdc-form-field-flex {
+    margin-top: -7px !important;
+  }
+  .mat-mdc-floating-label {
+    height: 32px;
+  }
+  .mat-mdc-input-element {
+    font-size: 13px !important;
+  }
+  .search-label {
+    font-size: 13px;
+    top: -4px;
+    position: relative;
+  }
+}

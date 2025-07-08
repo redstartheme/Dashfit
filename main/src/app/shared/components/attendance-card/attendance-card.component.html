@@ -1,0 +1,40 @@
+<mat-card class="attendance-card">
+    <mat-card-header class="header-style">
+        <mat-card-title>Attendance</mat-card-title>
+        <a mat-button color="primary" href="#" (click)="$event.preventDefault();">View Stats</a>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div class="stats-container">
+            <div class="attendance-stats">
+                <div class="stat-item">
+                    <span class="dot on-time"></span>
+                    <span class="count">276</span>
+                    <span>on time</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="dot late"></span>
+                    <span class="count">65</span>
+                    <span>late attendance</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="dot absent"></span>
+                    <span class="count">24</span>
+                    <span>not present</span>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <apx-chart [series]="donutChartOptions.series" [chart]="donutChartOptions.chart"
+                    [plotOptions]="donutChartOptions.plotOptions" [labels]="donutChartOptions.labels">
+                </apx-chart>
+                <div class="total-count">
+                    <div class="number">325</div>
+                    <div class="f-s-14">/365</div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

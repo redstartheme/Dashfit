@@ -1,0 +1,12 @@
+<ul class="p-0">
+  @for (schedule of schedules; track schedule) {
+  <li class="schedule-list">
+    <div class="standard-name" [ngClass]="schedule.statusClass">
+      {{ schedule.title }}
+    </div>
+    <div class="m-l-auto">
+      <div class="media-title f-s-14">{{ schedule.dateRange }}</div>
+    </div>
+  </li>
+  }
+</ul>

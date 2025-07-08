@@ -1,0 +1,79 @@
+<app-page-header></app-page-header>
+<div class="container m-t-3">
+  <!-- Filter Section -->
+  <div class="filterBody">
+    <div class="row">
+      <div class="col-md-3">
+        <mat-form-field class="example-full-width advance-search" appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Status:</mat-label>
+          <mat-select id="status" [(ngModel)]="selectedStatus" (selectionChange)="filterRooms()">
+            <mat-option value="">All</mat-option>
+            @for (status of statuses; track status) {
+            <mat-option [value]="status">{{ status }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <mat-form-field class="example-full-width advance-search" appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Room Type:</mat-label>
+          <mat-select id="type" [(ngModel)]="selectedType" (selectionChange)="filterRooms()">
+            <mat-option value="">All</mat-option>
+            @for (type of roomTypes; track type) {
+            <mat-option [value]="type">{{ type }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <mat-form-field class="example-full-width advance-search" appearance="outline" subscriptSizing="dynamic">
+          <mat-label>Bed Size:</mat-label>
+          <mat-select id="bed" [(ngModel)]="selectedBed" (selectionChange)="filterRooms()">
+            <mat-option value="">All</mat-option>
+            @for (bed of bedSizes; track bed) {
+            <mat-option [value]="bed">{{ bed }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 d-flex align-items-end">
+        <button mat-flat-button color="primary" (click)="clearFilters()">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Room Cards Section -->
+  <div class="row">
+    @for (room of filteredRooms; track room) {
+    <div class="col-md-2 col-lg-2">
+      <div class="room-card">
+        <div class="card-body">
+          <div class="roomCard">
+            <div class="top-block d-flex align-items-center justify-content-between">
+              <h3 class="m-0 f-w-500">Room</h3>
+              <div
+                [ngClass]="{'badge-solid-orange': room.status === 'Booked', 'badge-solid-green': room.status !== 'Booked'}"
+                class="room-badge badge">
+                {{ room.status }}
+              </div>
+            </div>
+            <h2 class="m-0 f-s-24">{{ room.roomNo }}</h2>
+            <div class="room-details">
+              <h3 class="room-type">{{ room.type }}</h3>
+              <small class="text-muted m-t-8 d-inline-block w-full">{{ room.bed }}</small>
+              <small class="text-muted m-t-8 d-inline-block w-full">{{ room.occupants }}</small>
+            </div>
+            <div class="roomCard-footer">
+              <a class="f-s-12" [ngClass]="{'disabled-link': room.status === 'Available'}"
+                (click)="room.status === 'Booked' ? openGuestDetailsDialog(room) : openAddGuestDetailsDialog(room)">
+                {{ room.status === 'Booked' ? 'Guest Details' : 'Add Guest' }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+
+</div>

@@ -1,0 +1,92 @@
+<div class="customizer-header primaryColorBG">
+  <p class="customizer-text f-s-18 f-w-500">Theme Config</p>
+</div>
+<div id="customizer">
+  <ng-scrollbar [style.height]="listMaxHeight + 'px'" visibility="hover">
+    <form [formGroup]="form" class="customizer-form">
+      <div class="m-l-8">
+        <div class="customizer-title">
+          <h3>Colors</h3>
+          <span>Switch theme color</span>
+        </div>
+        <div class="color-picker">
+          <mat-radio-group formControlName="color" class="colors">
+            @for (color of colors; track color) {
+            <mat-radio-button class="m-x-4 radioCircle" [value]="color.value"
+              [style.background-color]="color.colorCode"></mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+      </div>
+      <mat-divider inset class="m-x-0 m-y-24"></mat-divider>
+      <div class="m-l-8">
+        <div class="customizer-title">
+          <h3>Theme</h3>
+          <span>Switch theme mode to Light, Dark or Auto</span>
+        </div>
+        <mat-radio-group formControlName="theme">
+          <mat-radio-button class="m-x-4" value="light" color="primary">Light</mat-radio-button>
+          <mat-radio-button class="m-x-4" value="dark" color="primary">Dark</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <mat-divider inset class="m-x-0 m-y-24"></mat-divider>
+      <div class="m-l-8">
+        <div class="customizer-title">
+          <h3>Header</h3>
+          <span>Header Settings</span>
+        </div>
+        <mat-slide-toggle formControlName="showHeader" [disabled]="isHeaderPosAbove || isNavPosTop"
+          color="primary">Visible
+        </mat-slide-toggle>
+        <h4 class="f-w-600 f-s-14 m-b-0">Position</h4>
+        <mat-radio-group formControlName="headerPos">
+          <mat-radio-button class="m-x-4" value="above" [disabled]="!isShowHeader || isNavPosTop"
+            color="primary">Above</mat-radio-button>
+          <mat-radio-button class="m-x-4" value="fixed" color="primary">Fixed</mat-radio-button>
+          <mat-radio-button class="m-x-4" value="static" color="primary">Static</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <mat-divider inset class="m-x-0 m-y-24"></mat-divider>
+      <div class="m-l-8">
+        <div class="customizer-title">
+          <h3>Footer</h3>
+          <span>Footer Settings</span>
+        </div>
+        <mat-slide-toggle formControlName="showFooter" color="primary">Visible
+        </mat-slide-toggle>
+        <h4 class="f-w-600 f-s-14 m-b-0">Position</h4>
+        <mat-radio-group formControlName="footerPos">
+          <mat-radio-button [disabled]="!isShowFooter" class="m-x-4" value="fixed"
+            color="primary">Fixed</mat-radio-button>
+          <mat-radio-button [disabled]="!isShowFooter" class="m-x-4" value="static"
+            color="primary">Static</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <mat-divider inset class="m-x-0 m-y-24"></mat-divider>
+      <div class="m-l-8">
+        <div class="customizer-title">
+          <h3>Navigation</h3>
+          <span>Sidebar navigation settings</span>
+        </div>
+        <mat-slide-toggle formControlName="showUserPanel" color="primary">Show User Panel</mat-slide-toggle>
+        <h4 class="f-w-600 f-s-14 m-b-0">Position</h4>
+        <mat-radio-group formControlName="navPos">
+          <mat-radio-button class="m-x-4" value="side" color="primary">Side</mat-radio-button>
+          <mat-radio-button class="m-x-4" value="top" [disabled]="isHeaderPosAbove || !isShowHeader" color="primary">Top
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <mat-divider inset class="m-x-0 m-y-24"></mat-divider>
+      <div class="customizer-title">
+        <h3>Direction</h3>
+        <span>Select template direction</span>
+      </div>
+      <div class="m-l-8">
+        <mat-radio-group formControlName="dir">
+          <mat-radio-button class="m-x-4" value="ltr" color="primary">LTR</mat-radio-button>
+          <mat-radio-button class="m-x-4" value="rtl" color="primary">RTL</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </form>
+  </ng-scrollbar>
+</div>

@@ -1,0 +1,35 @@
+<!-- testimonial.component.html -->
+<div class="row m-t-16">
+  @for (testimonial of testimonials; track testimonial) {
+  <div class="col-sm-3">
+    <mat-card>
+      <mat-card-content>
+        <div class="testimonialCard">
+          <div class="testimonialBody">
+            <i class="material-icons icon {{ testimonial.iconColor }}">format_quote</i>
+            <p class="m-t-0 testimonialDetails">{{ testimonial.quote }}</p>
+          </div>
+          <div class="testimonialFooter">
+            <div class="d-flex">
+              <img class="userImg" [src]="testimonial.avatar" alt="Profile Image">
+              <div class="userDetails">
+                <p class="userName">{{ testimonial.name }}</p>
+                <p class="m-0 d-flex userDesig">
+                  {{ testimonial.position }}
+                </p>
+              </div>
+              <div class="d-flex1">
+                @for (star of getStarIcons(testimonial.rating); track $index) {
+                <i class="material-icons icon {{ testimonial.iconColor }} f-s-18">
+                  {{ star }}
+                </i>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  }
+</div>

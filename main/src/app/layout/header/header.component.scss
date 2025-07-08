@@ -1,0 +1,15 @@
+.header {
+  position: relative;
+  z-index: 200;
+
+  .toolbar {
+    padding: 0 8px;
+  }
+}
+.header_icons {
+  .feather {
+    height: 20px !important;
+    width: 20px !important;
+    fill: rgba(75, 75, 90, 0.1215686275) !important;
+  }
+}

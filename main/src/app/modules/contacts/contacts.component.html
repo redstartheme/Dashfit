@@ -1,0 +1,178 @@
+<app-page-header></app-page-header>
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="create-contact-btn">
+                            <button mat-fab extended color="primary" (click)="addNew()">
+                                <mat-icon>add</mat-icon>
+                                Add Contact
+                            </button>
+                        </div>
+                        <div class="filter-container">
+
+                            <mat-sidenav-container class="contact-sidenav-container" autosize>
+                                <mat-sidenav #sidenav class="contact-sidenav" mode="side" opened="true">
+                                    <ng-scrollbar style="height: 550px" visibility="hover">
+                                        <mat-nav-list class="contact-filter-menu">
+                                            <mat-list-item class="parent" (click)="refresh()">
+                                                <span class="material-icons-outlined icon">account_circle</span>
+                                                <span class="contact-filter-text">Contacts</span>
+                                            </mat-list-item>
+                                            <mat-list-item class="parent" (click)="frequentCall('true')">
+                                                <span class="material-icons-outlined icon">history</span>
+                                                <span class="contact-filter-text">Frequent</span>
+                                            </mat-list-item>
+                                            <mat-list-item class="parent" (click)="favouriteCall('true')">
+                                                <span class="material-icons-outlined icon">star_outline</span>
+                                                <span class="contact-filter-text">Favourite</span>
+                                            </mat-list-item>
+                                            <p class="contact-menu-devider-lbl"> Fix and manage</p>
+                                            <mat-list-item class="parent">
+                                                <span class="material-icons-outlined icon">handyman</span>
+                                                <span class="contact-filter-text">Merge and fix</span>
+                                            </mat-list-item>
+                                            <mat-list-item class="parent">
+                                                <span class="material-icons-outlined icon">downloading</span>
+                                                <span class="contact-filter-text">Import</span>
+                                            </mat-list-item>
+                                            <mat-list-item class="parent">
+                                                <span class="material-icons-outlined icon">delete_outline</span>
+                                                <span class="contact-filter-text">Bin</span>
+                                            </mat-list-item>
+                                            <p class="contact-menu-devider-lbl"> Labels</p>
+                                            <mat-list-item class="parent">
+                                                <span class="material-icons-outlined icon col-blue">label</span>
+                                                <span class="contact-filter-text">Office</span>
+                                            </mat-list-item>
+                                            <mat-list-item class="parent">
+                                                <span class="material-icons-outlined icon col-orange">label</span>
+                                                <span class="contact-filter-text">Family</span>
+                                            </mat-list-item>
+                                            <mat-list-item class="parent">
+                                                <span class="material-icons-outlined icon col-green">label</span>
+                                                <span class="contact-filter-text">Friends</span>
+                                            </mat-list-item>
+                                        </mat-nav-list>
+                                    </ng-scrollbar>
+                                </mat-sidenav>
+                            </mat-sidenav-container>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="materialTableHeader">
+                            <div class="left">
+                                <ul class="header-buttons-left ms-0">
+                                    <li class="tbl-search-box">
+                                        <mat-form-field appearance="outline" class="search-box">
+                                            <mat-label class="search-label">Search...</mat-label>
+                                            <input #filter matInput type="text">
+                                            <mat-icon matSuffix>search</mat-icon>
+                                        </mat-form-field>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overflow-auto">
+                            <div class="responsive_table">
+                                <table mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+                                    <!-- Checkbox Column -->
+                                    <ng-container matColumnDef="select">
+                                        <mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-15'">
+                                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                                [checked]="selection.hasValue() && isAllSelected()"
+                                                [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                                [ngClass]="'tbl-checkbox'">
+                                            </mat-checkbox>
+                                        </mat-header-cell>
+                                        <mat-cell *matCellDef="let row" [ngClass]="'tbl-col-width-per-15'">
+                                            <mat-checkbox (click)="$event.stopPropagation()"
+                                                (change)="$event ? selection.toggle(row) : null"
+                                                [checked]="selection.isSelected(row)" [ngClass]="'tbl-checkbox'">
+                                            </mat-checkbox>
+                                            <img [src]="row.favourite === 'true' ? 'assets/images/favourite.png' : 'assets/images/no-favourite.png'"
+                                                class="favourite-star" (click)="$event.stopPropagation()"
+                                                (click)="toggleStar(row)" alt="image" />
+                                        </mat-cell>
+                                    </ng-container>
+                                    <!-- ID Column -->
+                                    <ng-container matColumnDef="id">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Id
+                                        </mat-header-cell>
+                                        <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="name">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Name
+                                        </mat-header-cell>
+                                        <mat-cell *matCellDef="let row" class="text-nowrap">
+                                            <span class="mobile-label">Name:</span><img [src]="row.img"
+                                                class="table-img" alt="image" />{{row.name}}
+                                        </mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="email">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Email
+                                        </mat-header-cell>
+                                        <mat-cell *matCellDef="let row"> <span
+                                                class="mobile-label">Email:</span><mat-icon
+                                                class="tbl-icon material-icons-outlined col-red">mail</mat-icon>{{row.email}}
+                                        </mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="mobile">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile
+                                        </mat-header-cell>
+                                        <mat-cell *matCellDef="let row"> <span
+                                                class="mobile-label">Mobile:</span><mat-icon
+                                                class="tbl-icon material-icons-outlined col-green">call</mat-icon>{{row.mobile}}
+                                        </mat-cell>
+                                    </ng-container>
+                                    <!-- actions -->
+                                    <ng-container matColumnDef="actions">
+                                        <mat-header-cell class="psl-3 display-none tbl-col-width-per-10"
+                                            *matHeaderCellDef>Actions</mat-header-cell>
+                                        <mat-cell *matCellDef="let row; let i=index;"
+                                            class="psl-3 tbl-col-width-per-10">
+                                            @if (row.isHovered==='true') {
+                                            <app-feather-icons [icon]="'edit-2'" [class]="'tbl-fav-edit m-r-8'"
+                                                (click)="$event.stopPropagation()"
+                                                (click)="editCall(row)"></app-feather-icons>
+                                            <app-feather-icons [icon]="'trash-2'" [class]="'tbl-fav-delete m-r-8'"
+                                                (click)="$event.stopPropagation()"
+                                                (click)="deleteItem(row)"></app-feather-icons>
+                                            }
+                                        </mat-cell>
+                                    </ng-container>
+
+                                    <mat-header-row *matHeaderRowDef="displayedColumns">
+                                    </mat-header-row>
+                                    <mat-row [@rowsAnimation]="" *matRowDef="let row; columns: displayedColumns;"
+                                        (click)="detailsCall(row)" [style.cursor]="'pointer'"
+                                        (mouseenter)="onMouseEnter(row)" (mouseleave)="onMouseLeave(row)" matRipple>
+                                    </mat-row>
+                                </table>
+                                <!-- Loading spinner -->
+                                @if (exampleDatabase?.isTblLoading) {
+                                <div class="tbl-spinner">
+                                    <mat-progress-spinner color="primary" [diameter]="40" mode="indeterminate">
+                                    </mat-progress-spinner>
+                                </div>
+                                }
+                                @if (!exampleDatabase?.isTblLoading) {
+                                <div class="no-results"
+                                    [style.display]="dataSource.renderedData.length === 0 ? '' : 'none'">
+                                    No results
+                                </div>
+                                }
+                                <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0"
+                                    [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+                                </mat-paginator>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

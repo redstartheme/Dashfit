@@ -1,0 +1,175 @@
+<app-page-header></app-page-header>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Gauge Types</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h5 class="text-center">Full</h5>
+                        <ngx-gauge [value]="gaugeValue" [size]="gaugeSize" type="full" [thick]="guageThick"
+                            class="guage-chart-center">
+                            <ngx-gauge-append>
+                                <span class="font-15">'km/hr'</span>
+                            </ngx-gauge-append>
+                            <ngx-gauge-label>
+                                'Speed'
+                            </ngx-gauge-label>
+                            <ngx-gauge-value>
+                                {{gaugeValue}}
+                            </ngx-gauge-value>
+                        </ngx-gauge>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5 class="text-center">Semi</h5>
+                        <ngx-gauge [value]="gaugeValue" [size]="gaugeSize" type="semi" [thick]="guageThick"
+                            class="guage-chart-center">
+                            <ngx-gauge-append>
+                                <span class="font-15">'km/hr'</span>
+                            </ngx-gauge-append>
+                            <ngx-gauge-label>
+                                'Speed'
+                            </ngx-gauge-label>
+                            <ngx-gauge-value>
+                                {{gaugeValue}}
+                            </ngx-gauge-value>
+                        </ngx-gauge>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5 class="text-center">Arch</h5>
+                        <ngx-gauge [value]="gaugeValue" [size]="gaugeSize" type="arch" [thick]="guageThick"
+                            class="guage-chart-center">
+                            <ngx-gauge-append>
+                                <span class="font-15">'km/hr'</span>
+                            </ngx-gauge-append>
+                            <ngx-gauge-label>
+                                'Speed'
+                            </ngx-gauge-label>
+                            <ngx-gauge-value>
+                                {{gaugeValue}}
+                            </ngx-gauge-value>
+                        </ngx-gauge>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Gauge Styles</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h5 class="text-center">butt </h5>
+                        <ngx-gauge [size]="180" type="arch" [thick]="15" [value]="68" cap="butt" label="Speed"
+                            append="mph" class="guage-chart-center"></ngx-gauge>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5 class="text-center">round </h5>
+                        <ngx-gauge [size]="180" type="arch" [thick]="15" [value]="68" cap="round" label="Speed"
+                            append="mph" class="guage-chart-center"></ngx-gauge>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Gauge Thickness</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h5 class="text-center">thickness = 5 </h5>
+                        <ngx-gauge type="arch" [value]="68" [thick]="5" [size]="150" label="Speed" append="mph"
+                            class="guage-chart-center"></ngx-gauge>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5 class="text-center">thickness = 10 </h5>
+                        <ngx-gauge type="arch" [value]="68" [thick]="10" [size]="150" label="Speed" append="mph"
+                            class="guage-chart-center"></ngx-gauge>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5 class="text-center">thickness = 15 </h5>
+                        <ngx-gauge type="arch" [value]="68" [thick]="15" [size]="150" label="Speed" append="mph"
+                            class="guage-chart-center"></ngx-gauge>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Dynamic Gauge Value</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <ngx-gauge [value]="dynamicGaugeDemoValue" type="arch" [thick]="13" cap="round" [size]="200"
+                    label="I/O Utilization" append="%">
+                </ngx-gauge>
+                <button mat-raised-button color="primary" (click)="onUpdateClick()">Update</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Gauge Themes</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <!--blue theme -->
+                        <ngx-gauge [size]="150" type="arch" [thick]="7" [value]="68.2" cap="round" label="Speed"
+                            append="mph" foregroundColor="#2980b9" backgroundColor="#ecf0f1"></ngx-gauge>
+                    </div>
+                    <div class="col-sm-4">
+                        <!-- green theme -->
+                        <ngx-gauge [size]="150" type="arch" [thick]="7" [value]="68.2" cap="round" label="Speed"
+                            append="mph" foregroundColor="#2ecc71" backgroundColor="#ecf0f1"></ngx-gauge>
+                    </div>
+                    <div class="col-sm-4">
+                        <!-- red theme -->
+                        <ngx-gauge [size]="150" type="arch" [thick]="7" [value]="68.2" cap="round" label="Speed"
+                            append="mph" foregroundColor="#e74c3c" backgroundColor="#ecf0f1"></ngx-gauge>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Adding Markers to the Gauge</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <ngx-gauge [size]="180" type="arch" [thick]="10" [value]="68.2" cap="butt" label="Revenue" append="%"
+                    [markers]="markerConfig" class="p-3 m-3">
+                </ngx-gauge>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

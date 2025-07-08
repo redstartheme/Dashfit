@@ -1,0 +1,123 @@
+.badge {
+  display: inline-block;
+  min-width: 18px;
+  padding: 4px 10px;
+  font-size: 13px;
+  line-height: 20px;
+  background-color: #757575;
+  border-radius: 4px;
+}
+
+.badge-solid-red {
+  color: #f11541;
+  background-color: rgba(241, 21, 65, 0.15);
+  font-weight: 500;
+}
+.badge-solid-purple {
+  color: #6f42c1;
+  background-color: rgba(111, 66, 193, 0.15);
+  font-weight: 500;
+}
+.badge-solid-green {
+  color: #198754;
+  background-color: rgba(25, 135, 84, 0.15);
+  font-weight: 500;
+}
+.badge-solid-blue {
+  color: #0d6efd !important;
+  background-color: rgba(13, 110, 253, 0.15) !important;
+  font-weight: 500;
+}
+.badge-solid-pink {
+  color: #f665f6 !important;
+  background-color: rgba(253, 13, 253, 0.15) !important;
+  font-weight: 500;
+}
+.badge-solid-orange {
+  color: #fd7e14 !important;
+  background-color: rgba(253, 126, 20, 0.15) !important;
+  font-weight: 500;
+}
+.badge-solid-cyan {
+  color: #0dcaf0 !important;
+  background-color: rgba(13, 202, 240, 0.15) !important;
+  font-weight: 500;
+}
+.badge-solid-brown {
+  color: #964b00 !important;
+  background-color: rgba(150, 75, 0, 0.15) !important;
+  font-weight: 500;
+}
+.badge-solid-indigo {
+  color: #6366f1 !important;
+  background-color: rgba(99, 102, 241, 0.15) !important;
+  font-weight: 500;
+}
+
+.badge-outline-red {
+  color: #ff4d4d !important;
+  background-color: transparent;
+  border: 1px solid #ff4d4d;
+}
+.badge-outline-purple {
+  color: #9b26af !important;
+  background-color: transparent;
+  border: 1px solid #9b26af;
+}
+.badge-outline-green {
+  color: #45b449 !important;
+  background-color: transparent;
+  border: 1px solid #45b449;
+}
+.badge-outline-blue {
+  color: #0d6efd !important;
+  background-color: transparent;
+  border: 1px solid #0d6efd;
+}
+.badge-outline-pink {
+  color: #f665f6 !important;
+  background-color: transparent;
+  border: 1px solid #f665f6;
+}
+.badge-outline-orange {
+  color: #fd7e14 !important;
+  background-color: transparent;
+  border: 1px solid #fd7e14;
+}
+.badge-outline-cyan {
+  color: #0dcaf0 !important;
+  background-color: transparent;
+  border: 1px solid #0dcaf0;
+}
+.badge-outline-brown {
+  color: #964b00 !important;
+  background-color: transparent;
+  border: 1px solid #964b00;
+}
+.badge-outline-indigo {
+  color: #6366f1 !important;
+  background-color: transparent;
+  border: 1px solid #6366f1;
+}
+
+.icon-badge {
+  display: inline-block;
+  line-height: 17px;
+  background-color: #757575;
+  border-radius: 50%;
+  padding: 6px;
+  line-height: 10px;
+  margin-right: 10px;
+  &.col-green {
+    background-color: #45b449;
+  }
+  &.col-red {
+    background-color: #ff4d4d;
+  }
+  .mat-icon {
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+  }
+}

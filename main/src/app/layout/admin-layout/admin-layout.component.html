@@ -1,0 +1,65 @@
+<div class="container-wrap" [ngClass]="{
+  'sidenav-collapsed': options.sidenavCollapsed && options.navPos !== 'top',
+  'navbar-side': options.navPos === 'side',
+  'navbar-top': options.navPos === 'top',
+  'header-above': options.headerPos === 'above',
+  'header-fixed': options.headerPos === 'fixed',
+  'footer-fixed': options.footerPos === 'fixed',
+  'header-white': options.theme !== 'dark'
+  }" [dir]="options.dir">
+  <ng-progress [color]="'#6366f1'"></ng-progress>
+  <!-- Header Above -->
+  @if (options.showHeader && options.headerPos === 'above') {
+  <app-header (toggleSidenav)="sidenav.toggle()" (toggleSidenavNotice)="toggleSideNavSetIn('notificationSidenav')"
+    [showBranding]="true">
+  </app-header>
+  }
+  <mat-sidenav-container class="container" autosize autoFocus>
+    <mat-sidenav #sidenav class="sidenav" [mode]="isOver ? 'over' : 'side'" [ngClass]="{'hover-sidenav': isHovered}"
+      (mouseenter)="isHovered = true" (mouseleave)="isHovered = false"
+      [opened]="options.navPos === 'side' && options.sidenavOpened && !isOver"
+      (openedChange)="onSidenavOpenedChange($event)" (closedStart)="onSidenavClosedStart()">
+      <app-sidebar [showToggle]="!isOver" [showUser]="!!options.showUserPanel"
+        [showHeader]="options.headerPos !== 'above'" (toggleCollapsed)="toggleCollapsed()"
+        [toggleChecked]="!!options.sidenavCollapsed" (closeSidenav)="sidenav.close()">
+      </app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav #rightSideNav position="end" mode="over" opened="false" class="customizerSidenav">
+      @switch (toggleSideNavSetOut) {
+      @case ('customizerSidenav') {
+      <div>
+        <app-customizer (optionsChange)="receiveOptions($event)"></app-customizer>
+      </div>
+      }
+      @case ('notificationSidenav') {
+      <div>
+        <app-sidebar-notice></app-sidebar-notice>
+      </div>
+      }
+      }
+    </mat-sidenav>
+    <mat-sidenav-content #content class="content-wrap">
+      @if (options.showHeader && options.headerPos !== 'above') {
+      <app-header [showToggle]="!options.sidenavCollapsed && options.navPos !== 'top'"
+        [showBranding]="options.navPos === 'top'" (toggleSidenav)="sidenav.toggle()"
+        (toggleSidenavNotice)="toggleSideNavSetIn('notificationSidenav')">
+      </app-header>
+      }
+      @if (options.navPos === 'top') {
+      <app-topmenu></app-topmenu>
+      }
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+      @if (options.showFooter) {
+      <app-footer class="d-flex"></app-footer>
+      }
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <!-- Customization sidenav button -->
+  <div class="customizer-handle" matTooltip="Drag me around" cdkDrag (cdkDragStarted)="onDragStart($event)">
+    <button mat-fab (click)="toggleSideNavSetIn('customizerSidenav')" color="primary" class="customizerBtn">
+      <i-feather name="settings"></i-feather>
+    </button>
+  </div>
+</div>

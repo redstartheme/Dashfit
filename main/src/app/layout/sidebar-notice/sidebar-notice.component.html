@@ -1,0 +1,162 @@
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <i class="material-icons icon text-grey f-s-22 m-l-4 m-r-4">event</i>
+      Events
+    </ng-template>
+    <ul class="eventList">
+      <li class="eventListItem d-flex justify-content-between align-content-center eventListCol1">
+        <div class="d-flex">
+          <div class="eventBox timeDetailColor">
+            <div class="rectangle"></div>
+            <b class="dateRange">Today</b>
+            <b class="b1">10:00</b>
+          </div>
+          <div class="eventDetails">
+            <h6 class="eventTitle">Pankaj Tiwari</h6>
+            <p class="eventDetails"> Meeting with john deo regarding new project planning and estimation. </p>
+          </div>
+          <div>
+          </div>
+        </div>
+      </li>
+      <li class="eventListItem d-flex justify-content-between align-content-center eventListCol2">
+        <div class="d-flex">
+          <div class="eventBox timeDetailColor">
+            <div class="rectangle"></div>
+            <b class="dateRange">11 Jan</b>
+            <b class="b1">12:30</b>
+          </div>
+          <div class="eventDetails">
+            <h6 class="eventTitle">Jamie Lloyd</h6>
+            <p class="eventDetails">Green. Herb. Seas after multiply creepeth itself give set, sixth bring green to that
+              made own, deep under grass said. </p>
+          </div>
+          <div>
+          </div>
+        </div>
+      </li>
+      <li class="eventListItem d-flex justify-content-between align-content-center eventListCol3">
+        <div class="d-flex">
+          <div class="eventBox timeDetailColor">
+            <div class="rectangle"></div>
+            <b class="dateRange">12 - 14 Feb</b>
+            <b class="b1">14:00</b>
+          </div>
+          <div class="eventDetails">
+            <h6 class="eventTitle">Alby Shaw</h6>
+            <p class="eventDetails"> Dominion light. Cattle seed god fowl itself his won't won't, seas man. Brought fowl
+              forth hath rule created fill said.</p>
+          </div>
+          <div>
+          </div>
+        </div>
+      </li>
+      <li class="eventListItem d-flex justify-content-between align-content-center eventListCol4">
+        <div class="d-flex">
+          <div class="eventBox timeDetailColor">
+            <div class="rectangle"></div>
+            <b class="dateRange">15 - 17 Feb</b>
+            <b class="b1">11:00</b>
+          </div>
+          <div class="eventDetails">
+            <h6 class="eventTitle">Macie Jordan</h6>
+            <p class="eventDetails">Heaven rule. All forth void. Upon second air fly green greater likeness creature
+              very them i can't lights bearing midst. </p>
+          </div>
+          <div>
+          </div>
+        </div>
+      </li>
+      <li class="eventListItem d-flex justify-content-between align-content-center eventListCol5">
+        <div class="d-flex">
+          <div class="eventBox timeDetailColor">
+            <div class="rectangle"></div>
+            <b class="dateRange">02 - 03 Mar</b>
+            <b class="b1">22:00</b>
+          </div>
+          <div class="eventDetails">
+            <h6 class="eventTitle">Aleeza Miller</h6>
+            <p class="eventDetails">A don't. God. Is great Said isn't and form two give every shall and one place so
+              kind make he.</p>
+          </div>
+          <div>
+          </div>
+        </div>
+      </li>
+      <li class="eventListItem d-flex justify-content-between align-content-center eventListCol6">
+        <div class="d-flex">
+          <div class="eventBox timeDetailColor">
+            <div class="rectangle"></div>
+            <b class="dateRange">08 - 11 Mar</b>
+            <b class="b1">12:20</b>
+          </div>
+          <div class="eventDetails">
+            <h6 class="eventTitle">Esme Pearson</h6>
+            <p class="eventDetails">She'd light one. Gathering seasons. Shall may they're called Shall. Appear their.
+              Give, the. Good rule over after you. Male.</p>
+          </div>
+          <div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <i class="material-icons icon text-grey f-s-22 m-l-4 m-r-4">manage_accounts</i>
+      Settings
+    </ng-template>
+    <div class="settingTabContent">
+      <div class="settings-title">
+        <h3>Security Settings</h3>
+      </div>
+      <div class="settingsList border-bottom">
+        <div class="m-b-24">
+          <div class="f-s-14 f-w-500">Enable 2-step authentication</div>
+        </div>
+        <mat-slide-toggle [(ngModel)]="isChecked" color="primary"></mat-slide-toggle>
+      </div>
+      <div class="settingsList border-bottom">
+        <div class="m-b-24">
+          <div class="f-s-14 f-w-500">Password change every 3 months.</div>
+        </div>
+        <mat-slide-toggle color="primary"></mat-slide-toggle>
+      </div>
+      <div class="settingsList border-bottom">
+        <div class="m-b-24">
+          <div class="f-s-14 f-w-500">Log out automatically after inactivity</div>
+        </div>
+        <mat-slide-toggle color="primary"></mat-slide-toggle>
+      </div>
+      <div class="settingsList border-bottom">
+        <div class="m-b-24">
+          <div class="f-s-14 f-w-500">Login using mobile OTP</div>
+        </div>
+        <mat-slide-toggle [(ngModel)]="isChecked" color="primary"></mat-slide-toggle>
+      </div>
+      <div class="settings-title">
+        <h3>Notification Settings</h3>
+      </div>
+      <div class="settingsList border-bottom">
+        <div class="m-b-24">
+          <div class="f-s-14 f-w-500">Message Notification Alert</div>
+        </div>
+        <mat-slide-toggle [(ngModel)]="isChecked" color="primary"></mat-slide-toggle>
+      </div>
+      <div class="settingsList border-bottom">
+        <div class="m-b-24">
+          <div class="f-s-16 f-w-500">Security Notification Alert</div>
+        </div>
+        <mat-slide-toggle [(ngModel)]="isChecked" color="primary"></mat-slide-toggle>
+      </div>
+      <div class="settingsList border-bottom">
+        <div class="m-b-24">
+          <div class="f-s-16 f-w-500">Email Notification</div>
+        </div>
+        <mat-slide-toggle color="primary"></mat-slide-toggle>
+      </div>
+    </div>
+
+  </mat-tab>
+</mat-tab-group>

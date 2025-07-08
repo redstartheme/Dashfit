@@ -1,0 +1,96 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <div class="table-header-toolbar">
+      <div class="row">
+        <div class="col-sm-8">
+          <span class="table-header">Employee Attendance</span>
+          <mat-form-field appearance="outline" class="search-box">
+            <mat-label class="search-label">Search...</mat-label>
+            <input #filter (keyup)="applyFilter($event)" matInput type="text">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="overflow-auto">
+      <div class="responsive_table">
+        <table mat-table [dataSource]="dataSource" matSort class="mat-cell advance-table">
+
+          @for (column of columnDefinitions; track column) {
+            <!-- For Date Column -->
+            @if (column.type === 'date') {
+              <ng-container [matColumnDef]="column.def">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <span class="truncate-text">{{ column.label }}</span>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <span class="mobile-label">{{ column.label }}:</span>
+                  <span class="truncate-text">{{ row[column.def] | date: 'MM/dd/yyyy' }}</span>
+                </mat-cell>
+              </ng-container>
+            } @else {
+              @if (column.def === 'Status') {
+                <ng-container [matColumnDef]="column.def"
+                  >
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> <span class="truncate-text">{{
+                  column.label }}</span></mat-header-cell>
+                  <mat-cell mat-cell *matCellDef="let row">
+                    <span class="mobile-label">{{ column.label }}:</span>
+                    @if (row.Status==='Present') {
+                      <div>
+                        <span class="badge badge-solid-green">
+                          <span class="truncate-text">
+                          {{row.Status}}</span></span>
+                        </div>
+                      }
+                      @if (row.Status==='Absent') {
+                        <div>
+                          <span class="badge badge-solid-orange">
+                            <span class="truncate-text">
+                            {{row.Status}}</span></span>
+                          </div>
+                        }
+                      </mat-cell>
+                    </ng-container>
+                  } @else {
+                    <ng-container [matColumnDef]="column.def">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>
+                        <span class="truncate-text">{{ column.label }}</span>
+                      </mat-header-cell>
+                      <mat-cell *matCellDef="let row">
+                        <span class="mobile-label">{{ column.label }}:</span>
+                        <span class="truncate-text">{{ row[column.def] }}</span>
+                      </mat-cell>
+                    </ng-container>
+                  }
+                }
+                <!-- For Status Column -->
+                <!-- Rest all columns -->
+              }
+              <mat-header-row *matHeaderRowDef="getDisplayedColumns()"></mat-header-row>
+              <mat-row [@rowsAnimation]="" *matRowDef="let row; columns: getDisplayedColumns();"
+                [style.cursor]="'pointer'" matRipple>
+              </mat-row>
+            </table>
+          </div>
+          <!-- Loading spinner -->
+          @if (isLoading) {
+            <div class="tbl-spinner">
+              <mat-progress-spinner color="primary" [diameter]="40" mode="indeterminate">
+              </mat-progress-spinner>
+            </div>
+          }
+          @if (isLoading) {
+            <div class="no-results" [style.display]="dataSource.data.length === 0 ? '' : 'none'">
+              No results
+            </div>
+          }
+          <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 25, 100]">
+          </mat-paginator>
+        </div>
+      </mat-card-content>
+    </mat-card>

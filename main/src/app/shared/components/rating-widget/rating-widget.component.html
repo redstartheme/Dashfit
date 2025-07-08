@@ -1,0 +1,26 @@
+<!-- rating-breakdown.component.html -->
+<mat-card>
+  <mat-card-content>
+    <div class="p-12">
+      <div class="d-flex justify-content-between m-b-8">
+        <div class="ratings">
+          @for (star of getStarIcons(overallRating); track $index) {
+          <i class="material-icons icon text-green">{{ star }}</i>
+          }
+        </div>
+        <h5 class="f-s-16 m-t-0 m-b-16">{{ totalReviews }} Reviews</h5>
+      </div>
+
+      @for (item of ratingItems; track item.label) {
+      <div class="d-flex justify-content-between align-items-center m-t-12 m-b-12">
+        <h4 class="m-4 f-w-500">{{ item.label }}</h4>
+        <div class="small-ratings">
+          @for (star of getStarIcons(item.rating); track $index) {
+          <i class="material-icons icon text-orange f-s-18">{{ star }}</i>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,48 @@
+.main-footer {
+  margin-top: 40px;
+  background: #ffffff;
+  font-weight: 500;
+  font-size: 11px;
+  width: 100%;
+  padding: 20px;
+  height: 60px;
+
+  .footer-left {
+    float: left;
+    color: #404146;
+    font-size: 13px;
+  }
+
+  .footer-right {
+    float: right;
+  }
+  .footer-icon {
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+    color: red;
+    margin: 0px 5px;
+  }
+}
+
+.dark {
+  .main-footer {
+    background: #1a202e;
+
+    .footer-left {
+      color: #ffffff;
+    }
+  }
+}
+
+.simple-footer {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.footer-fixed {
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+}

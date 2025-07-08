@@ -1,0 +1,118 @@
+:host ::ng-deep {
+  .mat-mdc-tab {
+    min-width: 160px;
+  }
+}
+.eventList {
+  padding: 10px;
+  .eventListItem {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    .eventBox {
+      position: relative;
+      margin: 5px;
+      width: 70px;
+      height: 70px;
+      text-align: center;
+      border-radius: 5px;
+      .rectangle-div {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        border-radius: 3px;
+        width: 70px;
+        height: 70px;
+      }
+      .dateRange {
+        position: relative;
+        text-transform: uppercase;
+        font-size: 10px;
+        top: 10px;
+      }
+      .b1 {
+        position: absolute;
+        top: 35px;
+        left: 10px;
+        font-size: 17px;
+        text-transform: uppercase;
+        text-align: left;
+      }
+    }
+    .eventDetails {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .eventTitle {
+        font-size: 16px;
+        margin: 0px;
+      }
+      .eventDetails {
+        margin: 0px;
+        line-height: 1.5;
+        letter-spacing: 0.15px;
+        font-weight: 500;
+        overflow: hidden;
+        font-size: 13px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 185px;
+      }
+    }
+  }
+  .eventListCol1 {
+    background-color: rgba($color: #00cf31, $alpha: 0.1);
+    .timeDetailColor {
+      background-color: rgba($color: #00cf31, $alpha: 0.2);
+    }
+  }
+  .eventListCol2 {
+    background-color: rgba($color: #ff0000, $alpha: 0.1);
+    .timeDetailColor {
+      background-color: rgba($color: #ff0000, $alpha: 0.2);
+    }
+  }
+  .eventListCol3 {
+    background-color: rgba($color: #002bb8, $alpha: 0.1);
+    .timeDetailColor {
+      background-color: rgba($color: #002bb8, $alpha: 0.2);
+    }
+  }
+  .eventListCol4 {
+    background-color: rgba($color: #ff9500, $alpha: 0.1);
+    .timeDetailColor {
+      background-color: rgba($color: #ff9500, $alpha: 0.2);
+    }
+  }
+  .eventListCol5 {
+    background-color: rgba($color: #9e00bd, $alpha: 0.1);
+    .timeDetailColor {
+      background-color: rgba($color: #9e00bd, $alpha: 0.2);
+    }
+  }
+  .eventListCol6 {
+    background-color: rgba($color: #00fffb, $alpha: 0.1);
+    .timeDetailColor {
+      background-color: rgba($color: #00fffb, $alpha: 0.2);
+    }
+  }
+}
+.settingTabContent {
+  margin: 20px;
+}
+.settings-title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+.settingsList {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  &.border-bottom {
+    border-bottom: 1px solid #bfcde3;
+  }
+}

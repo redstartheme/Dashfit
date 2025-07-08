@@ -1,0 +1,125 @@
+<div class="dialogContainer">
+  <div class="modalHeader">
+    <div class="avatarDetails">
+      <label class="hoverable" for="tableFileInput">
+        <img [src]="url ? url : allStaffs.img" alt="image">
+        <div class="hover-text">Upload</div>
+        <div class="background"></div>
+      </label>
+      <input id="tableFileInput" type='file' (change)="onSelectFile($event)">
+      <div class="modalTitle">
+        {{dialogTitle}}
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="form-field-full" [formGroup]="allStaffsForm">
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" required>
+            @if (allStaffsForm.get('name')?.hasError('required') || allStaffsForm.get('name')?.touched) {
+            <mat-error>
+              Please enter a valid name address
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Designation</mat-label>
+            <mat-select formControlName="designation" required>
+              <mat-option [value]="'Cook'">
+                Cook
+              </mat-option>
+              <mat-option [value]="'Kitchen Manager'">
+                Kitchen Manager
+              </mat-option>
+              <mat-option [value]="'Casino Host'">
+                Casino Host
+              </mat-option>
+              <mat-option [value]="'Driver'">
+                Driver
+              </mat-option>
+              <mat-option [value]="'Purchase Officer'">
+                Purchase Officer
+              </mat-option>
+              <mat-option [value]="'Receptionist'">
+                Receptionist
+              </mat-option>
+              <mat-option [value]="'Events Manager'">
+                Events Manager
+              </mat-option>
+            </mat-select>
+            @if (allStaffsForm.get('designation')?.hasError('required')) {
+            <mat-error>
+              Designation is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Mobile</mat-label>
+            <input matInput formControlName="mobile" type="number">
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>phone</mat-icon>
+            @if (allStaffsForm.get('mobile')?.hasError('required')) {
+            <mat-error>
+              Mobile is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>email</mat-icon>
+            @if (allStaffsForm.get('email')?.hasError('required') || allStaffsForm.get('email')?.touched) {
+            <mat-error>
+              Please enter a valid email address
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Joining date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            @if (allStaffsForm.get('date')?.hasError('required')) {
+            <mat-error>
+              Please select joining date
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [disabled]="!allStaffsForm.valid" (click)="submit()">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

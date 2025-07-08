@@ -1,0 +1,17 @@
+<div class="row">
+  @for (info of infoData; track info) {
+    <div class="col-sm-3">
+      <mat-card [ngClass]="info.bgClass" class="dashboard-cards">
+        <div class="dashboard-cards-content">
+          <div class="dashboard-cards-info">
+            <h2>{{ info.count }} <span class="amount">{{ info.amount }}</span></h2>
+            <p>{{ info.description }}</p>
+          </div>
+          <div class="dashboard-cards-image">
+            <img [src]="info.image" alt="" />
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  }
+</div>

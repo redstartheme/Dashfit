@@ -1,0 +1,158 @@
+.p-15 {
+  padding: 15px;
+}
+.p-10 {
+  padding: 10px;
+}
+.b-b {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.mail_listing {
+  .mail-option {
+    .btn-group {
+      margin-bottom: 5px;
+    }
+  }
+}
+#mail-nav {
+  .btn {
+    min-width: 110px;
+  }
+  #mail-folders {
+    list-style-type: none;
+    padding: 0px;
+    .badge {
+      float: right;
+    }
+  }
+  #mail-folders > li {
+    margin: 2px 0;
+    a {
+      &:hover {
+        color: #fff;
+        background-color: #6366f1;
+      }
+    }
+    &.active > a {
+      color: #fff;
+      background-color: #6366f1;
+      &:hover {
+        background-color: #4e51d5;
+      }
+    }
+  }
+  #mail-labels {
+    float: left;
+    width: 100%;
+    list-style-type: none;
+    padding-left: 0px;
+    li {
+      float: left;
+    }
+    .material-icons {
+      font-size: 16px;
+      height: 16px;
+      padding: 2px;
+      float: left;
+    }
+  }
+  #online-offline {
+    list-style-type: none;
+    padding-left: 0px;
+    .material-icons {
+      font-size: 8px;
+      height: 8px;
+      padding: 0px 5px 2px 0;
+    }
+  }
+  #mail-labels,
+  #online-offline {
+    li {
+      a:hover {
+        background-color: rgba($color: #000000, $alpha: 0.1);
+      }
+    }
+  }
+  li {
+    a {
+      color: #212529;
+      padding: 7px 10px;
+      display: block;
+      border-radius: 4px;
+      position: relative;
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+  }
+}
+.composeForm {
+  padding: 25px;
+}
+.inbox-body {
+  padding: 20px;
+}
+.replyBox {
+  border: 1px solid rgba(120, 130, 140, 0.13);
+  padding: 20px;
+}
+.inbox-center .table thead th {
+  vertical-align: middle;
+}
+.email-btn-group {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.max-texts {
+  padding: 15px !important;
+}
+.emainMenuIcon {
+  .mat-icon {
+    font-size: 18px;
+    height: 18px;
+    padding: 2px;
+    float: left;
+  }
+}
+.unread {
+  font-weight: 500;
+}
+.email-table {
+  border-spacing: 0px;
+  tr {
+    a {
+      color: #212529 !important;
+    }
+  }
+  tr:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+}
+.NgxEditorStyles {
+  overflow: auto;
+  display: block;
+  .NgxEditor__Content {
+    height: 400px;
+  }
+}
+
+.dark {
+  #mail-nav {
+    li {
+      a {
+        color: #96a2b4 !important;
+      }
+    }
+  }
+  .email-table {
+    border-spacing: 0px;
+    tr {
+      a {
+        color: #96a2b4 !important;
+      }
+    }
+  }
+}

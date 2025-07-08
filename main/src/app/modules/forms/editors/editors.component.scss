@@ -1,0 +1,10 @@
+.editor {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+:host ::ng-deep .NgxEditor__Content {
+  height: 300px;
+}
+:host ::ng-deep .ck-editor__editable_inline {
+  min-height: 300px;
+}

@@ -1,0 +1,68 @@
+.filter-container {
+  .contact-sidenav-container {
+    height: 550px;
+  }
+}
+.create-contact-btn {
+  margin-bottom: 20px;
+  button {
+    height: 40px;
+  }
+}
+.contact-sidenav-container {
+  .contact-sidenav {
+    width: 100%;
+    border-radius: 0px;
+    border-right-color: #cccccc;
+    .contact-filter-menu {
+      cursor: pointer;
+      padding: 0px;
+      height: 100%;
+
+      .icon {
+        vertical-align: bottom;
+        margin: 0px 7px;
+      }
+      .col-green {
+        color: #12a147;
+      }
+      .col-orange {
+        color: #f46b36;
+      }
+      .col-blue {
+        color: #6366f1;
+      }
+      .contact-filter-text {
+        font-size: 14px;
+      }
+    }
+    .contact-menu-devider-lbl {
+      align-items: center;
+      display: flex;
+      height: 60px;
+      justify-content: space-between;
+      margin: 0 12px 0 28px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+}
+.search-box {
+  .mat-mdc-text-field-wrapper {
+    height: 40px !important;
+  }
+  .mat-mdc-form-field-flex {
+    margin-top: -7px !important;
+  }
+  .mat-mdc-floating-label {
+    height: 32px;
+  }
+  .mat-mdc-input-element {
+    font-size: 13px !important;
+  }
+  .search-label {
+    font-size: 13px;
+    top: -4px;
+    position: relative;
+  }
+}

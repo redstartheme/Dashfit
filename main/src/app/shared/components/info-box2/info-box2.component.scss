@@ -1,0 +1,27 @@
+:host ::ng-deep .info-card {
+  margin-top: 20px;
+  text-align: right;
+
+  .info-box8 {
+    padding: 15px 20px;
+  }
+  .card1-icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -15px;
+    font-size: 35px;
+    border-radius: 8px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+  .card-block > span {
+    color: #919aa3;
+  }
+  :hover .card1-icon {
+    top: -25px;
+  }
+}

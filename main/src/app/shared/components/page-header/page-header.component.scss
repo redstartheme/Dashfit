@@ -1,0 +1,21 @@
+.page-header {
+  display: block;
+  margin: 20px 0px;
+
+  .breadcrumb {
+    margin: 0px;
+    padding: 0px 5px;
+  }
+}
+
+.page-title {
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+.dark {
+  .page-title {
+    color: #fff;
+  }
+}

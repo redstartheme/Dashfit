@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-content>
+    <div class="review-container">
+      <div class="d-flex justify-content-between">
+        <h2>What others think about the hotel</h2>
+        <div class="rating-summary d-flex justify-content-between">
+          <mat-icon>star</mat-icon>
+          <div class="rating-details">
+            <span class="rating-number">{{ ratingData?.averageRating }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="reviews">
+        <h4 class="f-w-500">Review</h4>
+        @for (review of ratingData?.reviews; track review) {
+          <div class="review-item">
+            <span>{{ review.stars }}</span><mat-icon>star</mat-icon>
+            <mat-progress-bar class="rating-bar" [value]="review.percentage"></mat-progress-bar>
+            <span class="review-count">{{ review.count }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

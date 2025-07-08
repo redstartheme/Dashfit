@@ -1,0 +1,14 @@
+:host ::ng-deep .card-statistic-2 {
+  .card-icon-only {
+    margin: 10px;
+  }
+
+  .card-right {
+    float: right;
+    margin: 15px 15px 15px 0px;
+
+    [dir="rtl"] & {
+      float: left;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+<div class="dialogContainer">
+  <div class="modalHeader">
+    <div class="avatarDetails">
+      <div class="modalTitle">
+        {{ dialogTitle }}
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="form-field-full" [formGroup]="cabBookingForm">
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Guest Name</mat-label>
+            <input matInput formControlName="guestName" required>
+            @if (cabBookingForm.get('guestName')?.hasError('required') || cabBookingForm.get('guestName')?.touched) {
+              <mat-error
+                >
+                Guest Name is <strong>required</strong>
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Hotel Room Number</mat-label>
+            <input matInput formControlName="hotelRoomNumber" required>
+            @if (cabBookingForm.get('hotelRoomNumber')?.hasError('required') || cabBookingForm.get('hotelRoomNumber')?.touched) {
+              <mat-error
+                >
+                Hotel Room Number is <strong>required</strong>
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Cab Model</mat-label>
+            <input matInput formControlName="cabModel">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Pickup Location</mat-label>
+            <input matInput formControlName="pickupLocation" required>
+            @if (cabBookingForm.get('pickupLocation')?.hasError('required') || cabBookingForm.get('pickupLocation')?.touched) {
+              <mat-error
+                >
+                Pickup Location is <strong>required</strong>
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Dropoff Location</mat-label>
+            <input matInput formControlName="dropoffLocation" required>
+            @if (cabBookingForm.get('dropoffLocation')?.hasError('required') || cabBookingForm.get('dropoffLocation')?.touched) {
+              <mat-error
+                >
+                Dropoff Location is <strong>required</strong>
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Pickup Date & Time</mat-label>
+            <input matInput [matDatepicker]="pickupPicker" formControlName="pickupDate">
+            <mat-datepicker-toggle matSuffix [for]="pickupPicker"></mat-datepicker-toggle>
+            <mat-datepicker #pickupPicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Dropoff Date & Time</mat-label>
+            <input matInput [matDatepicker]="dropoffPicker" formControlName="dropoffDate">
+            <mat-datepicker-toggle matSuffix [for]="dropoffPicker"></mat-datepicker-toggle>
+            <mat-datepicker #dropoffPicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Booking Status</mat-label>
+            <mat-select formControlName="bookingStatus">
+              <mat-option [value]="'Pending'">Pending</mat-option>
+              <mat-option [value]="'Confirmed'">Confirmed</mat-option>
+              <mat-option [value]="'Completed'">Completed</mat-option>
+              <mat-option [value]="'Cancelled'">Cancelled</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Driver Name</mat-label>
+            <input matInput formControlName="driverName">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Driver Contact</mat-label>
+            <input matInput formControlName="driverContact" required>
+            @if (cabBookingForm.get('driverContact')?.hasError('required') || cabBookingForm.get('driverContact')?.touched) {
+              <mat-error
+                >
+                Driver Contact is <strong>required</strong>
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [disabled]="!cabBookingForm.valid"
+            (click)="submit()">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

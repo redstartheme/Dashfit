@@ -1,0 +1,15 @@
+<ul class="p-0">
+    @for (guestList of guestLists; track guestList) {
+    <li class="lecture-list">
+        <img alt="image" class="msr-3 rounded-circle" width="40" [src]="guestList.imageUrl">
+        <div class="">
+            <div class="media-title f-s-14 f-w-500">{{ guestList.name }}</div>
+            <div class="text-job text-muted mb-0 f-s-12">{{ guestList.roomNo }}</div>
+        </div>
+        <div class="m-l-auto">
+            <div class="media-title f-s-14 f-w-500">{{ guestList.date }}</div>
+            <div class="text-job text-muted mb-0 f-s-12">{{ guestList.time }}</div>
+        </div>
+    </li>
+    }
+</ul>

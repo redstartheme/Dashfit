@@ -1,0 +1,31 @@
+<div class="dialogContainer">
+    <div class="modalHeader">
+        <div class="avatarDetails">
+            <div class="modalTitle">
+                Cancel Booking
+            </div>
+        </div>
+        <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div mat-dialog-content>
+        <p>Please provide a reason for cancelling the booking:</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="form-field-full" [formGroup]="cancelBookingsForm">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Reason</mat-label>
+                        <textarea matInput formControlName="reason"></textarea>
+                    </mat-form-field>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <div class="p-l-16 p-r-16">
+            <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
+            <button mat-button color="primary" (click)="onYesClick()">Submit</button>
+        </div>
+    </div>
+</div>

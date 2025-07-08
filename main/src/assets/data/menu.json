@@ -1,0 +1,869 @@
+{
+  "menu": [
+    {
+      "type": "devider",
+      "name": "devider-dashboards"
+    },
+    {
+      "route": "dashboard",
+      "name": "dashboard",
+      "type": "sub",
+      "icon": "space_dashboard",
+      "children": [
+        {
+          "route": "dashboard1",
+          "name": "dashboard1",
+          "type": "link"
+        },
+        {
+          "route": "dashboard2",
+          "name": "dashboard2",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "occupancy",
+      "name": "occupancy",
+      "type": "link",
+      "icon": "assignment",
+      "badge": {
+        "color": "red-500",
+        "value": "5"
+      },
+      "permissions": {
+        "only": [
+          "ADMIN"
+        ]
+      }
+    },
+    {
+      "route": "bookings",
+      "name": "bookings",
+      "type": "sub",
+      "icon": "book-open",
+      "children": [
+        {
+          "route": "all-bookings",
+          "name": "all-bookings",
+          "type": "link"
+        },
+        {
+          "route": "add-booking",
+          "name": "add-booking",
+          "type": "link"
+        },
+        {
+          "route": "edit-booking",
+          "name": "edit-booking",
+          "type": "link"
+        },
+        {
+          "route": "cancel-bookings",
+          "name": "cancel-bookings",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "rooms",
+      "name": "rooms",
+      "type": "sub",
+      "icon": "bed",
+      "children": [
+        {
+          "route": "all-rooms",
+          "name": "all-rooms",
+          "type": "link"
+        },
+        {
+          "route": "add-room",
+          "name": "add-room",
+          "type": "link"
+        },
+        {
+          "route": "edit-room",
+          "name": "edit-room",
+          "type": "link"
+        },
+        {
+          "route": "room-types",
+          "name": "room-types",
+          "type": "link"
+        },
+        {
+          "route": "room-rates",
+          "name": "room-rates",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "staffs",
+      "name": "staffs",
+      "type": "sub",
+      "icon": "people_alt",
+      "children": [
+        {
+          "route": "all-staffs",
+          "name": "all-staffs",
+          "type": "link"
+        },
+        {
+          "route": "add-staff",
+          "name": "add-staff",
+          "type": "link"
+        },
+        {
+          "route": "edit-staff",
+          "name": "edit-staff",
+          "type": "link"
+        },
+        {
+          "route": "staff-profile",
+          "name": "staff-profile",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+         "only": "ADMIN"
+      }
+    },
+    {
+      "route": "departments",
+      "name": "departments",
+      "type": "sub",
+      "icon": "dns",
+      "children": [
+        {
+          "route": "all-departments",
+          "name": "all-departments",
+          "type": "link"
+        },
+        {
+          "route": "add-department",
+          "name": "add-department",
+          "type": "link"
+        },
+        {
+          "route": "edit-department",
+          "name": "edit-department",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "housekeeping",
+      "name": "housekeeping",
+      "type": "sub",
+      "icon": "cleaning_services",
+      "children": [
+        {
+          "route": "room-cleaning",
+          "name": "room-cleaning",
+          "type": "link"
+        },
+        {
+          "route": "laundry-services",
+          "name": "laundry-services",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+     "only": "ADMIN"
+      }
+    },
+    {
+      "route": "leaves",
+      "name": "leaves",
+      "type": "sub",
+      "icon": "travel_explore",
+      "children": [
+        {
+          "route": "leave-requests",
+          "name": "leave-requests",
+          "type": "link"
+        },
+        {
+          "route": "leave-balance",
+          "name": "leave-balance",
+          "type": "link"
+        },
+        {
+          "route": "leave-types",
+          "name": "leave-types",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "cabs",
+      "name": "cabs",
+      "type": "sub",
+      "icon": "local_taxi",
+      "children": [
+        {
+          "route": "cab-list",
+          "name": "cab-list",
+          "type": "link"
+        },
+        {
+          "route": "cab-booking",
+          "name": "cab-booking",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "reports",
+      "name": "reports",
+      "type": "sub",
+      "icon": "inventory",
+      "children": [
+        {
+          "route": "stocks",
+          "name": "stocks",
+          "type": "link"
+        },
+        {
+          "route": "expense",
+          "name": "expense",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+       "only": "ADMIN"
+      }
+    },
+    {
+      "route": "emp_dashboard",
+      "name": "emp_dashboard",
+      "type": "link",
+      "icon": "airplay",
+      "permissions": {
+        "only": [
+          "EMPLOYEE"
+        ]
+      }
+    },
+    {
+      "route": "attendance",
+      "name": "emp_attendance",
+      "type": "link",
+      "icon": "inventory",
+      "permissions": {
+        "only": [
+          "EMPLOYEE"
+        ]
+      }
+    },
+    {
+      "route": "emp-leaves",
+      "name": "emp-leaves",
+      "type": "sub",
+      "icon": "assignment",
+      "children": [
+        {
+          "route": "leave-request",
+          "name": "leave-request",
+          "type": "link"
+        },
+        {
+          "route": "leave-balance",
+          "name": "leave-balance",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+       "only": "EMPLOYEE"
+      }
+    },
+    {
+      "route": "payroll",
+      "name": "payroll",
+      "type": "sub",
+      "icon": "payments",
+      "children": [
+        {
+          "route": "salary",
+          "name": "salary",
+          "type": "link"
+        },
+        {
+          "route": "bank-details",
+          "name": "bank-details",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+       "only": "EMPLOYEE"
+      }
+    },
+    {
+      "route": "shift",
+      "name": "shift",
+      "type": "link",
+      "icon": "pending_actions",
+      "permissions": {
+        "only": [
+          "EMPLOYEE"
+        ]
+      }
+    },
+    {
+      "type": "devider",
+      "name": "devider-app"
+    },
+    {
+      "route": "calendar",
+      "name": "calendar",
+      "type": "link",
+      "icon": "calendar_month"
+    },
+    {
+      "route": "task",
+      "name": "task",
+      "type": "link",
+      "icon": "task_alt"
+    },
+    {
+      "route": "contacts",
+      "name": "contacts",
+      "type": "link",
+      "icon": "contacts"
+    },
+    {
+      "route": "chat",
+      "name": "chat",
+      "type": "link",
+      "icon": "message-square"
+    },
+    {
+      "route": "email",
+      "name": "email",
+      "type": "sub",
+      "icon": "mail",
+      "children": [
+        {
+          "route": "inbox",
+          "name": "inbox",
+          "type": "link"
+        },
+        {
+          "route": "compose",
+          "name": "compose",
+          "type": "link"
+        },
+        {
+          "route": "read-mail",
+          "name": "read-mail",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "route": "support",
+      "name": "support",
+      "type": "link",
+      "icon": "headphones"
+    },
+    {
+      "route": "material",
+      "name": "material",
+      "type": "sub",
+      "icon": "copy",
+      "children": [
+        {
+          "route": "",
+          "name": "form-controls",
+          "type": "sub",
+          "children": [
+            {
+              "route": "autocomplete",
+              "name": "autocomplete",
+              "type": "link"
+            },
+            {
+              "route": "checkbox",
+              "name": "checkbox",
+              "type": "link"
+            },
+            {
+              "route": "datepicker",
+              "name": "datepicker",
+              "type": "link"
+            },
+            {
+              "route": "form-field",
+              "name": "form-field",
+              "type": "link"
+            },
+            {
+              "route": "input",
+              "name": "input",
+              "type": "link"
+            },
+            {
+              "route": "radio",
+              "name": "radio",
+              "type": "link"
+            },
+            {
+              "route": "select",
+              "name": "select",
+              "type": "link"
+            },
+            {
+              "route": "slider",
+              "name": "slider",
+              "type": "link"
+            },
+            {
+              "route": "slide-toggle",
+              "name": "slide-toggle",
+              "type": "link"
+            }
+          ]
+        },
+        {
+          "route": "",
+          "name": "navigation",
+          "type": "sub",
+          "children": [
+            {
+              "route": "menuItem",
+              "name": "menuItem",
+              "type": "link"
+            },
+            {
+              "route": "sidenav",
+              "name": "sidenav",
+              "type": "link"
+            },
+            {
+              "route": "toolbar",
+              "name": "toolbar",
+              "type": "link"
+            }
+          ]
+        },
+        {
+          "route": "",
+          "name": "layout",
+          "type": "sub",
+          "children": [
+            {
+              "route": "card",
+              "name": "card",
+              "type": "link"
+            },
+            {
+              "route": "divider",
+              "name": "divider",
+              "type": "link"
+            },
+            {
+              "route": "expansion",
+              "name": "expansion",
+              "type": "link"
+            },
+            {
+              "route": "grid-list",
+              "name": "grid-list",
+              "type": "link"
+            },
+            {
+              "route": "list",
+              "name": "list",
+              "type": "link"
+            },
+            {
+              "route": "tab",
+              "name": "tab",
+              "type": "link"
+            },
+            {
+              "route": "tree",
+              "name": "tree",
+              "type": "link"
+            },
+            {
+              "route": "drag-drop",
+              "name": "drag-drop",
+              "type": "link"
+            }
+          ]
+        },
+        {
+          "route": "",
+          "name": "buttons-indicators",
+          "type": "sub",
+          "children": [
+            {
+              "route": "button",
+              "name": "button",
+              "type": "link"
+            },
+            {
+              "route": "button-toggle",
+              "name": "button-toggle",
+              "type": "link"
+            },
+            {
+              "route": "badge",
+              "name": "badge",
+              "type": "link"
+            },
+            {
+              "route": "chips",
+              "name": "chips",
+              "type": "link"
+            },
+            {
+              "route": "progress-spinner",
+              "name": "progress-spinner",
+              "type": "link"
+            },
+            {
+              "route": "progress-bar",
+              "name": "progress-bar",
+              "type": "link"
+            },
+            {
+              "route": "ripple",
+              "name": "ripple",
+              "type": "link"
+            }
+          ]
+        },
+        {
+          "route": "",
+          "name": "popups-modals",
+          "type": "sub",
+          "children": [
+            {
+              "route": "bottom-sheet",
+              "name": "bottom-sheet",
+              "type": "link"
+            },
+            {
+              "route": "dialog",
+              "name": "dialog",
+              "type": "link"
+            },
+            {
+              "route": "snack-bar",
+              "name": "snackbar",
+              "type": "link"
+            },
+            {
+              "route": "tooltip",
+              "name": "tooltip",
+              "type": "link"
+            }
+          ]
+        }
+      ],
+      "permissions": {
+        "except": [
+          "EMPLOYEE"
+        ]
+      }
+    },
+    {
+      "route": "permissions",
+      "name": "permissions",
+      "type": "sub",
+      "icon": "shield",
+      "children": [
+        {
+          "route": "role-switching",
+          "name": "role-switching",
+          "type": "link"
+        },
+        {
+          "route": "route-guard",
+          "name": "route-guard",
+          "type": "link"
+        },
+        {
+          "route": "test",
+          "name": "test",
+          "type": "link",
+          "permissions": {
+            "only": "ADMIN"
+          }
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "forms",
+      "name": "forms",
+      "type": "sub",
+      "icon": "list_alt",
+      "children": [
+        {
+          "route": "elements",
+          "name": "form-elements",
+          "type": "link"
+        },
+        {
+          "route": "examples",
+          "name": "form-examples",
+          "type": "link"
+        },
+        {
+          "route": "wizard",
+          "name": "wizard",
+          "type": "link"
+        },
+        {
+          "route": "editors",
+          "name": "editors",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "tables",
+      "name": "tables",
+      "type": "sub",
+      "icon": "table_chart",
+      "children": [
+        {
+          "route": "basic",
+          "name": "basic",
+          "type": "link"
+        },
+        {
+          "route": "filter",
+          "name": "filter",
+          "type": "link"
+        },
+        {
+          "route": "pagination",
+          "name": "pagination",
+          "type": "link"
+        },
+        {
+          "route": "sorting",
+          "name": "sorting",
+          "type": "link"
+        },
+        {
+          "route": "expandable",
+          "name": "expandable",
+          "type": "link"
+        },
+        {
+          "route": "column-reorder",
+          "name": "column-reorder",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "charts",
+      "name": "charts",
+      "type": "sub",
+      "icon": "insights",
+      "children": [
+        {
+          "route": "apexchart",
+          "name": "apexchart",
+          "type": "link"
+        },
+        {
+          "route": "echart",
+          "name": "echart",
+          "type": "link"
+        },
+        {
+          "route": "chartjs",
+          "name": "chartjs",
+          "type": "link"
+        },
+        {
+          "route": "ngxchart",
+          "name": "ngxchart",
+          "type": "link"
+        },
+        {
+          "route": "guage",
+          "name": "guage",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+      "route": "widgets",
+      "name": "widgets",
+      "type": "sub",
+      "icon": "widgets",
+      "children": [
+        {
+          "route": "card-widget",
+          "name": "card-widget",
+          "type": "link",
+          "permissions": {
+            "only": "ADMIN"
+          }
+        },
+        {
+          "route": "chart-widget",
+          "name": "chart-widget",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "route": "profile",
+      "name": "profile",
+      "type": "sub",
+      "icon": "account_circle",
+      "children": [
+        {
+          "route": "overview",
+          "name": "overview",
+          "type": "link"
+        },
+        {
+          "route": "settings",
+          "name": "settings",
+          "type": "link",
+          "permissions": {
+            "only": "ADMIN"
+          }
+        }
+      ]
+    },
+    {
+      "route": "",
+      "name": "sessions",
+      "type": "sub",
+      "icon": "error_outline",
+      "children": [
+        {
+          "route": "403",
+          "name": "403",
+          "type": "link"
+        },
+        {
+          "route": "404",
+          "name": "404",
+          "type": "link"
+        },
+        {
+          "route": "500",
+          "name": "500",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    },
+    {
+     "route": "utilities",
+      "name": "utilities",
+      "type": "sub",
+      "icon": "tune",
+      "label": {
+        "color": "indigo-500",
+        "value": "new"
+      },
+      "permissions": {
+        "only": "ADMIN"
+      },
+      "children": [
+        {
+          "route": "css-grid",
+          "name": "css-grid",
+          "type": "link"
+        },
+        {
+          "route": "css-helpers",
+          "name": "css-helpers",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "route": "menu-level",
+      "name": "menu-level",
+      "type": "sub",
+      "icon": "unfold_more",
+      "children": [
+        {
+          "route": "level-1-1",
+          "name": "level-1-1",
+          "type": "sub",
+          "children": [
+            {
+              "route": "level-2-1",
+              "name": "level-2-1",
+              "type": "sub",
+              "children": [
+                {
+                  "route": "level-3-1",
+                  "name": "level-3-1",
+                  "type": "sub",
+                  "children": [
+                    {
+                      "route": "level-4-1",
+                      "name": "level-4-1",
+                      "type": "link"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "route": "level-2-2",
+              "name": "level-2-2",
+              "type": "link"
+            }
+          ]
+        },
+        {
+          "route": "level-1-2",
+          "name": "level-1-2",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "only": "ADMIN"
+      }
+    }
+  ]
+}

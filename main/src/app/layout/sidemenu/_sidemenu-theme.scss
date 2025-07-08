@@ -1,0 +1,81 @@
+@use "sass:color";
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin theme($theme) {
+  $is-dark-theme: map.get($theme, theme-type);
+  $primary: mat.get-theme-color($theme, primary, 50);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+
+  .sidemenu {
+    > .menu-item {
+      > .menu-heading {
+        color: map.get($foreground, text);
+
+        &:hover,
+        &:focus {
+          // background: mat.get-color-from-palette($primary, hover);
+          background: rgb(mat.get-theme-color($theme, primary), 0.07);
+        }
+      }
+
+      &.active {
+        > .menu-heading {
+          color: if(
+            $is-dark-theme,
+            color.adjust(mat.get-theme-color($theme, primary), $lightness: 25%),
+            map.get($foreground, text)
+          );
+          background-color: rgba(
+            mat.get-theme-color($theme, primary),
+            0.07
+          ) !important;
+
+          &:hover,
+          &:focus {
+            // background: mat.get-color-from-palette($primary, hover);
+            background: rgb(mat.get-theme-color($theme, primary), 0.07);
+          }
+
+          .menu-icon {
+            color: transparent;
+            background: mat.get-theme-color($theme, primary);
+            background-clip: text;
+          }
+        }
+      }
+
+      &.expanded {
+        background: map.get($background, hover);
+        padding: 0px;
+      }
+      .menu-badge-color {
+        background: rgb(mat.get-theme-color($theme, primary), 0.9);
+      }
+    }
+
+    &.submenu {
+      > .menu-item {
+        &.active {
+          > .menu-heading {
+            background-color: transparent;
+
+            &:hover,
+            &:focus {
+              background: map.get($background, hover);
+            }
+          }
+        }
+
+        &.expanded {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  .customizer-title h3 {
+    color: mat.get-theme-color($theme, primary);
+  }
+}

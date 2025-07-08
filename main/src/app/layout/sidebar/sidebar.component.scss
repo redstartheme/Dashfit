@@ -1,0 +1,58 @@
+@use "../../../assets/styles/layout/variables";
+@use "../../../assets/styles/layout/breakpoints";
+
+.sidebar-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: variables.$toolbar-height-desktop;
+  padding: 0 8px;
+  overflow: hidden;
+
+  @include breakpoints.bp-lt(small) {
+    & {
+      height: variables.$toolbar-height-mobile;
+    }
+  }
+
+  // Colorful
+  .header-white & {
+    background-color: white;
+  }
+}
+
+.sidebar-main {
+  height: calc(100% - #{variables.$toolbar-height-desktop});
+  overflow: auto;
+
+  @include breakpoints.bp-lt(small) {
+    & {
+      height: calc(100% - #{variables.$toolbar-height-mobile});
+    }
+  }
+}
+
+.app-branding {
+  width: 100%;
+  text-align: center;
+}
+.menu-collapse {
+  display: inline-block;
+  transform: rotate(270deg);
+  transition: 500ms ease all;
+  [dir="rtl"] & {
+    transform: rotate(90deg);
+  }
+}
+.menu-expand {
+  display: inline-block;
+  transform: rotate(90deg);
+  transition: 500ms ease all;
+  [dir="rtl"] & {
+    transform: rotate(270deg);
+  }
+}

@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Room Availability</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="room-availability-card">
+            <div class="p-8">
+                <div class="room-availability-progress">
+                    <div class="progress-bar occupied" [ngStyle]="{'width': occupiedPercentage + '%'}"></div>
+                    <div class="progress-bar reserved" [ngStyle]="{'width': reservedPercentage + '%'}"></div>
+                    <div class="progress-bar available" [ngStyle]="{'width': availablePercentage + '%'}"></div>
+                    <div class="progress-bar not-ready" [ngStyle]="{'width': notReadyPercentage + '%'}"></div>
+                </div>
+                <div class="room-availability-stats">
+                    <div class="stat-item occupied-label">
+                        <span class="stat-label">Occupied</span>
+                        <span class="stat-value">{{ occupied }}</span>
+                    </div>
+                    <div class="stat-item reserved-label">
+                        <span class="stat-label">Reserved</span>
+                        <span class="stat-value">{{ reserved }}</span>
+                    </div>
+                    <div class="stat-item available-label">
+                        <span class="stat-label">Available</span>
+                        <span class="stat-value">{{ available }}</span>
+                    </div>
+                    <div class="stat-item not-ready-label">
+                        <span class="stat-label">Not Ready</span>
+                        <span class="stat-value">{{ notReady }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

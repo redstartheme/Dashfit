@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Average Profit</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="kcal">
+            <h1>$3,785 <span>k</span></h1>
+            <p class="m-0">Avg. per month</p>
+        </div>
+
+        <div class="chart">
+            <apx-chart [series]="energyChartOptions.series" [chart]="energyChartOptions.chart"
+                [dataLabels]="energyChartOptions.dataLabels" [plotOptions]="energyChartOptions.plotOptions"
+                [xaxis]="energyChartOptions.xaxis" [yaxis]="energyChartOptions.yaxis"
+                [tooltip]="energyChartOptions.tooltip" [grid]="energyChartOptions.grid">
+            </apx-chart>
+        </div>
+    </mat-card-content>
+</mat-card>

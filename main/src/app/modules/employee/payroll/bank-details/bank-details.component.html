@@ -1,0 +1,89 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Bank Details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="bankDetailsForm!" (ngSubmit)="onSubmit()" class="form-field-full">
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Account Holder Name</mat-label>
+            <input matInput formControlName="accountHolderName" />
+            @if (bankDetailsForm?.get('accountHolderName')?.hasError('required')) {
+              <mat-error>
+                Account holder name is required.
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Account Number</mat-label>
+            <input matInput formControlName="accountNumber" />
+            @if (bankDetailsForm?.get('accountNumber')?.hasError('required')) {
+              <mat-error>
+                Account number is required.
+              </mat-error>
+            }
+            @if (bankDetailsForm?.get('accountNumber')?.hasError('pattern')) {
+              <mat-error>
+                Invalid account number format.
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Bank Name</mat-label>
+            <input matInput formControlName="bankName" />
+            @if (bankDetailsForm?.get('bankName')?.hasError('required')) {
+              <mat-error>
+                Bank name is required.
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Branch</mat-label>
+            <input matInput formControlName="branch" />
+            @if (bankDetailsForm?.get('branch')?.hasError('required')) {
+              <mat-error>
+                Branch is required.
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>IFSC Code</mat-label>
+            <input matInput formControlName="ifscCode" />
+            @if (bankDetailsForm?.get('ifscCode')?.hasError('required')) {
+              <mat-error>
+                IFSC code is required.
+              </mat-error>
+            }
+            @if (bankDetailsForm?.get('ifscCode')?.hasError('pattern')) {
+              <mat-error>
+                Invalid IFSC code format.
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" type="submit"
+        [disabled]="!bankDetailsForm?.valid">Submit</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

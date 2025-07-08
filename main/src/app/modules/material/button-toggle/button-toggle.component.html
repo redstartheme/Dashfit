@@ -1,0 +1,123 @@
+<app-page-header></app-page-header>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Single button toggle</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-button-toggle>Yes</mat-button-toggle>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Button toggle appearance</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Default appearance:
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="bold">Bold</mat-button-toggle>
+        <mat-button-toggle value="italic">Italic</mat-button-toggle>
+        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      </mat-button-toggle-group>
+    </p>
+
+    <p>
+      Legacy appearance:
+      <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="bold">Bold</mat-button-toggle>
+        <mat-button-toggle value="italic">Italic</mat-button-toggle>
+        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      </mat-button-toggle-group>
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Exclusive selection</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-button-toggle-group #group="matButtonToggleGroup">
+      <mat-button-toggle value="left" aria-label="Text align left">
+        <mat-icon>format_align_left</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="center" aria-label="Text align center">
+        <mat-icon>format_align_center</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="right" aria-label="Text align right">
+        <mat-icon>format_align_right</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="justify" disabled aria-label="Text align justify">
+        <mat-icon>format_align_justify</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <div class="example-selected-value">Selected value: {{group.value}}</div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Button-toggles with forms</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <h4>Button Toggle inside of a Template-driven form</h4>
+      <mat-button-toggle-group [(ngModel)]="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="bold">Bold</mat-button-toggle>
+        <mat-button-toggle value="italic">Italic</mat-button-toggle>
+        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      </mat-button-toggle-group>
+      <p>Chosen value is {{fontStyle}}</p>
+    </section>
+
+    <section>
+      <h4>Button Toggle inside of a Reactive form</h4>
+      <mat-button-toggle-group [formControl]="fontStyleControl" aria-label="Font Style">
+        <mat-button-toggle value="bold">Bold</mat-button-toggle>
+        <mat-button-toggle value="italic">Italic</mat-button-toggle>
+        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      </mat-button-toggle-group>
+      <p>Chosen value is {{fontStyleControl.value}}</p>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Multi-selection button toggle group</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-button-toggle-group multiple aria-label="Groceries">
+        <mat-button-toggle>Flour</mat-button-toggle>
+        <mat-button-toggle>Eggs</mat-button-toggle>
+        <mat-button-toggle>Sugar</mat-button-toggle>
+        <mat-button-toggle>Milk</mat-button-toggle>
+      </mat-button-toggle-group>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Vertical button toggle group</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-button-toggle-group multiple [vertical]="true" aria-label="Groceries">
+        <mat-button-toggle>Flour</mat-button-toggle>
+        <mat-button-toggle>Eggs</mat-button-toggle>
+        <mat-button-toggle>Sugar</mat-button-toggle>
+        <mat-button-toggle>Milk</mat-button-toggle>
+      </mat-button-toggle-group>
+    </section>
+    <div class="alert alert-primary m-t-16">
+      If you want more examples please visit angular material design components <a
+        href="https://material.angular.io/components/button-toggle/examples" target="_blank">here</a>
+    </div>
+  </mat-card-content>
+</mat-card>

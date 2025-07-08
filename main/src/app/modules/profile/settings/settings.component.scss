@@ -1,0 +1,49 @@
+.uploadImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .avatarDetails {
+    height: 100px;
+    width: 100px;
+
+    img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+    }
+    #fileInput {
+      display: none;
+    }
+    .hoverable {
+      height: 100px;
+    }
+  }
+}
+.personalDetails {
+  .feather {
+    height: 20px !important;
+    width: 20px !important;
+    fill: rgba(75, 75, 90, 0.1215686275) !important;
+  }
+}
+.securityDetails {
+  .feather {
+    height: 20px !important;
+    width: 20px !important;
+    fill: rgba(75, 75, 90, 0.1215686275) !important;
+  }
+}
+.securityPreference {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  &.border-bottom {
+    border-bottom: 1px solid #bfcde3;
+  }
+}
+.dark {
+  .profilePostHeader .userDetails .userName {
+    color: #bfcde3;
+  }
+}

@@ -1,0 +1,69 @@
+@use "@angular/material" as mat;
+.progress-bar-extra-small {
+  @include mat.progress-bar-overrides(
+    (
+      track-height: 5px,
+      active-indicator-height: 5px,
+    )
+  );
+}
+.progress-bar-small {
+  @include mat.progress-bar-overrides(
+    (
+      track-height: 10px,
+      active-indicator-height: 10px,
+    )
+  );
+}
+.progress-bar-medium {
+  @include mat.progress-bar-overrides(
+    (
+      track-height: 15px,
+      active-indicator-height: 15px,
+    )
+  );
+}
+.progress-bar-big {
+  @include mat.progress-bar-overrides(
+    (
+      track-height: 20px,
+      active-indicator-height: 20px,
+    )
+  );
+}
+
+.progress-orange {
+  @include mat.progress-bar-overrides(
+    (
+      active-indicator-color: #ffa500,
+    )
+  );
+}
+.progress-olive {
+  @include mat.progress-bar-overrides(
+    (
+      active-indicator-color: #808000,
+    )
+  );
+}
+.progress-purple {
+  @include mat.progress-bar-overrides(
+    (
+      active-indicator-color: #6d00a8,
+    )
+  );
+}
+.progress-green {
+  @include mat.progress-bar-overrides(
+    (
+      active-indicator-color: #00dc6a,
+    )
+  );
+}
+.progress-red {
+  @include mat.progress-bar-overrides(
+    (
+      active-indicator-color: #ff0000,
+    )
+  );
+}

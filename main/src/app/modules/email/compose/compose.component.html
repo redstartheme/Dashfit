@@ -1,0 +1,136 @@
+<app-page-header></app-page-header>
+<div class="row">
+    <div class="col-sm-3">
+        <mat-card>
+            <mat-card-content>
+                <div id="mail-nav">
+                    <button mat-flat-button color="primary" class="m-b-16">COMPOSE</button>
+                    <ul class="" id="mail-folders">
+                        <li class="active">
+                            <a class="emainMenuIcon"><mat-icon>inbox</mat-icon>Inbox
+                                <span class="float-end">6</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="emainMenuIcon"><mat-icon class="material-icons-outlined">send</mat-icon>Sent</a>
+                        </li>
+                        <li>
+                            <a class="emainMenuIcon"><mat-icon class="material-icons-outlined">
+                                    star_border</mat-icon>Important</a>
+                        </li>
+                        <li>
+                            <a class="emainMenuIcon"><mat-icon
+                                    class="material-icons-outlined">folder</mat-icon>Draft</a>
+                        </li>
+                        <li>
+                            <a class="emainMenuIcon"><mat-icon
+                                    class="material-icons-outlined">delete_outline</mat-icon>Bin</a>
+                        </li>
+
+                        <li>
+                            <a class="emainMenuIcon"><mat-icon
+                                    class="material-icons-outlined">error_outline</mat-icon>Spam</a>
+                        </li>
+                    </ul>
+                    <h6 class="b-b p-10 f-s-14 text-strong">Labels</h6>
+                    <ul class="" id="mail-labels">
+                        <li>
+                            <a><mat-icon class="material-icons-outlined text-red">local_offer</mat-icon>Family</a>
+                        </li>
+                        <li>
+                            <a><mat-icon class="material-icons-outlined text-blue">local_offer</mat-icon>Work</a>
+                        </li>
+                        <li>
+                            <a><mat-icon class="material-icons-outlined text-orange">local_offer</mat-icon>Shop</a>
+                        </li>
+                        <li>
+                            <a><mat-icon
+                                    class="material-icons-outlined text-purple">local_offer</mat-icon>Themeforest</a>
+                        </li>
+                        <li>
+                            <a><mat-icon class="material-icons-outlined text-green">local_offer</mat-icon>Google</a>
+                        </li>
+                    </ul>
+                    <h6 class="b-b p-10 f-s-14 text-strong">Online</h6>
+                    <ul class="online-user" id="online-offline">
+                        <li>
+                            <a><i class="material-icons text-green" title="Online">brightness_1</i>Sachin</a>
+                        </li>
+                        <li>
+                            <a>
+                                <i class="material-icons text-indigo" title="Off Line">brightness_1</i>John
+                                Smith
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <i class="material-icons text-orange" title="Away">brightness_1</i>Askay</a>
+                        </li>
+                        <li>
+                            <a>
+                                <i class="material-icons text-indigo" title="Off Line">brightness_1</i>Dhavan</a>
+                        </li>
+                        <li>
+                            <a>
+                                <i class="material-icons text-indigo" title="Off Line">brightness_1</i>Lee</a>
+                        </li>
+                    </ul>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-sm-9">
+        <mat-card>
+            <mat-card-content>
+                <div class="boxs mail_listing">
+                    <div class="inbox-center table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th colspan="1">
+                                        <div class="inbox-header">
+                                            Compose New Message
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form class="form-field-full">
+                                <div class="form-line">
+                                    <mat-form-field class="example-full-width" appearance="outline">
+                                        <mat-label>TO</mat-label>
+                                        <input matInput id="email_address">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-line">
+                                    <mat-form-field class="example-full-width" appearance="outline">
+                                        <mat-label>Subject</mat-label>
+                                        <input matInput id="subject">
+                                    </mat-form-field>
+                                </div>
+                                <div class="NgxEditor__Wrapper">
+                                    <ngx-editor-menu [editor]="editor!" [toolbar]="toolbar!"> </ngx-editor-menu>
+                                    <ngx-editor [editor]="editor!" [placeholder]="'Type here...'"
+                                        class="NgxEditorStyles"></ngx-editor>
+                                </div>
+                                <div class="compose-editor m-t-24">
+                                    <div id="summernote"></div>
+                                    <input type="file" class="default" multiple>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="m-t-24 m-b-20">
+                                <button mat-flat-button color="primary" class="msr-2">Send</button>
+                                <button mat-flat-button color="warn">Discard</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

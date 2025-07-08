@@ -1,0 +1,27 @@
+.dark {
+  .owl-dt-calendar-table {
+    .owl-dt-calendar-cell {
+      color: #96a2b4;
+    }
+    .owl-dt-calendar-header {
+      color: #96a2b4;
+    }
+  }
+  .owl-dt-container {
+    background: #1a202e;
+  }
+  .owl-dt-timer-content .owl-dt-timer-input {
+    border: 1px solid #717070;
+    background-color: #1a202e;
+    color: #96a2b4;
+  }
+  .owl-dt-container-buttons,
+  .owl-dt-timer-divider,
+  .owl-dt-calendar-control,
+  .owl-dt-control-arrow-button svg {
+    color: #96a2b4;
+  }
+  .mat-mdc-checkbox label {
+    color: #96a2b4;
+  }
+}

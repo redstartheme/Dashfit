@@ -1,0 +1,6 @@
+<div class="page-header-inner d-flex justify-content-between">
+  <h1 class="page-title">{{title | translate}} <small>{{subtitle}}</small></h1>
+  @if (!hideBreadcrumb) {
+  <app-breadcrumb [nav]="nav"></app-breadcrumb>
+  }
+</div>

@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Room Status</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="booking-status">
+            <div style="height: 180px;">
+                <apx-chart [series]="bookingGaugeOptions.series!" [chart]="bookingGaugeOptions.chart!"
+                    [plotOptions]="bookingGaugeOptions.plotOptions!" [labels]="bookingGaugeOptions.labels!"
+                    [fill]="bookingGaugeOptions.fill!" [grid]="bookingGaugeOptions.grid!" class="apex-pie-center">
+                </apx-chart>
+            </div>
+
+            <!-- Legend -->
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="dot check-in"></span>
+                    <span>Check In</span>
+                </div>
+                <div class="legend-item">
+                    <span class="dot check-out"></span>
+                    <span>Check Out</span>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <span class="percentage m-2">{{ percentage }}</span>
+                <span class="footer-text">{{ footerText }}</span>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

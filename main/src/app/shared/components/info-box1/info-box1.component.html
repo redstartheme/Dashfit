@@ -1,0 +1,22 @@
+<div class="info-box1" [ngClass]="cardClass">
+    <div class="card-statistic-3">
+        <div class="card-icon card-icon-large">
+            <i class="material-icons">
+                {{ iconClass }}
+            </i>
+        </div>
+        <div class="card-content">
+            <p class="card-title">{{ title }}</p>
+            <span class="data">{{ value }}</span>
+            <mat-progress-bar class="progress" mode="determinate" [value]="progressValue"
+                [color]="getProgressBarColor(progressValue)">
+            </mat-progress-bar>
+            <p class="m-b-0 text-sm">
+                <span class="mr-2"><i class="material-icons f-s-14">
+                        arrow_upward
+                    </i> {{ percentageChange }}%</span>
+                <span class="text-nowrap"> Since last month</span>
+            </p>
+        </div>
+    </div>
+</div>

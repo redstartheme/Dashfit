@@ -1,0 +1,140 @@
+<div class="dialogContainer">
+  <div class="modalHeader">
+    <div class="avatarDetails">
+      <div class="modalTitle">
+        {{dialogTitle}}
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="form-field-full" [formGroup]="expenseForm">
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Invoce No</mat-label>
+            <input matInput formControlName="invoiceNo" required>
+            @if (expenseForm.get('invoiceNo')?.hasError('required') || expenseForm.get('invoiceNo')?.touched) {
+            <mat-error>
+              Please enter a valid Invoce No
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            @if (expenseForm.get('date')?.hasError('required')) {
+            <mat-error>
+              Please select date
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Expense</mat-label>
+            <input matInput formControlName="expense" required>
+            @if (expenseForm.get('expense')?.hasError('required') || expenseForm.get('expense')?.touched) {
+            <mat-error>
+              Please enter a valid Expense Details
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Expense By</mat-label>
+            <input matInput formControlName="name" required>
+            @if (expenseForm.get('name')?.hasError('required') || expenseForm.get('name')?.touched) {
+            <mat-error>
+              Please enter a valid Name
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Amount</mat-label>
+            <input matInput formControlName="amount">
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>attach_money</mat-icon>
+            @if (expenseForm.get('amount')?.hasError('required')) {
+            <mat-error>
+              Amount is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Payment Mode</mat-label>
+            <mat-select formControlName="pmode" required>
+              <mat-option [value]="'Cash'">
+                Cash
+              </mat-option>
+              <mat-option [value]="'Cheque'">
+                Cheque
+              </mat-option>
+              <mat-option [value]="'Credit Card'">
+                Credit Card
+              </mat-option>
+            </mat-select>
+            @if (expenseForm.get('pmode')?.hasError('required')) {
+            <mat-error>
+              Status Name is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" required>
+              <mat-option [value]="'Paid'">
+                Paid
+              </mat-option>
+              <mat-option [value]="'Unpaid'">
+                Unpaid
+              </mat-option>
+            </mat-select>
+            @if (expenseForm.get('status')?.hasError('required')) {
+            <mat-error>
+              Status is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Paid To</mat-label>
+            <input matInput formControlName="paidTo" required>
+            @if (expenseForm.get('paidTo')?.hasError('required') || expenseForm.get('paidTo')?.touched) {
+            <mat-error>
+              Please enter a valid Paid To Details
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [disabled]="!expenseForm.valid" (click)="submit()">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

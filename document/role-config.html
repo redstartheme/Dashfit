@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Luxuria- Hotel Admin Dashboard Template </title>
+    <!-- Favicon-->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Plugins Core Css -->
+    <link href="assets/css/app.min.css" rel="stylesheet">
+
+    <!-- Custom Css -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <link href="assets/css/prism.min.css" rel="stylesheet" />
+
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="assets/css/styles/theme-white.css" rel="stylesheet" />
+</head>
+
+<body class="menu_dark theme-white logo-black submenu-closed">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30">
+                <img class="loading-img-spin" src="assets/images/loading.png" width="20" height="20" alt="admin">
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" /> <span
+                        class="logo-name">Luxuria</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown user_profile">
+                        <p class="col-blue m-r-20">V 2.0.0</p>
+                    </li>
+                    <li class="dropdown user_profile m-r-20">
+                        <form
+                            action="https://themeforest.net/item/luxuria-angular-19-material-design-admin-dashboar-template/55878551/comments"
+                            method="get" target="_blank">
+                            <button type="submit" class="btn bg-blue waves-effect">Support</button>
+                        </form>
+                    </li>
+                    <li class="dropdown user_profile m-r-20">
+                        <form
+                            action="https://themeforest.net/item/luxuria-angular-19-material-design-admin-dashboar-template/55878551"
+                            method="get" target="_blank">
+                            <button type="submit" class="btn bg-orange waves-effect">Buy
+                                Now</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li>
+                        <a href="index.html">
+                            <i class="material-icons">home</i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="intro.html">
+                            <i class="material-icons">info</i>
+                            <span>Introductions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="install.html">
+                            <i class="material-icons">build</i>
+                            <span>Installation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="folder-structure.html">
+                            <i class="material-icons">folder</i>
+                            <span>Folder Structure</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="layout-settigs.html">
+                            <i class="material-icons">devices</i>
+                            <span>Layout Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="start-up.html">
+                            <i class="material-icons">select_all</i>
+                            <span>Start Up </span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="material-icons">people</i>
+                            <span>Role</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="role-info.html">About Role</a>
+                            </li>
+                            <li class="active">
+                                <a href="role-config.html">Role Configurations</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="sidebar-menu.html">
+                            <i class="material-icons">chrome_reader_mode</i>
+                            <span>Sidebar Menu</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="material-icons">equalizer</i>
+                            <span>Charts</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="echart.html">Echart Chart</a>
+                            </li>
+
+                            <li>
+                                <a href="apex.html">Apex Chart</a>
+                            </li>
+                            <li>
+                                <a href="chartjs.html">Chart js</a>
+                            </li>
+                            <li>
+                                <a href="gauge-chart.html">Gauge Chart</a>
+                            </li>
+                            <li>
+                                <a href="ngx-chart.html">ngx-chart</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="calendar.html">
+                            <i class="material-icons">event</i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="helpers.html">
+                            <i class="material-icons">format_paint</i>
+                            <span>Helpers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="grid-class.html">
+                            <i class="material-icons">view_list</i>
+                            <span>Grid Class</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="credits.html">
+                            <i class="material-icons">thumb_up</i>
+                            <span>Credits</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="changelog.html">
+                            <i class="material-icons">watch_later</i>
+                            <span>Changelog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="support.html">
+                            <i class="material-icons">local_phone</i>
+                            <span>Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row clearfix" id="line1">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Config</strong> </h2>
+                        </div>
+                        <div class="body">
+                            <div class="card-body">
+                                <p>In the Luxuria template, all role configuration are located in the
+                                    <code>assets/data</code>
+                                    directory. This documentation provides a detailed overview of the users.json file
+                                    structure, which is used to define user roles and their associated permissions.
+                                </p>
+                                <h4>1. users.json</h4>
+                                <p>The users.json file contains an array of user objects, each representing a unique
+                                    user profile. Below is a breakdown of the JSON structure:</p>
+                                <pre class=" language-typescript">
+                         	<code>
+{
+    "id": 3,
+    "username": "customer",
+    "password": "customer",
+    "name": "customer",
+    "email": "customer@gmail.com",
+    "role": [
+        {
+        "name": "CUSTOMER",
+        "priority": 3
+        }
+    ],
+    "permissions": ["canAdd", "canEdit", "canRead"],
+    "avatar": "./assets/images/avatars/customer.jpg",
+    "refresh_token": true
+}
+							</code>
+						</pre>
+                                <br>
+                                <h5>User Object Properties</h5>
+                                <table class="table table-bordered m-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%;"><i class="ti-file"></i> Options</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>id</code></td>
+                                            <td>A unique identifier for the user. Each user must have a distinct ID.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>username</code></td>
+                                            <td>The username that the user will use to log in to the system.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>password</code></td>
+                                            <td>The user's password. Ensure to use secure practices for storing and
+                                                managing passwords.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>name</code></td>
+                                            <td>The full name of the user, which may be displayed in the user interface.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>email</code></td>
+                                            <td>The email address associated with the user. This can be used for
+                                                notifications and password recovery.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>role</code></td>
+                                            <td>An array of role objects that define the user’s role(s) in the system.
+                                                Each role object contains:<ul>
+                                                    <li><strong>name</strong>: The name of the role (e.g., CUSTOMER,
+                                                        ADMIN).</li>
+                                                    <li><strong>priority</strong>: A priority value that can be used to
+                                                        determine role hierarchy or access levels.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>permissions</code></td>
+                                            <td>A list of permissions granted to the user. Common permissions include:
+                                                <ul>
+                                                    <li><code>canAdd</code>: Permission to add new records.</li>
+                                                    <li><code>canEdit</code>: Permission to edit existing records.</li>
+                                                    <li><code>canRead</code>: Permission to read/view records.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>avatar</code></td>
+                                            <td>A path to the user's avatar image. This image will be displayed in the
+                                                user interface.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>refresh_token</code></td>
+                                            <td>A flag indicating whether a refresh token is enabled for the user. This
+                                                is used in authentication processes to maintain user sessions.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-body">
+                                <h4>2. menu.json</h4>
+                                <p>The sidebar menu in the Luxuria template is configured using a JSON structure that
+                                    defines the properties and permissions for each menu entry. This documentation
+                                    provides an overview of how to add new entries for pages in the sidebar menu.</p>
+                                <pre class=" language-typescript">
+                         	<code>
+{
+    "route": "cust_dashboard",
+    "name": "cust_dashboard",
+    "type": "link",
+    "icon": "airplay",
+    "permissions": {
+        "only": [
+            "CUSTOMER"
+        ],
+    }
+}
+							</code>
+						</pre><br>
+                                <h5>Sidebar Menu Entry Structure</h5>
+                                <p>Each entry in the sidebar menu is represented as a JSON object. Below is a breakdown
+                                    of the properties used in a typical sidebar menu entry:</p>
+                                <br>
+                                <h5>Properties</h5>
+                                <table class="table table-bordered m-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%;"><i class="ti-file"></i> Options</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>route</code></td>
+                                            <td>The route name that corresponds to the page. This is used for navigation
+                                                within the application.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>name</code></td>
+                                            <td>The display name of the menu item. This is what users will see in the
+                                                sidebar.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>type</code></td>
+                                            <td>Indicates the type of menu item. Common types include "link" for
+                                                navigation links.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>icon</code></td>
+                                            <td>The icon associated with the menu item. This is typically a string
+                                                representing the icon's name, which will be displayed alongside the menu
+                                                item.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>permissions</code></td>
+                                            <td>An object that defines the permissions required to view the menu item.
+                                                This includes:<ul>
+                                                    <li><strong>only</strong>: An array of roles that are allowed to
+                                                        access this menu item. If the user’s role matches any of the
+                                                        roles listed, the menu item will be displayed.</li>
+                                                    <li><strong>except </strong>: A role or array of roles that are
+                                                        explicitly denied access to this menu item. If the user’s role
+                                                        matches any of the roles listed in this field, the menu item
+                                                        will not be displayed.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <h5>Explanation of Example Entry</h5>
+                                <table class="table table-bordered m-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%;"><i class="ti-file"></i> Options</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>route</code></td>
+                                            <td><code>"cust_dashboard"</code> - This is the route name for the customer
+                                                dashboard page.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>name</code></td>
+                                            <td><code>"cust_dashboard"</code> - This is the display name that will
+                                                appear in the sidebar.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>type</code></td>
+                                            <td><code>"link"</code> - This indicates that this menu item is a
+                                                navigational link.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>icon</code></td>
+                                            <td><code>"airplay"</code> - This specifies the icon that will be shown next
+                                                to the menu item.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>permissions</code></td>
+                                            <td>An object that defines the permissions for this menu item:<ul>
+                                                    <li><strong>only</strong>: <code>["CUSTOMER"]</code> - This
+                                                        restricts visibility of the menu item to users with the
+                                                        "CUSTOMER" role only.</li>
+                                                    <li><strong>except</strong>: <code>"GUEST"</code> - This specifies
+                                                        that users with the "GUEST" role will not have access to this
+                                                        menu item.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <h5>Adding New Pages to the Sidebar Menu</h5>
+                                <p>To add a new page to the sidebar menu, create a new JSON object with the required
+                                    properties as shown in the example above. Ensure that the route, name, type, icon,
+                                    and permissions are properly defined to reflect the new page and its accessibility.
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <h4>3. app.routes.ts</h4>
+                                <p>In the Luxuria template, the routing configuration for the application is defined in
+                                    the app.routes.ts file. This documentation provides an overview of how to configure
+                                    routes, including authentication and access control for specific roles.</p>
+                                <pre class=" language-typescript">
+                                    <code>
+{
+    path: 'cust_dashboard',
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+        import('../modules/customer/dashboard/dashboard.routes').then(
+        (m) => m.DASHBOARD_ROUTE
+        ),
+    data: {
+        role: ['ADMIN', 'CUSTOMER'],
+    },
+},
+                                   </code>
+                               </pre>
+                                <br>
+                                <h5>Route Configuration Structure</h5>
+                                <p>Each route in Angular is defined as an object that includes various properties to
+                                    control navigation and access. Below is a breakdown of the properties used in a
+                                    typical route configuration.</p>
+                                <br>
+                                <h5>Properties</h5>
+                                <table class="table table-bordered m-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%;"><i class="ti-file"></i> Options</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>path</code></td>
+                                            <td>The URL path associated with the route. This is the path that users will
+                                                navigate to in the application.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>canActivate</code></td>
+                                            <td>An array of guards that control whether a route can be activated. This
+                                                is typically used for authentication and authorization checks.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>loadChildren</code></td>
+                                            <td>A function that dynamically loads a module when the route is activated.
+                                                This is useful for lazy loading features to improve application
+                                                performance.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>data</code></td>
+                                            <td>An object that can hold additional metadata for the route. This can
+                                                include roles or other parameters that are relevant for access control.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <h5>Explanation of Example Route</h5>
+                                <table class="table table-bordered m-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%;"><i class="ti-file"></i> Options</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>path</code></td>
+                                            <td><code>'cust_dashboard'</code> - This defines the URL path for the
+                                                customer dashboard. Users will navigate to this path to access the
+                                                dashboard.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>canActivate</code></td>
+                                            <td><code>[AuthGuard]</code> - This specifies that the
+                                                <code>AuthGuard</code> service will be used to determine if the user can
+                                                activate this route. This ensures that only authenticated users can
+                                                access the dashboard.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>loadChildren</code></td>
+                                            <td>This function dynamically imports the <code>DASHBOARD_ROUTE</code> from
+                                                the <code>dashboard.routes</code> module located in the
+                                                <code>customer</code> directory. This allows for lazy loading of the
+                                                dashboard module when the route is activated.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>data</code></td>
+                                            <td>An object that holds additional metadata for the route:<ul>
+                                                    <li><strong>role</strong>: <code>['ADMIN', 'CUSTOMER']</code> - This
+                                                        array specifies the roles that are allowed to access the
+                                                        <code>cust_dashboard</code> route. Only users with the "ADMIN"
+                                                        or "CUSTOMER" roles will be able to access this route.
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <h5>Adding New Routes</h5>
+                                <p>To add a new route, create a new object following the structure outlined above.
+                                    Ensure that the path, canActivate, loadChildren, and data properties are correctly
+                                    defined to match the new functionality and access requirements.</p>
+
+                            </div>
+                            <div class="card-body">
+                                <h4>4. auth.service.ts</h4>
+                                <p>In the Luxuria template, the auth.service.ts file is responsible for managing user
+                                    authentication and redirecting users to their respective dashboard pages based on
+                                    their roles. This documentation provides an overview of how the redirect logic is
+                                    implemented after a user logs in.</p>
+                                <pre class=" language-typescript">
+                                    <code>
+for (const role of this.tokenService.roleArray ?? []) {
+    if (role['name'] == 'ADMIN') {
+        this.router.navigate(['dashboard/dashboard1']);
+        break;
+    } else if (role['name'] == 'EMPLOYEE') {
+        this.router.navigateByUrl('emp_dashboard/dashboard1');
+        break;
+    }else if (role['name'] == 'CUSTOMER') {
+        this.router.navigateByUrl('cust_dashboard/dashboard1');
+        break;
+    }
+}
+                                   </code>
+                               </pre>
+                                <br>
+                                <h5>Breakdown of the Code</h5>
+                                <table class="table table-bordered m-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%;"><i class="ti-file"></i> Options</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Loop Through Roles</strong></td>
+                                            <td>The code iterates over the <code>roleArray</code> obtained from the
+                                                <code>tokenService</code>. This array contains the roles associated with
+                                                the logged-in user. The <code>?? []</code> operator ensures that if
+                                                <code>roleArray</code> is <code>null</code> or <code>undefined</code>,
+                                                it defaults to an empty array, preventing runtime errors.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Role Checks</strong></td>
+                                            <td>
+                                                <ul>
+                                                    <li><strong>ADMIN</strong>:
+                                                        <ul>
+                                                            <li>If the user's role is "ADMIN", the router navigates to
+                                                                the admin dashboard using
+                                                                <code>this.router.navigate(['dashboard/dashboard1']);</code>.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><strong>EMPLOYEE</strong>:
+                                                        <ul>
+                                                            <li>If the user's role is "EMPLOYEE", the router navigates
+                                                                to the employee dashboard using
+                                                                <code>this.router.navigateByUrl('emp_dashboard/dashboard1');</code>.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><strong>CUSTOMER</strong>:
+                                                        <ul>
+                                                            <li>If the user's role is "CUSTOMER", the router navigates
+                                                                to the customer dashboard using
+                                                                <code>this.router.navigateByUrl('cust_dashboard/dashboard1');</code>.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Break Statement</strong></td>
+                                            <td>The <code>break</code> statement is used to exit the loop after a
+                                                successful navigation. This prevents further checks once a matching role
+                                                has been found.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <!-- Custom Js -->
+    <script src="assets/js/admin.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+</body>
+
+</html>

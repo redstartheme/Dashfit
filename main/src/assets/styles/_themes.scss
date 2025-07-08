@@ -1,0 +1,123 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "layout-theme";
+@use "custom-themes" as customTheme;
+
+$custom-light-theme-foreground: (
+  base: #000000,
+  divider: rgba(0, 0, 0, 0.06),
+  secondary-text: rgb(96, 112, 134),
+  icon: #607086,
+  text: #1a202e,
+  divider-off: #e3eaf2,
+);
+$custom-light-theme-background: (
+  base: #ffffff,
+  status-bar: #c3cedb,
+  app-bar: #ffffff,
+  background: #edf3f9,
+  hover: rgba(152, 169, 193, 0.15),
+  dialog: #ffffff,
+  tooltip: #1a202e,
+);
+
+$custom-dark-theme-foreground: (
+  base: #ffffff,
+  divider: rgba(236, 242, 248, 0.1),
+  secondary-text: #909fb4,
+  icon: #edf3f9,
+  text: #bfcde3,
+  divider-off: rgba(255, 255, 255, 0.07),
+);
+
+$custom-dark-theme-background: (
+  base: #1a202e,
+  status-bar: #232b3e,
+  app-bar: #232b3e,
+  background: #232b3e,
+  hover: rgba(0, 0, 0, 0.2),
+  dialog: #10131a,
+  tooltip: #617187,
+);
+
+@each $theme-name, $theme-config in customTheme.$custom-themes {
+  $selector: map.get($theme-config, selector);
+
+  $_rest: (
+    secondary: map.get($theme-config, secondary),
+    neutral: map.get($theme-config, neutral),
+    neutral-variant: map.get($theme-config, neutral-variant),
+    error: map.get($theme-config, error),
+  );
+
+  $_primary: map.merge(map.get($theme-config, primary), $_rest);
+  $_tertiary: map.merge(map.get($theme-config, tertiary), $_rest);
+  $_secondary: map.merge(map.get($theme-config, secondary), $_rest);
+  $_error: map.merge(map.get($theme-config, error), $_rest);
+
+  #{$selector}.light {
+    $light-theme: mat.define-theme(
+      (
+        color: (
+          theme-type: light,
+          primary: $_primary,
+          tertiary: $_tertiary,
+        ),
+        typography: (
+          use-system-variables: true,
+          system-variables-prefix: sys,
+        ),
+        density: (
+          scale: 0,
+        ),
+      )
+    );
+
+    $light-theme: map.set(
+      $light-theme,
+      "background",
+      $custom-light-theme-background
+    );
+    $light-theme: map.set(
+      $light-theme,
+      "foreground",
+      $custom-light-theme-foreground
+    );
+    @include mat.all-component-colors($light-theme);
+    @include mat.color-variants-backwards-compatibility($light-theme);
+    @include layout-theme.theme($light-theme);
+  }
+
+  #{$selector}.dark {
+    $dark-theme: mat.define-theme(
+      (
+        color: (
+          theme-type: dark,
+          primary: $_primary,
+          tertiary: $_tertiary,
+        ),
+        typography: (
+          use-system-variables: true,
+          system-variables-prefix: sys,
+        ),
+        density: (
+          scale: 0,
+        ),
+      )
+    );
+
+    $dark-theme: map.set(
+      $dark-theme,
+      "background",
+      $custom-dark-theme-background
+    );
+    $dark-theme: map.set(
+      $dark-theme,
+      "foreground",
+      $custom-dark-theme-foreground
+    );
+    @include mat.all-component-colors($dark-theme);
+    @include mat.color-variants-backwards-compatibility($dark-theme);
+    @include layout-theme.theme($dark-theme);
+  }
+}

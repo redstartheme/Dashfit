@@ -1,0 +1,15 @@
+<div class="card info-card">
+    <div class="info-box8">
+        <i class="material-icons" [ngClass]="'bg-'+colorClass + '-500 card1-icon'">{{ icon }}</i>
+        <h2 [ngClass]="'text-'+colorClass + ' f-w-500 m-0 text-right'">{{ title }}</h2>
+        <p class="m-4 f-s-18 f-w-600 text-right">{{ value }}</p>
+        <div>
+            <i class="material-icons float-start me-1 ms-1"
+                [ngClass]="{'text-red': trendDirection === 'down', 'text-green': trendDirection === 'up'}">
+                trending_{{ trendDirection }}
+            </i>
+            <p class="float-start m-0"><span [ngClass]="trendDirection === 'down' ? 'text-orange' : 'text-green'">{{
+                    trendPercentage }}</span> {{ trendText }}</p>
+        </div>
+    </div>
+</div>

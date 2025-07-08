@@ -1,0 +1,107 @@
+<app-page-header></app-page-header>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Basic Tooltip</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <p>Mouse over or focus the button to show and hide the tooltip</p>
+      <button mat-raised-button matTooltip="This is an example of a tooltip">
+        What is this?
+      </button>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Click to trigger a tooltip</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <button class="m-12" mat-raised-button (click)="tooltip.toggle(); $event.stopPropagation()">
+        Click me.
+      </button>
+      <button mat-raised-button matTooltip="This is a tooltip that shows on click" #tooltip="matTooltip">
+        I have a tooltip
+      </button>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Different tooltip positions</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <button class="m-12" mat-raised-button matTooltip="This tooltip appears below the trigger"
+        matTooltipPosition="below">
+        Below
+      </button>
+
+      <button class="m-12" mat-raised-button matTooltip="This tooltip appears above the trigger"
+        matTooltipPosition="above">
+        Above
+      </button>
+
+      <button class="m-12" mat-raised-button matTooltip="This tooltip appears to the left of the trigger"
+        matTooltipPosition="left">
+        Left
+      </button>
+
+      <button class="m-12" mat-raised-button matTooltip="This tooltip appears to the right of the trigger"
+        matTooltipPosition="right">
+        Right
+      </button>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Delayed tooltip</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <button mat-raised-button matTooltip="This tooltip will show up after a delay" [matTooltipShowDelay]="2000">
+        What is this?
+      </button>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Tooltip with a show and hide delay</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-form-field class="example-user-input">
+        <mat-label>Show delay</mat-label>
+        <input matInput type="number" [formControl]="showDelay"
+          aria-label="Adds a delay between hovering over the button and displaying the tooltip" />
+        <mat-hint>milliseconds</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="example-user-input">
+        <mat-label>Hide delay</mat-label>
+        <input matInput type="number" [formControl]="hideDelay"
+          aria-label="Adds a delay between hovering away from the button and hiding the tooltip" />
+        <mat-hint>milliseconds</mat-hint>
+      </mat-form-field>
+
+      <button class="m-12" mat-raised-button matTooltip="Info about the action" [matTooltipShowDelay]="showDelay.value"
+        [matTooltipHideDelay]="hideDelay.value"
+        aria-label="Button that displays a tooltip with a customized delay in showing and hiding">
+        Action
+      </button>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<div class="alert alert-primary m-t-16">
+  If you want more examples please visit angular material design components
+  <a href="https://material.angular.io/components/tooltip/examples" target="_blank">here</a>
+</div>

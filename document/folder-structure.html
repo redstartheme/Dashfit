@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Luxuria- Hotel Admin Dashboard Template </title>
+    <!-- Favicon-->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Plugins Core Css -->
+    <link href="assets/css/app.min.css" rel="stylesheet">
+
+    <!-- Custom Css -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <link href="assets/css/prism.min.css" rel="stylesheet" />
+
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="assets/css/styles/theme-white.css" rel="stylesheet" />
+</head>
+
+<body class="menu_dark theme-white logo-black submenu-closed">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30">
+                <img class="loading-img-spin" src="assets/images/loading.png" width="20" height="20" alt="admin">
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" /> <span
+                        class="logo-name">Luxuria</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown user_profile">
+                        <p class="col-blue m-r-20">V 2.0.0</p>
+                    </li>
+                    <li class="dropdown user_profile m-r-20">
+                        <form
+                            action="https://themeforest.net/item/luxuria-angular-19-material-design-admin-dashboar-template/55878551/comments"
+                            method="get" target="_blank">
+                            <button type="submit" class="btn bg-blue waves-effect">Support</button>
+                        </form>
+                    </li>
+                    <li class="dropdown user_profile m-r-20">
+                        <form
+                            action="https://themeforest.net/item/luxuria-angular-19-material-design-admin-dashboar-template/55878551"
+                            method="get" target="_blank">
+                            <button type="submit" class="btn bg-orange waves-effect">Buy
+                                Now</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li>
+                        <a href="index.html">
+                            <i class="material-icons">home</i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="intro.html">
+                            <i class="material-icons">info</i>
+                            <span>Introductions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="install.html">
+                            <i class="material-icons">build</i>
+                            <span>Installation</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="folder-structure.html">
+                            <i class="material-icons">folder</i>
+                            <span>Folder Structure</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="layout-settigs.html">
+                            <i class="material-icons">devices</i>
+                            <span>Layout Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="start-up.html">
+                            <i class="material-icons">select_all</i>
+                            <span>Start Up </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="material-icons">people</i>
+                            <span>Role</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="role-info.html">About Role</a>
+                            </li>
+                            <li>
+                                <a href="role-config.html">Role Configurations</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="sidebar-menu.html">
+                            <i class="material-icons">chrome_reader_mode</i>
+                            <span>Sidebar Menu</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="material-icons">equalizer</i>
+                            <span>Charts</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="echart.html">Echart Chart</a>
+                            </li>
+
+                            <li>
+                                <a href="apex.html">Apex Chart</a>
+                            </li>
+                            <li>
+                                <a href="chartjs.html">Chart js</a>
+                            </li>
+                            <li>
+                                <a href="gauge-chart.html">Gauge Chart</a>
+                            </li>
+                            <li>
+                                <a href="ngx-chart.html">ngx-chart</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="calendar.html">
+                            <i class="material-icons">event</i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="helpers.html">
+                            <i class="material-icons">format_paint</i>
+                            <span>Helpers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="grid-class.html">
+                            <i class="material-icons">view_list</i>
+                            <span>Grid Class</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="credits.html">
+                            <i class="material-icons">thumb_up</i>
+                            <span>Credits</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="changelog.html">
+                            <i class="material-icons">watch_later</i>
+                            <span>Changelog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="support.html">
+                            <i class="material-icons">local_phone</i>
+                            <span>Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>App</strong> Folder Structure</h2>
+                        </div>
+                        <div class="body">
+                            <p>You can see following folder structure of app folder in starter template.</p>
+
+                            <pre class="language-javascript">
+                                <code>
+main/
+├── .angular
+├── node_modules
+├── src/
+|   ├── app/
+|   |   ├── core/
+|   |   ├── layout/
+|   |   ├── modules/
+|   |   ├── shared/
+|   |   ├── app.component.html
+|   |   ├── app.componentscss
+|   |   ├── app.component.spec.ts
+|   |   ├── app.component.ts
+|   |   ├── app.config.ts
+|   ├── assets/
+|   |   └── .gitkeep
+|   ├── index.html
+|   ├── main.server.ts
+|   ├── main.ts
+|   ├── styles.scss
+├── .editorconfig
+├── .gitignore
+├── angular.json
+├── eslint.config.js
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.spec.json
+</code>
+                                </pre>
+
+
+
+                            <table class="table table-bordered m-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%;"><i class="ti-file"></i> Folder</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>core</code></td>
+                                        <td>The Core Module is a module we create to define common services, models,
+                                            interceptor and guard. The
+                                            services defined in the core module are instantiated once. For more details
+                                            please scroll down.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>layout</code></td>
+                                        <td>You can find layout related modules here like header, sidebar, customizer
+                                            etc.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>modules</code></td>
+                                        <td>You can find application all modules and pages here.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>shared</code></td>
+                                        <td>We create it to define common components and other modules that we need to
+                                            import inside every other module of our application, so you do not need to
+                                            import them again and again (like the Material Components). We only need to
+                                            add the
+                                            Shared module to each module to access to common components.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Core</strong> Folder</h2>
+                        </div>
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-4">
+                                    <pre class="language-javascript">
+                                        <code>
+core/
+├── guard/
+├── interceptor/
+├── models/
+├── service/
+
+</code>
+                                </pre>
+                                </div>
+                                <div class="col-8">
+                                    <table class="table table-bordered m-0">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 20%;"><i class="ti-file"></i> Options</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>guard</code></td>
+                                                <td>This folder is used for auth guard and import guard, you can find
+                                                    related files like <code>auth.guard.ts</code> &
+                                                    <code>module-import.guard.ts</code> here.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>interceptor</code></td>
+                                                <td>You can see interfeptor files here. You can see files for error and
+                                                    token interceptor.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>models</code></td>
+                                                <td>All enum and class files for USER, SETTINGS are install here.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>service</code></td>
+                                                <td>All singleton services are placed in service directory.
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Layout</strong> Folder</h2>
+                        </div>
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-4">
+                                    <pre class="language-javascript">
+                                        <code>
+layout/
+├── admin-layout/
+├── auth-layout/
+├── customizer/
+├── footer/
+├── header/
+├── sidebar/
+├── sidebar-notice/
+├── sidemenu/
+├── topmenu/
+├── widgets
+
+</code>
+                                </pre>
+                                </div>
+                                <div class="col-8">
+                                    <table class="table table-bordered m-0">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 20%;"><i class="ti-file"></i> Options</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>admin-layout & auth-layout</code></td>
+                                                <td>Used for Seperate authentication pages and main content or admin
+                                                    pages. </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>customizer</code></td>
+                                                <td>This module is used for layout customization like theme, sidebar,
+                                                    topbar, LTR & RTL etc.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>footer</code></td>
+                                                <td>Footer module for branding.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>header</code></td>
+                                                <td>Header or Navbar module for template header.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>sidebar</code></td>
+                                                <td>Main sidebar layout which include user details and sidebar menu.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>sidebar-notice</code></td>
+                                                <td>Notification sidebar menu used for events and settings.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>sidemenu</code></td>
+                                                <td>Sidemenu module for pages router links.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>topmenu</code></td>
+                                                <td>All page router links when top layout is enabled.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>widgets</code></td>
+                                                <td>Widgets for userpanel, notification, logo etc.
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix" id="line4">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Folder</strong> Structure</h2>
+                        </div>
+                        <div class="body">
+                            <div class="header">
+                                <h2>Src Folder Structure</h2>
+                            </div>
+                            <pre class="language-javascript">
+                                <code>
+src/
+├── app/
+|   ├── app.component.html
+|   ├── app.componentscss
+|   ├── app.component.spec.ts
+|   ├── app.component.ts
+|   └── app.config.ts
+├── assets/
+|   └── .gitkeep
+├── index.html
+├── main.server.ts
+├── main.ts
+├── styles.scss
+</code>
+                                    </pre>
+                            <div class="header">
+                                <h2>root Folder Structure</h2>
+                            </div>
+                            <pre class="language-javascript">
+                                <code>
+main/
+├── .angular
+├── node_modules
+├── src/...
+├── .editorconfig
+├── angular.json
+├── .eslint.config.json
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.spec.json
+                                        </code>
+                                    </pre>
+                            <div class="header">
+                                <h2>Styles Folder Structure</h2>
+                            </div>
+                            <pre class="language-javascript">
+                                <code>
+styles/
+├── custom/
+├── grid/
+├── helpers/
+├── layout/
+├── material/
+├── plugins/
+├── _layout-themes.scss
+├── _themes.scss
+├── custom-themes.scss
+                                        </code>
+                                    </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <!-- Custom Js -->
+    <script src="assets/js/admin.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+</body>
+
+</html>

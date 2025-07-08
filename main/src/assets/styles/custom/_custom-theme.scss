@@ -1,0 +1,90 @@
+@use "sass:color";
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin theme($theme) {
+  $primary: mat.get-theme-color($theme, primary, 50);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
+  $is-dark-theme: map.get($theme, theme-type);
+
+  @if $is-dark-theme {
+    :root {
+      color-scheme: dark;
+    }
+  }
+
+  a:not(.mat-mdc-button-base) {
+    color: $primary;
+
+    &:hover {
+      color: color.adjust($primary, $lightness: 10%);
+    }
+  }
+
+  code {
+    background-color: rgba(map.get($foreground, secondary-text), 0.03);
+  }
+
+  .primaryColorBG {
+    background-color: $primary;
+  }
+  .secondaryColorBG {
+    background-color: mat.get-theme-color($theme, secondary);
+  }
+  .warnColorBG {
+    background-color: mat.get-theme-color($theme, tertiary);
+  }
+
+  // tak app
+  .task-module {
+    .mat-drawer.mat-drawer-end {
+      background: map.get($background, base);
+    }
+  }
+  // Table
+  .mat-mdc-table {
+    background: map.get(map.get($theme, background), base);
+  }
+  .mat-mdc-paginator {
+    background: map.get(map.get($theme, background), base);
+  }
+
+  // Badge
+  .primary-badge {
+    @include mat.badge-color($theme, $color-variant: primary);
+  }
+  .secondary-badge {
+    @include mat.badge-color($theme, $color-variant: secondary);
+  }
+  .tertiary-badge {
+    @include mat.badge-color($theme, $color-variant: tertiary);
+  }
+  .error-badge {
+    @include mat.badge-color($theme, $color-variant: error);
+  }
+
+  // Button
+  .primary-button {
+    @include mat.button-color($theme, $color-variant: primary);
+  }
+  .secondary-button {
+    @include mat.button-color($theme, $color-variant: secondary);
+  }
+  .tertiary-button {
+    @include mat.button-color($theme, $color-variant: tertiary);
+  }
+  .error-button {
+    @include mat.button-color($theme, $color-variant: error);
+  }
+
+  // Card
+  .mat-mdc-card {
+    background: map.get(map.get($theme, background), base);
+  }
+
+  //Contacts app
+  .contact-sidenav-container .contact-sidenav .contact-filter-menu {
+    background: map.get(map.get($theme, background), base);
+  }
+}

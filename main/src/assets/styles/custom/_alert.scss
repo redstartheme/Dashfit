@@ -1,0 +1,43 @@
+.alert {
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 14px;
+
+    a{
+        color: #ffc107 !important;
+    }
+  
+    &.alert-primary {
+      background-color: #6777ef;
+    }
+  
+    &.alert-secondary {
+      background-color: #cdd3d8;
+    }
+  
+    &.alert-success {
+      background-color: #54ca68;
+    }
+  
+    &.alert-info {
+      background-color: #3abaf4;
+    }
+  
+    &.alert-warning {
+      background-color: #ffa426;
+    }
+  
+    &.alert-danger {
+      background-color: #fc544b;
+    }
+  
+    &.alert-light {
+        background-color: #e3eaef;
+        color: #191d21;
+    }
+  
+    &.alert-dark {
+      background-color: #191d21;
+    }
+  }

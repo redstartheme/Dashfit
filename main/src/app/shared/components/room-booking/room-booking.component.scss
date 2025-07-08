@@ -1,0 +1,9 @@
+:host ::ng-deep .mat-column-guestName {
+  min-width: 180px;
+}
+:host ::ng-deep .mat-column-mobile {
+  min-width: 140px;
+}
+:host ::ng-deep .mat-column-roomNo {
+  max-width: 100px;
+}

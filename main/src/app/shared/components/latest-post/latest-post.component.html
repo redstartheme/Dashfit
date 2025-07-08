@@ -1,0 +1,19 @@
+<div class="card-block">
+  @for (post of posts; track post) {
+  <div class="row m-b-16">
+    <div class="col-auto p-12">
+      <img [src]="post.image" alt="post image" class="latest-posts-img">
+    </div>
+    <div class="col p-l-12 p-r-12">
+      <p class="f-s-16 f-w-500 m-t-0 m-b-4">{{ post.title }}</p>
+      <p class="text-muted m-t-0 m-b-8">
+        Video | {{ post.timeAgo }}
+      </p>
+      <p class="text-muted m-t-0 m-b-8">{{ post.description }}</p>
+    </div>
+  </div>
+  }
+  <div class="text-center">
+    <a href="#!" class="b-b-primary text-primary">View All Posts</a>
+  </div>
+</div>

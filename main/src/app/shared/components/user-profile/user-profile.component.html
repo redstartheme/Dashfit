@@ -1,0 +1,14 @@
+@for (user of users; track user) {
+  <div class="d-flex justify-content-between m-t-4 align-items-center cpCard">
+    <div class="d-flex flex-row followCard">
+      <img [src]="user.avatar" [alt]="user.name + ' avatar'">
+      <div class="d-flex flex-col m-l-8 m-r-8">
+        <span class="f-s-16 f-w-500">{{ user.name }}</span>
+        <small>{{ user.postCount }} posts</small>
+      </div>
+    </div>
+    <button mat-button color="primary" (click)="toggleFollow(user)">
+      {{ user.isFollowed ? 'Unfollow' : 'Follow' }}
+    </button>
+  </div>
+}

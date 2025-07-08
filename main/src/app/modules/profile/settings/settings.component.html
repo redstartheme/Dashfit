@@ -1,0 +1,523 @@
+<app-page-header></app-page-header>
+<mat-card>
+    <mat-card-header>
+        <div class="profilePostHeader w-full">
+            <div class="d-flex">
+                <img class="profile-pic" src="assets/images/avatars/avatar-3.jpg" alt="image">
+                <div class="userDetails">
+                    <p class="userName">Pooja Sharma</p>
+                    <p class="postTime">
+                        Software Engineer
+                    </p>
+                </div>
+                <div class="m-l-auto">
+                    <button mat-icon-button>
+                        <mat-icon class="text-dark-grey cursor-pointer f-s-22 m-4">help_outline</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-card-header>
+    <mat-tab-group mat-stretch-tabs="false">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="text-dark-grey cursor-pointer f-s-22 m-4">person_2</mat-icon>
+                Account
+            </ng-template>
+            <div class="m-16">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Profile Image</mat-card-title>
+                        <mat-card-subtitle>Change your profile picture from here</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="uploadImg m-t-24">
+                            <div class="avatarDetails">
+                                <label class="hoverable" for="fileInput">
+                                    <img [src]="userImg ? userImg : 'assets/images/avatars/avatar-3.jpg'" alt="image">
+                                    <div class="hover-text">Upload</div>
+                                    <div class="background"></div>
+                                </label>
+                                <input id="fileInput" type='file' (change)="onSelectFile2($event)">
+                            </div>
+                            <div class="m-t-24">
+                                <button mat-raised-button color="warn" (click)="delete()">Reset</button>
+                            </div><span class="f-s-14 m-t-24 d-block">Allowed JPG, GIF or PNG. Max size of 800K</span>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Personal Details</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="m-t-4">
+                            <form class="form-field-full personalDetails" [formGroup]="personalDetails!">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>First name</mat-label>
+                                            <span matPrefix class="p-l-8 p-r-8">
+                                                <i-feather name="user"></i-feather>
+                                            </span>
+                                            <input matInput formControlName="first" required>
+                                            @if (personalDetails?.get('first')?.hasError('required')) {
+                                            <mat-error>
+                                                First name is required
+                                            </mat-error>
+                                            }
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Last name</mat-label>
+                                            <span matPrefix class="p-l-8 p-r-8">
+                                                <i-feather name="user"></i-feather>
+                                            </span>
+                                            <input matInput formControlName="last">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Password</mat-label>
+                                            <span matPrefix class="p-l-8 p-r-8">
+                                                <i-feather class="cursor-pointer" (click)="hide = !hide"
+                                                    [name]="hide ? 'eye' : 'eye-off'"></i-feather>
+                                            </span>
+                                            <input matInput formControlName="password"
+                                                [type]="hide ? 'password' : 'text'" required>
+                                            @if (personalDetails?.get('password')?.hasError('required')) {
+                                            <mat-error>
+                                                Password is required
+                                            </mat-error>
+                                            }
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Email</mat-label>
+                                            <span matPrefix class="p-l-8 p-r-8">
+                                                <i-feather name="mail"></i-feather>
+                                            </span>
+                                            <input matInput formControlName="email" required>
+                                            @if (personalDetails?.get('email')?.hasError('required') ||
+                                            personalDetails?.get('email')?.touched) {
+                                            <mat-error>
+                                                Please enter a valid email address
+                                            </mat-error>
+                                            }
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Mobile</mat-label>
+                                            <span matPrefix class="p-l-8 p-r-8">
+                                                <i-feather name="smartphone"></i-feather>
+                                            </span>
+                                            <input type="number" matInput placeholder="1234567890"
+                                                formControlName="mobile">
+                                            @if (personalDetails?.get('mobile')?.hasError('required')) {
+                                            <mat-error>
+                                                Please enter a valid mobile
+                                            </mat-error>
+                                            }
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Address</mat-label>
+                                            <span matPrefix class="p-l-8 p-r-8">
+                                                <i-feather name="map-pin"></i-feather>
+                                            </span>
+                                            <textarea matInput formControlName="address"></textarea>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>City</mat-label>
+                                            <span matPrefix class="p-l-8 p-r-8">
+                                                <i-feather name="star"></i-feather>
+                                            </span>
+                                            <input matInput formControlName="city" required>
+                                            @if (personalDetails?.get('city')?.hasError('required')) {
+                                            <mat-error>
+                                                City name is required
+                                            </mat-error>
+                                            }
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>State</mat-label>
+                                            <span matPrefix class="p-l-8 p-r-8">
+                                                <i-feather name="award"></i-feather>
+                                            </span>
+                                            <input matInput formControlName="state" required>
+                                            @if (personalDetails?.get('state')?.hasError('required')) {
+                                            <mat-error>
+                                                State name is required
+                                            </mat-error>
+                                            }
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Country</mat-label>
+                                            <span matPrefix class="p-l-8 p-r-8">
+                                                <i-feather name="globe"></i-feather>
+                                            </span>
+                                            <mat-select formControlName="country" required>
+                                                <mat-option [value]="'India'">
+                                                    India
+                                                </mat-option>
+                                                <mat-option [value]="'Algeria'">
+                                                    Algeria
+                                                </mat-option>
+                                                <mat-option [value]="'Brazil'">
+                                                    Brazil
+                                                </mat-option>
+                                                <mat-option [value]="'Poland'">
+                                                    Poland
+                                                </mat-option>
+                                                <mat-option [value]="'Sri Lanka'">
+                                                    Sri Lanka
+                                                </mat-option>
+                                                <mat-option [value]="'Thailand'">
+                                                    Thailand
+                                                </mat-option>
+                                                <mat-option [value]="'Japan'">
+                                                    Japan
+                                                </mat-option>
+                                            </mat-select>
+                                            @if (personalDetails?.get('country')?.hasError('required')) {
+                                            <mat-error>
+                                                Country is required
+                                            </mat-error>
+                                            }
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button class="btn-space" [disabled]="!personalDetails?.valid" mat-raised-button
+                                            color="primary">Submit</button>
+                                        <button type="button" color="warn" mat-button>Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="text-dark-grey cursor-pointer f-s-22 m-4">admin_panel_settings</mat-icon>
+                Security
+            </ng-template>
+            <div class="m-16">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Change Password</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <form class="form-field-full securityDetails" [formGroup]="securityForm!">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <mat-form-field appearance="outline" floatLabel="always">
+                                        <mat-label>Old Password</mat-label>
+                                        <span matPrefix class="p-l-8 p-r-8">
+                                            <i-feather name="key"></i-feather>
+                                        </span>
+                                        <input matInput formControlName="oldPwd" [type]="oldHide ? 'password' : 'text'"
+                                            placeholder="Old Password" required>
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather class="cursor-pointer" (click)="oldHide = !oldHide"
+                                                [name]="oldHide ? 'eye' : 'eye-off'"></i-feather>
+                                        </span>
+                                        @if (securityForm?.get('oldPwd')?.hasError('required')) {
+                                        <mat-error>
+                                            Old Password is required
+                                        </mat-error>
+                                        }
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <mat-form-field appearance="outline" floatLabel="always">
+                                        <mat-label>New Password</mat-label>
+                                        <span matPrefix class="p-l-8 p-r-8">
+                                            <i-feather name="key"></i-feather>
+                                        </span>
+                                        <input matInput formControlName="newPwd" [type]="newHide ? 'password' : 'text'"
+                                            placeholder="New Password" required>
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather class="cursor-pointer" (click)="newHide = !newHide"
+                                                [name]="newHide ? 'eye' : 'eye-off'"></i-feather>
+                                        </span>
+                                        @if (securityForm?.get('newPwd')?.hasError('required')) {
+                                        <mat-error>
+                                            New Password is required
+                                        </mat-error>
+                                        }
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <mat-form-field appearance="outline" floatLabel="always">
+                                        <mat-label>Confirm Password</mat-label>
+                                        <span matPrefix class="p-l-8 p-r-8">
+                                            <i-feather name="key"></i-feather>
+                                        </span>
+                                        <input matInput formControlName="confirmPwd"
+                                            [type]="confHide ? 'password' : 'text'" placeholder="Confirm Password"
+                                            required>
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather class="cursor-pointer" (click)="confHide = !confHide"
+                                                [name]="confHide ? 'eye' : 'eye-off'"></i-feather>
+                                        </span>
+                                        @if (securityForm?.get('confirmPwd')?.hasError('required')) {
+                                        <mat-error>
+                                            Confirm Password is required
+                                        </mat-error>
+                                        }
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button class="btn-space" [disabled]="!securityForm?.valid" mat-raised-button
+                                        color="primary">Submit</button>
+                                    <button type="button" color="warn" mat-button>Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="m-t-32">
+                    <mat-card-header>
+                        <mat-card-title>Security preferences</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="securityPreference border-bottom">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">Enable 2-step authentication</div>
+                                <small class="f-s-14 text-muted"> Prevents password theft by sending you an SMS with an
+                                    authentication code for each login.. </small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked1" color="primary"></mat-slide-toggle>
+                        </div>
+
+                        <div class="securityPreference border-bottom">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">Request a password change every 3 months.</div>
+                                <small class="f-s-14 text-muted"> Ask every 6 months to reset password for increase
+                                    security.</small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked2" color="primary"></mat-slide-toggle>
+                        </div>
+
+                        <div class="securityPreference">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">Log out automatically after inactivity</div>
+                                <small class="f-s-14 text-muted"> Automatically log out users after the application is
+                                    idle.</small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked3" color="primary"></mat-slide-toggle>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="text-dark-grey cursor-pointer f-s-22 m-4">notifications</mat-icon>
+                Notification
+            </ng-template>
+            <div class="m-16">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Notification Preferences</mat-card-title>
+                        <mat-card-subtitle>With notification preferences you can manage and choose the notifications you
+                            want to receive.</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h2 class="f-w-500 m-l-16 m-r-16">Alerts</h2>
+                        <div class="securityPreference border-bottom">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">Message Notification Alert</div>
+                                <small class="f-s-14 text-muted">Get notificaton when someone message you.</small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked1" color="primary"></mat-slide-toggle>
+                        </div>
+                        <div class="securityPreference border-bottom">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">Group Notification Alert</div>
+                                <small class="f-s-14 text-muted">Get notificaton when someone message you in
+                                    group.</small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked1" color="primary"></mat-slide-toggle>
+                        </div>
+                        <div class="securityPreference border-bottom">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">Security Notification Alert</div>
+                                <small class="f-s-14 text-muted">Get notifications about your account security.</small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked1" color="primary"></mat-slide-toggle>
+                        </div>
+                        <h2 class="f-w-500 m-l-16 m-r-16">Email Notification</h2>
+                        <div class="securityPreference border-bottom">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">Comment on your post</div>
+                                <small class="f-s-14 text-muted">Email notification for comments on your post and reply
+                                    to your comment.</small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked1" color="primary"></mat-slide-toggle>
+                        </div>
+                        <div class="securityPreference border-bottom">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">When you are tagged by someone</div>
+                                <small class="f-s-14 text-muted">Email notification when someone tags you in a
+                                    comment,post or story.</small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked1" color="primary"></mat-slide-toggle>
+                        </div>
+                        <div class="securityPreference border-bottom">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">Friend Request</div>
+                                <small class="f-s-14 text-muted">Email notification when someone send you a friend
+                                    request or a request you have sent is acceepted.</small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked1" color="primary"></mat-slide-toggle>
+                        </div>
+                        <div class="securityPreference border-bottom">
+                            <div class="m-b-24">
+                                <div class="f-s-16 f-w-500">Birthday</div>
+                                <small class="f-s-14 text-muted">Email notification when your friends birthday.</small>
+                            </div>
+                            <mat-slide-toggle [(ngModel)]="isChecked1" color="primary"></mat-slide-toggle>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="text-dark-grey cursor-pointer f-s-22 m-4">link</mat-icon>
+                Connections
+            </ng-template>
+            <div class="m-16">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Add New Connection</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <form class="form-field-full securityDetails" [formGroup]="connectionForm!">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Facebook</mat-label>
+                                        <input matInput formControlName="fbItem">
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather name="facebook"></i-feather>
+                                        </span>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Slack</mat-label>
+                                        <input matInput formControlName="slackItem">
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather name="slack"></i-feather>
+                                        </span>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>GitHub</mat-label>
+                                        <input matInput formControlName="githubItem">
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather name="github"></i-feather>
+                                        </span>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>X</mat-label>
+                                        <input matInput formControlName="xItem">
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather name="twitter"></i-feather>
+                                        </span>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Twitch</mat-label>
+                                        <input matInput formControlName="twitchItem">
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather name="twitch"></i-feather>
+                                        </span>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>YouTube</mat-label>
+                                        <input matInput formControlName="youtubeItem">
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather name="youtube"></i-feather>
+                                        </span>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Dribbble</mat-label>
+                                        <input matInput formControlName="dribbbleItem">
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather name="dribbble"></i-feather>
+                                        </span>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>LinkedIn</mat-label>
+                                        <input matInput formControlName="linkedInItem">
+                                        <span matSuffix class="p-l-8 p-r-8">
+                                            <i-feather name="linkedin"></i-feather>
+                                        </span>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button class="btn-space" [disabled]="!connectionForm?.valid" mat-raised-button
+                                        color="primary">Submit</button>
+                                    <button type="button" color="warn" mat-button>Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>

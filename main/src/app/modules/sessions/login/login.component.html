@@ -1,0 +1,86 @@
+<div class="auth-container">
+  <div class="row auth-main">
+    <div class="col-sm-7 px-0">
+      <div class="left-img" style="background-image: url(assets/images/pages/bg-01.png);">
+      </div>
+    </div>
+    <div class="col-sm-5 auth-form-section">
+      <mat-card class="authCard">
+        <mat-card-content>
+          <div class="form-section">
+            <div class="auth-wrapper">
+              <h2 class="welcome-msg"> Welcome to {{'login_title' | translate}}!</h2>
+              <div class="d-flex justify-content-center lbl-alert">
+                <div>
+                  <button mat-flat-button color="primary" class="m-l-16 m-r-16" (click)="adminSet();">Admin</button>
+                </div>
+                <div>
+                  <button mat-flat-button color="warn" (click)="employeeSet();">Employee</button>
+                </div>
+              </div>
+              <h2 class="login-title">Sign in</h2>
+              <form class="form-field-full" [formGroup]="loginForm">
+                <mat-form-field appearance="outline">
+                  <mat-label>{{'username' }}: admin</mat-label>
+                  <input matInput placeholder="admin" formControlName="username" required>
+                  <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>face</mat-icon>
+                  @if (username.invalid) {
+                  <mat-error>
+                    @if (username.errors) {
+                    <span>{{'please_enter' }}
+                      <strong>admin</strong>
+                    </span>
+                    }
+                  </mat-error>
+                  }
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>{{'password' }}: admin</mat-label>
+                  <input matInput placeholder="admin" [type]="hide ? 'password' : 'text'" formControlName="password"
+                    required>
+                  <a href="#" onClick="return false;" matSuffix (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon class="material-icons-outlined color-icon m-12" matSuffix>
+                      {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </a>
+                  @if (password.invalid) {
+                  <mat-error>
+                    @if (password.errors) {
+                    <span>{{'please_enter' }}
+                      <strong>admin</strong>
+                    </span>
+                    }
+                  </mat-error>
+                  }
+                </mat-form-field>
+                <mat-checkbox formControlName="rememberMe">{{'remember_me' | translate}}
+                </mat-checkbox>
+                <a class="forget-pwd" routerLink="/authentication/forgot-password">{{'forgot_password' | translate}}</a>
+                <div class="login-btn-container">
+                  <button class="w-full m-y-16 login-btn" mat-flat-button color="primary"
+                    [disabled]="!!loginForm.invalid" [class.auth-spinner]="isSubmitting" [disabled]="isSubmitting"
+                    (click)="login()">{{'login' |
+                    translate}}</button>
+                </div>
+                <div class="social-login">
+                  <button class="google-login">
+                    <img src="assets/images/social/google.png" alt="Google" />
+                  </button>
+                  <button class="apple-login">
+                    <img src="assets/images/social/apple.png" alt="Apple" />
+                  </button>
+                  <button class="facebook-login">
+                    <img src="assets/images/social/facebook.png" alt="Facebook" />
+                  </button>
+                </div>
+                <div class="askNoAcc">{{'have_no_account' | translate}}?
+                  <a routerLink="/auth/register">{{'create_one_account' | translate}}</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

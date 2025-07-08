@@ -1,0 +1,25 @@
+<!-- chart-card4.component.html -->
+<mat-card class="chart-card4">
+    <mat-card-header class="header-menu">
+        <mat-card-title>Employee</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="chart-container">
+            <div style="display: block; width: 220px; height: 220px;">
+                <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType"
+                    [options]="doughnutChartOptions">
+                </canvas>
+            </div>
+        </div>
+        <div class="statistics">
+            <div class="stat-item male">
+                <div class="count">{{maleCount | number}}</div>
+                <div class="label">Male Employee</div>
+            </div>
+            <div class="stat-item female">
+                <div class="count">{{femaleCount | number}}</div>
+                <div class="label">Female Employee</div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

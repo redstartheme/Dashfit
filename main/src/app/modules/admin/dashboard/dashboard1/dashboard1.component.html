@@ -1,0 +1,181 @@
+<div class="row m-t-48">
+  <div class="col-sm-3">
+    <mat-card>
+      <mat-card-content>
+        <div class="f-s-18 f-w-500">New Booking</div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="m-0">1,879</h2>
+            <h4 class="d-flex m-t-16 w-full align-items-center text-green ">
+              <i-feather name="arrow-up-circle" class="w-30 h-30 m-2 d-flex align-items-center"></i-feather>
+              +7.5%
+            </h4>
+          </div>
+          <div class="col-lg-8 align-self-center">
+            <apx-chart [series]="smallChart1Options.series!" [chart]="smallChart1Options.chart!"
+              [colors]="smallChart1Options.colors!" [yaxis]="smallChart1Options.yaxis!"
+              [plotOptions]="smallChart1Options.plotOptions!" [tooltip]="smallChart1Options.tooltip!"
+              [xaxis]="smallChart1Options.xaxis!"></apx-chart>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-3">
+    <mat-card>
+      <mat-card-content>
+        <div class="f-s-18 f-w-500">Available Rooms</div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="m-0">55</h2>
+            <h4 class="d-flex m-t-16 w-full align-items-center text-orange ">
+              <i-feather name="arrow-down-circle" class="w-30 h-30 m-2 d-flex align-items-center"></i-feather>
+              -5.7%
+            </h4>
+          </div>
+          <div class="col-lg-8 align-self-center">
+            <apx-chart [series]="smallChart2Options.series!" [chart]="smallChart2Options.chart!"
+              [labels]="smallChart2Options.labels!" [responsive]="smallChart2Options.responsive!"
+              [dataLabels]="smallChart2Options.dataLabels!" [legend]="smallChart2Options.legend!"
+              [colors]="smallChart2Options.colors!" class="apex-pie-center">
+            </apx-chart>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-3">
+    <mat-card>
+      <mat-card-content>
+        <div class="f-s-18 f-w-500">Revenue</div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="m-0">$2,287</h2>
+            <h4 class="d-flex m-t-16 w-full align-items-center text-green ">
+              <i-feather name="arrow-up-circle" class="w-30 h-30 m-2 d-flex align-items-center"></i-feather>
+              +5.3%
+            </h4>
+          </div>
+          <div class="col-lg-8 align-self-center">
+            <apx-chart [series]="smallChart3Options.series!" [chart]="smallChart3Options.chart!"
+              [plotOptions]="smallChart3Options.plotOptions!" [xaxis]="smallChart3Options.xaxis!"
+              [fill]="smallChart3Options.fill!" [yaxis]="smallChart3Options.yaxis!"
+              [legend]="smallChart3Options.legend!" [tooltip]="smallChart3Options.tooltip!"
+              [grid]="smallChart3Options.grid!"></apx-chart>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-3">
+    <mat-card>
+      <mat-card-content>
+        <div class="f-s-18 f-w-500">Checkout</div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="m-0">567</h2>
+            <h4 class="d-flex m-t-16 w-full align-items-center text-orange ">
+              <i-feather name="arrow-down-circle" class="w-30 h-30 m-2 d-flex align-items-center"></i-feather>
+              -2.4%
+            </h4>
+          </div>
+          <div class="col-lg-8 align-self-center">
+            <apx-chart [series]="smallChart4Options.series!" [chart]="smallChart4Options.chart!"
+              [labels]="smallChart4Options.labels!" [responsive]="smallChart4Options.responsive!"
+              [dataLabels]="smallChart4Options.dataLabels!" [legend]="smallChart4Options.legend!"
+              [colors]="smallChart4Options.colors!" class="apex-pie-center">
+            </apx-chart>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <app-availability-card [occupied]="125" [reserved]="87" [available]="57" [notReady]="25">
+    </app-availability-card>
+  </div>
+  <div class="col-sm-8">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Reservation</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <apx-chart [series]="reservationChartOptions.series!" [chart]="reservationChartOptions.chart!"
+          [dataLabels]="reservationChartOptions.dataLabels!" [plotOptions]="reservationChartOptions.plotOptions!"
+          [responsive]="reservationChartOptions.responsive!" [xaxis]="reservationChartOptions.xaxis!"
+          [legend]="reservationChartOptions.legend!" [colors]="reservationChartOptions.colors!"
+          [tooltip]="reservationChartOptions.tooltip!" [fill]="reservationChartOptions.fill!"></apx-chart>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-12">
+    <mat-card>
+      <mat-card-header class="header-style">
+        <mat-card-title>Current Booking</mat-card-title>
+        <a mat-button color="primary" href="#" (click)="$event.preventDefault();">View All</a>
+      </mat-card-header>
+      <mat-card-content>
+        <app-room-booking></app-room-booking>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card>
+      <mat-card-header class="header-style">
+        <mat-card-title>Guest List</mat-card-title>
+        <a mat-button color="primary" href="#" (click)="$event.preventDefault();">View All</a>
+      </mat-card-header>
+      <mat-card-content>
+        <ng-scrollbar style="height: 360px" visibility="hover">
+          <app-guest-list-card [guestLists]="guestLists"></app-guest-list-card>
+        </ng-scrollbar>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-8">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-subtitle>Booking Source</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <apx-chart [series]="lineChartOptions.series!" [chart]="lineChartOptions.chart!"
+          [xaxis]="lineChartOptions.xaxis!" [stroke]="lineChartOptions.stroke!" [colors]="lineChartOptions.colors!"
+          [dataLabels]="lineChartOptions.dataLabels!" [legend]="lineChartOptions.legend!"
+          [tooltip]="lineChartOptions.tooltip!" [markers]="lineChartOptions.markers!" [grid]="lineChartOptions.grid!"
+          [yaxis]="lineChartOptions.yaxis!" [title]="lineChartOptions.title!" [fill]="lineChartOptions.fill!">
+        </apx-chart>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-8">
+    <mat-card>
+      <mat-card-header class="header-style">
+        <mat-card-title> Customer Review</mat-card-title>
+        <a mat-button color="primary" href="#" (click)="$event.preventDefault();">View All</a>
+      </mat-card-header>
+      <mat-card-content>
+        <ng-scrollbar style="height: 400px" visibility="hover">
+          <app-review-widget [reviews]="reviewList"></app-review-widget>
+        </ng-scrollbar>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Visitors Chart</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="m-b-8">
+          <p class="f-s-16 m-0 f-w-500">Average Daily Users</p>
+          <p class="m-t-4">1,258 Visitors <span class="text-muted m-t-4 f-s-12">(Average)</span></p>
+          <apx-chart [series]="barChartOptions.series!" [chart]="barChartOptions.chart!"
+            [dataLabels]="barChartOptions.dataLabels!" [stroke]="barChartOptions.stroke!"
+            [colors]="barChartOptions.colors!" [title]="barChartOptions.title!" [grid]="barChartOptions.grid!"
+            [tooltip]="barChartOptions.tooltip!" [plotOptions]="barChartOptions.plotOptions!"
+            [yaxis]="barChartOptions.yaxis!" [xaxis]="barChartOptions.xaxis!"></apx-chart>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,153 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Drag&Drop position locking</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-box" cdkDragLockAxis="y" cdkDrag>
+      I can only be dragged up/down
+    </div>
+    <div class="example-box" cdkDragLockAxis="x" cdkDrag>
+      I can only be dragged left/right
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Drag&Drop boundary</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-boundary">
+      <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+        I can only be dragged within the dotted container
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Drag&Drop connected sorting group</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div cdkDropListGroup>
+      <div class="example-container2">
+        <h3>To do</h3>
+        <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
+          @for (item of todo; track item) {
+          <div class="example-box-small" cdkDrag>{{item}}</div>
+          }
+        </div>
+      </div>
+      <div class="example-container2">
+        <h3>Done</h3>
+        <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+          @for (item of done; track item) {
+          <div class="example-box-small" cdkDrag>{{item}}</div>
+          }
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Drag&Drop connected sorting</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-container2">
+      <h3>To do</h3>
+      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]"
+        class="example-list" (cdkDropListDropped)="drop($event)">
+        @for (item of todo; track item) {
+        <div class="example-box-small" cdkDrag>{{item}}</div>
+        }
+      </div>
+    </div>
+    <div class="example-container2">
+      <h3>Done</h3>
+      <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+        class="example-list" (cdkDropListDropped)="drop($event)">
+        @for (item of done; track item) {
+        <div class="example-box-small" cdkDrag>{{item}}</div>
+        }
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Drag&Drop custom placeholder</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div cdkDropList class="example-list2" (cdkDropListDropped)="drop($event)">
+      @for (movie of movies; track movie) {
+      <div class="example-box2" cdkDrag>
+        <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+        {{movie}}
+      </div>
+      }
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Drag&Drop disabled</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+      @for (item of items; track item) {
+      <div class="example-box-small" cdkDrag [cdkDragDisabled]="item.disabled">
+        {{item.value}}</div>
+      }
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Drag&Drop with a handle</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-box" cdkDrag>
+      I can only be dragged using the handle
+      <div class="example-handle" cdkDragHandle>
+        <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
+          </path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Drag&Drop enter predicate</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-container2">
+      <h3>Available numbers</h3>
+      <div id="all" cdkDropList [cdkDropListData]="all" cdkDropListConnectedTo="even" class="example-list"
+        (cdkDropListDropped)="droppredicate($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
+        @for (number of all; track number) {
+        <div class="example-box-small" [cdkDragData]="number" cdkDrag>{{number}}
+        </div>
+        }
+      </div>
+    </div>
+    <div class="example-container2">
+      <h3>Even numbers</h3>
+      <div id="even" cdkDropList [cdkDropListData]="even" cdkDropListConnectedTo="all" class="example-list"
+        (cdkDropListDropped)="droppredicate($event)" [cdkDropListEnterPredicate]="evenPredicate">
+        @for (number of even; track number) {
+        <div class="example-box-small" cdkDrag [cdkDragData]="number">{{number}}
+        </div>
+        }
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<div class="alert alert-primary m-t-16">
+  If you want more examples please visit angular material design components <a
+    href="https://material.angular.io/cdk/drag-drop/examples" target="_blank">here</a>
+</div>

@@ -1,0 +1,156 @@
+<div class="dialogContainer">
+  <div class="modalHeader">
+    <div class="avatarDetails">
+      <label class="hoverable" for="tableFileInput">
+        <img [src]="url ? url : leaveRequest.img" alt="image">
+        <div class="hover-text">Upload</div>
+        <div class="background"></div>
+      </label>
+      <input id="tableFileInput" type='file' (change)="onSelectFile($event)">
+      <div class="modalTitle">
+        {{dialogTitle}}
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="form-field-full" [formGroup]="leaveRequestForm">
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Employee Name</mat-label>
+            <input matInput formControlName="name" required>
+            @if (leaveRequestForm.get('name')?.hasError('required') && leaveRequestForm.get('name')?.touched) {
+              <mat-error
+                >
+                Employee name is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="department" required>
+              <mat-option [value]="'HR'">HR</mat-option>
+              <mat-option [value]="'Finance'">Finance</mat-option>
+              <mat-option [value]="'House Keeping'">House Keeping</mat-option>
+              <mat-option [value]="'Sales'">Sales</mat-option>
+              <mat-option [value]="'Marketing'">Marketing</mat-option>
+            </mat-select>
+            @if (leaveRequestForm.get('department')?.hasError('required') && leaveRequestForm.get('department')?.touched) {
+              <mat-error
+                >
+                Department is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Leave Type</mat-label>
+            <mat-select formControlName="type" required>
+              <mat-option [value]="'Personal Leave'">Personal Leave</mat-option>
+              <mat-option [value]="'Sick Leave'">Sick Leave</mat-option>
+              <mat-option [value]="'Annual Leave'">Annual Leave</mat-option>
+              <mat-option [value]="'Medical Leave'">Medical Leave</mat-option>
+            </mat-select>
+            @if (leaveRequestForm.get('type')?.hasError('required') && leaveRequestForm.get('type')?.touched) {
+              <mat-error
+                >
+                Leave type is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" required>
+              <mat-option [value]="'Approved'">Approved</mat-option>
+              <mat-option [value]="'Pending'">Pending</mat-option>
+              <mat-option [value]="'Rejected'">Rejected</mat-option>
+            </mat-select>
+            @if (leaveRequestForm.get('status')?.hasError('required') && leaveRequestForm.get('status')?.touched) {
+              <mat-error
+                >
+                Status is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Start Date</mat-label>
+            <input matInput [matDatepicker]="startPicker" formControlName="from" required>
+            <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+            <mat-datepicker #startPicker></mat-datepicker>
+            @if (leaveRequestForm.get('from')?.hasError('required') && leaveRequestForm.get('from')?.touched) {
+              <mat-error
+                >
+                Start date is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>End Date</mat-label>
+            <input matInput [matDatepicker]="endPicker" formControlName="leaveTo" required>
+            <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+            <mat-datepicker #endPicker></mat-datepicker>
+            @if (leaveRequestForm.get('leaveTo')?.hasError('required') && leaveRequestForm.get('leaveTo')?.touched) {
+              <mat-error
+                >
+                End date is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>No of days</mat-label>
+            <input matInput formControlName="noOfDays" type="number" required>
+            @if (leaveRequestForm.get('noOfDays')?.hasError('required') && leaveRequestForm.get('noOfDays')?.touched) {
+              <mat-error
+                >
+                No of days is required
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Approved By</mat-label>
+            <input matInput formControlName="approvedBy" type="text">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Reason</mat-label>
+            <textarea matInput formControlName="reason" rows="4"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [disabled]="!leaveRequestForm.valid"
+            (click)="submit()">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

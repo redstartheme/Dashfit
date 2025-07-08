@@ -1,0 +1,42 @@
+<mat-tab-group>
+  @for (employee of employees; track trackEmployee($index, employee)) {
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <img [src]="employee.imgUrl" alt="user" class="tab-user-style">{{ employee.name }}
+      </ng-template>
+      <div class="table-responsive mt-3">
+        <mat-table [dataSource]="employee.tasks" class="mat-elevation-z8">
+          <!-- Task Column -->
+          <ng-container matColumnDef="task">
+            <mat-header-cell *matHeaderCellDef> Task </mat-header-cell>
+            <mat-cell *matCellDef="let task"> {{ task.name }} </mat-cell>
+          </ng-container>
+          <!-- Status Column -->
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+            <mat-cell *matCellDef="let task">
+              <span [ngClass]="task.statusClass">{{ task.status }}</span>
+            </mat-cell>
+          </ng-container>
+          <!-- Manager Column -->
+          <ng-container matColumnDef="manager">
+            <mat-header-cell *matHeaderCellDef> Manager </mat-header-cell>
+            <mat-cell *matCellDef="let task"> {{ task.manager }} </mat-cell>
+          </ng-container>
+          <!-- Progress Column -->
+          <ng-container matColumnDef="progress">
+            <mat-header-cell *matHeaderCellDef> Progress </mat-header-cell>
+            <mat-cell *matCellDef="let task">
+              <mat-progress-bar class="progress" mode="determinate" [value]="task.progress"
+              [color]="getProgressBarColor(task.progress)"></mat-progress-bar>
+            </mat-cell>
+          </ng-container>
+          <!-- Header Row -->
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <!-- Row for displaying data -->
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </mat-tab>
+  }
+</mat-tab-group>

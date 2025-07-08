@@ -1,0 +1,31 @@
+<mat-card class="chart-card2">
+  <mat-card-title class="title">
+    <mat-icon>bar_chart</mat-icon> {{title}}
+  </mat-card-title>
+  <mat-card-subtitle class="subtitle">
+    {{subtitle}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <div class="chart-container">
+      <apx-chart [series]="pieChartOptions.series2!" [chart]="pieChartOptions.chart!"
+        [labels]="pieChartOptions.labels!" [responsive]="pieChartOptions.responsive!"
+        [dataLabels]="pieChartOptions.dataLabels!" [legend]="pieChartOptions.legend!" class="apex-pie-center">
+      </apx-chart>
+    </div>
+    <div class="status-list">
+      @for (item of items; track item) {
+        <div class="status-item">
+          <div class="status-icon" [ngStyle]="{ 'background-color': item.color }"></div>
+          <div class="status-info">
+            <span class="status-title">{{ item.title }}</span>
+            <span class="status-count">{{ item.count }}</span>
+          </div>
+          <div class="status-change" [ngClass]="{'positive': item.change > 0, 'negative': item.change < 0}">
+            {{ item.change > 0 ? '+' : '' }}{{ item.change }}%
+          </div>
+        </div>
+      }
+    </div>
+
+  </mat-card-content>
+</mat-card>

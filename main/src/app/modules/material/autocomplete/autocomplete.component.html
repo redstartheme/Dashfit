@@ -1,0 +1,26 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Autocomplete Examples</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Number</mat-label>
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+          [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          @for (option of filteredOptions | async; track option) {
+          <mat-option [value]="option">
+            {{option}}
+          </mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+<div class="alert alert-primary m-t-16">
+  If you want more examples please visit angular material design components <a
+    href="https://material.angular.io/components/autocomplete/examples" target="_blank">here</a>
+</div>

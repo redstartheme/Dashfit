@@ -1,0 +1,178 @@
+<div class="row m-t-48">
+    <div class="col-sm-8">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="info-card2">
+                    <div class="card-body">
+                        <div class="top-block d-flex align-items-center justify-content-between">
+                            <h3 class="m-0 f-w-500">Total Booking</h3>
+                            <div class="badge badge-solid-indigo">Monthly</div>
+                        </div>
+                        <h2 class="m-0"><span class="counter">654</span></h2>
+                        <div class="d-flex align-items-center justify-content-between m-t-16 m-b-8">
+                            <p class="m-0">Increase booking</p>
+                            <span class="text-purple">55%</span>
+                        </div>
+                        <mat-progress-bar mode="determinate" value="55"></mat-progress-bar>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="info-card2">
+                    <div class="card-body">
+                        <div class="top-block d-flex align-items-center justify-content-between">
+                            <h3 class="m-0 f-w-500">Income</h3>
+                            <div class="badge badge-solid-orange">Anual</div>
+                        </div>
+                        <h2 class="m-0">$<span class="counter">22784</span></h2>
+                        <div class="d-flex align-items-center justify-content-between m-t-16 m-b-8">
+                            <p class="m-0">Total Revenue</p>
+                            <span class="text-orange">42%</span>
+                        </div>
+                        <mat-progress-bar mode="determinate" color="warn" value="42"></mat-progress-bar>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Revenue Reports</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="row m-t-8 m-b-8">
+                            <div class="col-md-8">
+                                <apx-chart [series]="revenueOptions.series!" [chart]="revenueOptions.chart!"
+                                    [dataLabels]="revenueOptions.dataLabels!"
+                                    [plotOptions]="revenueOptions.plotOptions!"
+                                    [responsive]="revenueOptions.responsive!" [xaxis]="revenueOptions.xaxis!"
+                                    [legend]="revenueOptions.legend!" [fill]="revenueOptions.fill!"
+                                    [tooltip]="revenueOptions.tooltip!" [colors]="revenueOptions.colors!"></apx-chart>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="chartData">
+                                    <h4 class="m-0"><b>Total</b></h4>
+                                    <h2 class="m-0"><b>$ 22784 </b></h2>
+                                    <p>Total Bookings For Last Week</p>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <apx-chart [series]="dealChartOptions.series!" [chart]="dealChartOptions.chart!"
+                                            [xaxis]="dealChartOptions.xaxis!"
+                                            [dataLabels]="dealChartOptions.dataLabels!" [grid]="dealChartOptions.grid!"
+                                            [stroke]="dealChartOptions.stroke!" [title]="dealChartOptions.title!"
+                                            [markers]="dealChartOptions.markers!" [tooltip]="dealChartOptions.tooltip!"
+                                            [yaxis]="dealChartOptions.yaxis!"
+                                            [fill]="dealChartOptions.fill!"></apx-chart>
+                                    </div>
+                                    <div class="chartFooter">
+                                        <div class="d-flex align-items-center justify-content-between d1">
+                                            <p class="m-0">Delux Room Booking</p>
+                                            <h4><b>78%</b></h4>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between d1">
+                                            <p class="m-0">Single Room Booking</p>
+                                            <h4><b>22%</b></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 m-t-16">
+        <app-booking-status [totalBookings]="totalBookings" [checkedIn]="checkedIn" [checkedOut]="checkedOut">
+        </app-booking-status>
+
+        <app-chart-card5 [bookingGaugeOptions]="bookingStatusOptions" [percentage]="percentage"
+            [footerText]="footerText">
+        </app-chart-card5>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-header class="header-style">
+                <mat-card-title>Room Cleaning Status</mat-card-title>
+                <a mat-button color="primary" href="#" (click)="$event.preventDefault();">View All</a>
+            </mat-card-header>
+            <mat-card-content>
+                <ng-scrollbar style="height: 400px" visibility="hover">
+                    <app-progress-table [subjects]="roomStatus"></app-progress-table>
+                </ng-scrollbar>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-sm-8">
+        <mat-card>
+            <mat-card-header class="header-style">
+                <mat-card-title>Invoices</mat-card-title>
+                <a mat-button color="primary" href="#" (click)="$event.preventDefault();">View All</a>
+            </mat-card-header>
+            <mat-card-content>
+                <ng-scrollbar style="height: 400px" visibility="hover">
+                    <app-table-card [dataSource]="invoiceData"
+                        [columnDefinitions]="invoiceColumnDefinitions"></app-table-card>
+                </ng-scrollbar>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Chart Sample</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="radarChartOptions.series!" [chart]="radarChartOptions.chart!"
+                    [xaxis]="radarChartOptions.xaxis!" [stroke]="radarChartOptions.stroke!"
+                    [markers]="radarChartOptions.markers!" [fill]="radarChartOptions.fill!"></apx-chart>
+                <div class="row">
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Target</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-up-circle"
+                                class="text-green w-15 h-15 m-2 d-flex align-items-center"></i-feather>
+                            $15.3k
+                        </h4>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Last
+                            week</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-down-circle"
+                                class="text-red w-15 h-15 m-2 d-flex align-items-center"></i-feather>$2.8k
+                        </h4>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-muted m-b-4">Last
+                            Month</p>
+                        <h4 class="m-0 d-flex align-items-center">
+                            <i-feather name="arrow-up-circle"
+                                class="text-green w-15 h-15 m-2 d-flex align-items-center"></i-feather>$12.5k
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-sm-4">
+        <mat-card>
+            <mat-card-content>
+                <app-small-card-chart [title]="'Profit'" [amount]="'$4,589'" [percentageChange]="'+7.5%'"
+                    [profitData]="[110, 135, 400, 101, 210, 140, 110, 135, 400]" [chartColor]="'#FF7F31'"
+                    [chartCategories]="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']">
+                </app-small-card-chart>
+            </mat-card-content>
+        </mat-card>
+        <app-booking-average [bookingData]="bookingData"></app-booking-average>
+    </div>
+    <div class="col-sm-4">
+        <app-average-chart></app-average-chart>
+    </div>
+</div>

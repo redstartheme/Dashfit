@@ -1,0 +1,158 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Basic Datepicker</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-form-field>
+        <mat-label>Date of birth</mat-label>
+        <input matInput [matDatepicker]="birthdayPicker" [(ngModel)]="birthday" #birthdayModel="ngModel"
+          [max]="maxBirthday" required>
+        <mat-datepicker-toggle matSuffix [for]="birthdayPicker"></mat-datepicker-toggle>
+        <mat-datepicker #birthdayPicker startView="year"></mat-datepicker>
+        @if (birthdayModel.hasError('required')) {
+        <mat-error>
+          Please choose a date.
+        </mat-error>
+        }
+        @if (birthdayModel.hasError('matDatepickerMax')) {
+        <mat-error>
+          Please choose an earlier date.
+        </mat-error>
+        }
+      </mat-form-field>
+    </section>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Date range picker forms integration</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Start date">
+        <input matEndDate formControlName="end" placeholder="End date">
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+      @if (range.controls.start.hasError('matStartDateInvalid')) {
+      <mat-error>Invalid start date</mat-error>
+      }
+      @if (range.controls.end.hasError('matEndDateInvalid')) {
+      <mat-error>Invalid end date</mat-error>
+      }
+    </mat-form-field>
+    <p>Selected range: {{range.value | json}}</p>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Datepicker with custom icon</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="example-full-width">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="pickericon">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="pickericon">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #pickericon></mat-datepicker>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Choose date with startAt, min and max </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <section>
+      <mat-form-field>
+        <mat-label>Departure date</mat-label>
+        <input matInput [matDatepicker]="departPicker" [(ngModel)]="departDate" #departDateModel="ngModel"
+          [min]="minTripDate" [max]="maxTripDate" required>
+        <mat-datepicker-toggle matSuffix [for]="departPicker"></mat-datepicker-toggle>
+        <mat-datepicker #departPicker [startAt]="startTripDate"></mat-datepicker>
+        @if (departDateModel.hasError('required')) {
+        <mat-error>
+          Please choose a date.
+        </mat-error>
+        }
+        @if (departDateModel.hasError('matDatepickerMin')) {
+        <mat-error>
+          Please choose a later date.
+        </mat-error>
+        }
+        @if (departDateModel.hasError('matDatepickerMax')) {
+        <mat-error>
+          Please choose an earlier date.
+        </mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Return date</mat-label>
+        <input matInput [matDatepicker]="returnPicker" [(ngModel)]="returnDate" #returnDateModel="ngModel"
+          [min]="departDate || minTripDate" [max]="maxTripDate">
+        <mat-datepicker-toggle matSuffix [for]="returnPicker"></mat-datepicker-toggle>
+        <mat-datepicker #returnPicker [startAt]="startTripDate"></mat-datepicker>
+        @if (returnDateModel.hasError('matDatepickerMin') && !departDate) {
+        <mat-error>
+          Please choose a later date.
+        </mat-error>
+        }
+        @if (returnDateModel.hasError('matDatepickerMin') && departDate) {
+        <mat-error>
+          Please choose a date after your departure.
+        </mat-error>
+        }
+        @if (returnDateModel.hasError('matDatepickerMax')) {
+        <mat-error>
+          Please choose an earlier date.
+        </mat-error>
+        }
+      </mat-form-field>
+    </section>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Datepicker action buttons</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="example-form-field">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="datepicker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker>
+        <mat-datepicker-actions>
+          <button mat-button matDatepickerCancel>Cancel</button>
+          <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+        </mat-datepicker-actions>
+      </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="rangePicker">
+        <input matStartDate placeholder="Start date">
+        <input matEndDate placeholder="End date">
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="rangePicker"></mat-datepicker-toggle>
+      <mat-date-range-picker #rangePicker>
+        <mat-date-range-picker-actions>
+          <button mat-button matDateRangePickerCancel>Cancel</button>
+          <button mat-raised-button color="primary" matDateRangePickerApply>Apply</button>
+        </mat-date-range-picker-actions>
+      </mat-date-range-picker>
+    </mat-form-field>
+    <div class="alert alert-primary m-t-16">
+      If you want more examples please visit angular material design components <a
+        href="https://material.angular.io/components/datepicker/examples" target="_blank">here</a>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,93 @@
+<app-page-header></app-page-header>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <mat-card>
+      <mat-card-content>
+        <div id="plist" class="people-list">
+          <div class="form-line m-b-15">
+            <div class="form-group">
+              <div class="form-line">
+                <mat-form-field class="example-full-width chatSearchBox" appearance="outline">
+                  <input matInput placeholder="Search..">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content">
+            <ng-scrollbar style="height: 600px" visibility="hover">
+              <div id="chat_user">
+                <ul class="chat-list list-unstyled m-b-0 p-0">
+                  @for (user of users; track user) {
+                    <li class="clearfix"
+                      [ngClass]="{'active': user === selectedUser}" (click)="onUserClick(user)">
+                      <img [src]="user.avatar" alt="avatar">
+                      <div class="about">
+                        <div class="name">{{ user.name }}</div>
+                        <div class="status">
+                          <i class="material-icons"
+                          [ngClass]="{'online': user.status.includes('online'), 'offline': !user.status.includes('online')}">fiber_manual_record</i>
+                          {{ user.status }}
+                        </div>
+                      </div>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </ng-scrollbar>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+    <mat-card>
+      <mat-card-content>
+        <div class="chat">
+          <div class="chat-header clearfix">
+            <img [src]="selectedUser?.avatar" alt="avatar">
+            <div class="chat-about">
+              <div class="chat-with">{{ selectedUser?.name }}</div>
+              <div class="chat-num-messages">{{ filteredMessages.length }} new messages</div>
+            </div>
+          </div>
+          <ng-scrollbar style="height: 430px" visibility="hover">
+            <div class="chat-history" id="chat-conversation">
+              <ul>
+                @for (message of filteredMessages; track message) {
+                  <li
+                    [ngClass]="{'clearfix': true, 'text-end': message.type === 'outgoing'}">
+                    <div class="message-data" [ngClass]="{'text-end': message.type === 'outgoing'}">
+                      <span class="message-data-time">{{ message.time }}</span>
+                      &nbsp; &nbsp;
+                      <span class="message-data-name">{{ message.name }}</span>
+                    </div>
+                    <div class="message"
+                      [ngClass]="{'other-message float-end': message.type === 'incoming', 'my-message': message.type === 'outgoing'}">
+                      {{ message.text }}
+                    </div>
+                  </li>
+                }
+              </ul>
+            </div>
+          </ng-scrollbar>
+          <div class="chat-message clearfix">
+            <form class="form-field-full">
+              <mat-form-field class="example-full-width" appearance="outline"
+                [hideRequiredMarker]="hideRequiredControl.value">
+                <input matInput placeholder="Enter text here.." required>
+              </mat-form-field>
+            </form>
+            <div class="chat-upload">
+              <button mat-icon-button color="primary">
+                <mat-icon>attach_file</mat-icon>
+              </button>
+              <button mat-icon-button color="primary">
+                <mat-icon>insert_emoticon</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

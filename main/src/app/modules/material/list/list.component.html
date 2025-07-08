@@ -1,0 +1,95 @@
+<app-page-header></app-page-header>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Basic list</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list role="list">
+      @for (item of items; track item) {
+      <mat-list-item role="listitem"> {{item}} </mat-list-item>
+      }
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Messages</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list role="list">
+      @for (message of messages; track message) {
+      <mat-list-item role="listitem">
+        <img matListItemAvatar [src]="'assets/images/avatars/'+message.image" [alt]="message.from">
+        <h3 matListItemTitle> {{message.from}} </h3>
+        <p matListItemLine> {{message.subject}} </p>
+        <p matListItemLine class="demo-secondary-text"> {{message.message}} </p>
+      </mat-list-item>
+      }
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Folders and notes for mailbox</mat-card-title>
+    <mat-card-subtitle>Showing a list with two sections, "folders" and "notes".</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list role="list">
+      <h3 mat-subheader>Folders</h3>
+      @for (folder of folders; track folder) {
+      <mat-list-item role="listitem">
+        <mat-icon matListItemIcon>folder</mat-icon>
+        <h4 matListItemTitle>{{folder.name}}</h4>
+        <p matListItemLine class="demo-secondary-text"> {{folder.updated}} </p>
+      </mat-list-item>
+      }
+      <mat-divider></mat-divider>
+      <h3 mat-subheader>Notes</h3>
+      @for (note of notes; track note) {
+      <mat-list-item role="listitem">
+        <mat-icon matListItemIcon>note</mat-icon>
+        <h4 matListItemTitle>{{note.name}}</h4>
+        <p matListItemLine class="demo-secondary-text"> {{note.updated}} </p>
+      </mat-list-item>
+      }
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>List with selection</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-selection-list #shoes>
+      @for (shoe of typesOfShoes; track shoe) {
+      <mat-list-option>
+        {{shoe}}
+      </mat-list-option>
+      }
+    </mat-selection-list>
+    <p>
+      Options selected: {{shoes.selectedOptions.selected.length}}
+    </p>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>List with single selection</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-selection-list #flower [multiple]="false">
+      @for (flower of typesOfFlowers; track flower) {
+      <mat-list-option [value]="flower">
+        {{flower}}
+      </mat-list-option>
+      }
+    </mat-selection-list>
+    <p>
+      Option selected: {{flower.selectedOptions.hasValue() ? flower.selectedOptions.selected[0].value : 'None'}}
+    </p>
+  </mat-card-content>
+</mat-card>
+<div class="alert alert-primary m-t-16">
+  If you want more examples please visit angular material design components <a
+    href="https://material.angular.io/components/list/examples" target="_blank">here</a>
+</div>

@@ -1,0 +1,26 @@
+.badge {
+  padding: 0.5em;
+  border-radius: 5px;
+  color: white;
+}
+.badge-solid-green {
+  background-color: green;
+}
+.badge-solid-red {
+  background-color: red;
+}
+.badge-solid-orange {
+  background-color: orange;
+}
+.tbl-user-img-small {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background: #fff;
+  position: inherit;
+  margin-right: 10px;
+}
+.apex-pie-center {
+  display: flex;
+  justify-content: center;
+}

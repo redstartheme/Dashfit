@@ -1,0 +1,22 @@
+::ng-deep .filterBody {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+::ng-deep .advance-search {
+  .mat-mdc-form-field-infix {
+    min-height: unset !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+}
+::ng-deep .dark {
+  .filterBody {
+    background-color: #1a202e;
+  }
+  .room-card {
+    background: #1a202e;
+    border: 1px solid #1a202e;
+  }
+}

@@ -1,0 +1,38 @@
+:host ::ng-deep .doc-file-type {
+  .d-flex {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #d5dadb;
+  }
+  .img-icon {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    border-radius: 10%;
+    font-size: 30px;
+    text-align: center;
+    margin: 0px 15px;
+  }
+  .set-flex {
+    display: block;
+    height: 30px;
+  }
+  .ms-auto {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .primary-rgba {
+    background-color: rgba(110, 129, 220, 0.1);
+  }
+  .success-rgba {
+    background-color: rgba(95, 194, 126, 0.1);
+  }
+  .danger-rgba {
+    background-color: rgba(244, 68, 85, 0.1);
+  }
+  .info-rgba {
+    background-color: rgba(114, 208, 251, 0.1);
+  }
+}

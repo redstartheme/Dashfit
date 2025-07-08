@@ -1,0 +1,138 @@
+<div class="dialogContainer">
+  <div class="modalHeader">
+    <div class="avatarDetails">
+      <div class="modalTitle">
+        {{ dialogTitle }}
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="form-field-full" [formGroup]="cabForm">
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Driver Name</mat-label>
+            <input matInput formControlName="driverName" required>
+            @if (cabForm.get('driverName')?.hasError('required') || cabForm.get('driverName')?.touched) {
+              <mat-error>
+                Driver Name is <strong>required</strong>
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Driver Contact</mat-label>
+            <input matInput formControlName="driverContact" required>
+            @if (cabForm.get('driverContact')?.hasError('required') || cabForm.get('driverContact')?.touched) {
+              <mat-error
+                >
+                Driver Contact is <strong>required</strong>
+              </mat-error>
+            }
+            @if (cabForm.get('driverContact')?.hasError('pattern')) {
+              <mat-error>
+                Enter a valid contact number
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Cab Model</mat-label>
+            <input matInput formControlName="cabModel">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>License Plate</mat-label>
+            <input matInput formControlName="licensePlate">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" required>
+              <mat-option [value]="'Available'">Available</mat-option>
+              <mat-option [value]="'In Use'">In Use</mat-option>
+              <mat-option [value]="'Maintenance'">Maintenance</mat-option>
+            </mat-select>
+            @if (cabForm.get('status')?.hasError('required')) {
+              <mat-error>
+                Status is <strong>required</strong>
+              </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Capacity</mat-label>
+            <input matInput formControlName="capacity" type="number">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Last Service Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="lastServiceDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Location</mat-label>
+            <input matInput formControlName="location">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Assigned to Guest</mat-label>
+            <mat-select formControlName="assignedToGuest" required>
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Booking Count</mat-label>
+            <input matInput formControlName="bookingCount" type="number">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Rating</mat-label>
+            <input matInput formControlName="rating" type="number" step="0.1" min="0" max="5">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Notes</mat-label>
+            <textarea matInput formControlName="notes"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [disabled]="!cabForm.valid" (click)="submit()">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<app-page-header></app-page-header>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Bar Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div style="height: 400px">
+                    <ngx-charts-bar-vertical [scheme]="colorScheme" [results]="single" [gradient]="gradient"
+                        [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [legendPosition]="legendPosition"
+                        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="vbarxAxisLabel" [yAxisLabel]="vbaryAxisLabel">
+                    </ngx-charts-bar-vertical>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Horizontal Bar Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div style="height: 400px">
+                    <ngx-charts-bar-horizontal [scheme]="colorScheme" [results]="single" [gradient]="gradient"
+                        [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [legendPosition]="legendPosition"
+                        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="hbarxAxisLabel" [yAxisLabel]="hbaryAxisLabel">
+                    </ngx-charts-bar-horizontal>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Line Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div style="height: 400px">
+                    <ngx-charts-line-chart [scheme]="colorScheme" [results]="multi" [gradient]="gradient"
+                        [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="linexAxisLabel" [curve]="shapeChartCurve"
+                        [yAxisLabel]="lineyAxisLabel" [autoScale]="autoScale" [timeline]="timeline">
+                    </ngx-charts-line-chart>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Area Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div style="height: 400px">
+                    <ngx-charts-area-chart [scheme]="colorScheme" [results]="multi" [gradient]="gradient"
+                        [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="areaxAxisLabel" [yAxisLabel]="areayAxisLabel"
+                        [curve]="shapeChartCurve" [autoScale]="autoScale">
+                    </ngx-charts-area-chart>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Pie Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div style="height: 400px">
+                    <ngx-charts-pie-chart [scheme]="colorScheme" [results]="single" [legend]="showLegend"
+                        [labels]="showLabels" [gradient]="gradient">
+                    </ngx-charts-pie-chart>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

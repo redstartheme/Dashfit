@@ -1,0 +1,19 @@
+<ul class="p-0 m-0">
+  @for (transaction of transactions; track transaction) {
+    <li class="d-flex m-b-24 p-b-1">
+      <div [ngClass]="'icon-box icon-box-' + transaction.iconColor">
+        <i class="material-icons" [ngClass]="'text-'+transaction.iconColor">{{ transaction.icon }}</i>
+      </div>
+      <div class="d-flex w-full align-items-center justify-content-between">
+        <div class="m-l-8 m-r-8">
+          <small class="text-muted mb-1">{{ transaction.category }}</small>
+          <p class="f-s-15 f-w-500 m-0">{{ transaction.description }}</p>
+        </div>
+        <div class="d-flex align-items-center amount-section">
+          <p class="m-0 f-s-14 f-w-500" [ngClass]="'text-'+transaction.textColor">{{ transaction.amount }}</p>
+          <i class="material-icons" [ngClass]="'text-'+transaction.textColor">attach_money</i>
+        </div>
+      </div>
+    </li>
+  }
+</ul>

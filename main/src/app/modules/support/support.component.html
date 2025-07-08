@@ -1,0 +1,62 @@
+<app-page-header></app-page-header>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row m-b-24">
+            <div class="col-sm-3">
+                <div class="info-card">
+                    <div class="info-box8">
+                        <i class="material-icons bg-purple-500 card1-icon">local_activity</i>
+                        <h2 class="text-purple f-w-500 m-t-0 m-b-8 labelText">Total Tickets</h2>
+                        <h2 class="f-w-500 m-0 labelText">1,276</h2>
+                        <i class="material-icons icon text-red">trending_down</i>
+                        <p class="float-start m-0"><span class="text-red">10%</span> Decrease
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="info-card">
+                    <div class="info-box8">
+                        <i class="material-icons bg-orange-500 card1-icon">reply</i>
+                        <h2 class="text-orange f-w-500 m-t-0 m-b-8 labelText">Reply</h2>
+                        <h2 class="f-w-500 m-0 labelText">865</h2>
+                        <i class="material-icons icon text-green">trending_up</i>
+                        <p class="float-start m-0"><span class="text-green">25%</span> Increase
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="info-card">
+                    <div class="info-box8">
+                        <i class="material-icons bg-green-500 card1-icon">task_alt</i>
+                        <h2 class="text-green f-w-500 m-t-0 m-b-8 labelText">Resolve</h2>
+                        <h2 class="f-w-500 m-0 labelText">457</h2>
+                        <i class="material-icons icon text-red">trending_down</i>
+                        <p class="float-start m-0"><span class="text-red">12%</span> Decrease
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="info-card">
+                    <div class="info-box8">
+                        <i class="material-icons bg-blue-500 card1-icon">description</i>
+                        <h2 class="text-blue f-w-500 m-t-0 m-b-8 labelText">Pending</h2>
+                        <h2 class="f-w-500 m-0 labelText">239</h2>
+                        <i class="material-icons icon text-green">trending_up</i>
+                        <p class="float-start m-0"><span class="text-green">08%</span> Increase
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Support Tickets</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="table-responsive">
+                    <app-table-card [dataSource]="dataSource.data" [columnDefinitions]="displayedColumns">
+                    </app-table-card>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

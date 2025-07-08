@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Room Status</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="f-w-500 f-s-16 m-4">Today's booking details.</p>
+        <div class="banner1">
+            <div class="status">
+                <div class="status-banner">
+                    <span class="number">{{ totalBookings }}</span>
+                    <span class="label">Today's Bookings</span>
+                </div>
+                <div class="status-banner">
+                    <span class="number">{{ checkedIn }}</span>
+                    <span class="label">Checked-In</span>
+                </div>
+                <div class="status-banner">
+                    <span class="number">{{ checkedOut }}</span>
+                    <span class="label">Checked-Out</span>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

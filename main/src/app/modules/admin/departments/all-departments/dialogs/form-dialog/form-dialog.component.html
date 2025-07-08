@@ -1,0 +1,116 @@
+<div class="dialogContainer">
+  <div class="modalHeader">
+    <div class="avatarDetails">
+      <label class="hoverable" for="tableFileInput">
+        <img [src]="url ? url : allDepartments.img" alt="image">
+        <div class="hover-text">Upload</div>
+        <div class="background"></div>
+      </label>
+      <input id="tableFileInput" type='file' (change)="onSelectFile($event)">
+      <div class="modalTitle">
+        {{dialogTitle}}
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="form-field-full" [formGroup]="allDepartmentsForm">
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>HOD</mat-label>
+            <input matInput formControlName="hod" required>
+            @if (allDepartmentsForm.get('hod')?.hasError('required') || allDepartmentsForm.get('hod')?.touched) {
+            <mat-error>
+              Please enter a valid name
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width " appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Department Name</mat-label>
+            <mat-select formControlName="dName" required>
+              <mat-option [value]="'Housekeeping'">
+                Housekeeping
+              </mat-option>
+              <mat-option [value]="'Food and Beverage'">
+                Food and Beverage
+              </mat-option>
+              <mat-option [value]="'Kitchen'">
+                Kitchen
+              </mat-option>
+              <mat-option [value]="'Accounts'">
+                Accounts
+              </mat-option>
+              <mat-option [value]="'Security'">
+                Security
+              </mat-option>
+              <mat-option [value]="'Transport'">
+                Transport
+              </mat-option>
+              <mat-option [value]="'Purchase'">
+                Purchase
+              </mat-option>
+            </mat-select>
+            @if (allDepartmentsForm.get('dName')?.hasError('required')) {
+            <mat-error>
+              Department Name is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>email</mat-icon>
+            @if (allDepartmentsForm.get('email')?.hasError('required') || allDepartmentsForm.get('email')?.touched) {
+            <mat-error>
+              Please enter a valid email totalStaff
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Mobile</mat-label>
+            <input matInput formControlName="mobile" type="number">
+            <mat-icon class="material-icons-outlined color-icon p-3" matSuffix>phone</mat-icon>
+            @if (allDepartmentsForm.get('mobile')?.hasError('required')) {
+            <mat-error>
+              Mobile is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Total Staff</mat-label>
+            <input matInput formControlName="totalStaff" type="number">
+            @if (allDepartmentsForm.get('totalStaff')?.hasError('required')) {
+            <mat-error>
+              Total Staff is required
+            </mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row m-b-24">
+        <div class="col-sm-12">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [disabled]="!allDepartmentsForm.valid"
+              (click)="submit()">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

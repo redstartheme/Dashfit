@@ -1,0 +1,31 @@
+{
+    "employeeId": "E456",
+    "employeeName": "Bob Smith",
+    "leaveBalances": [
+      {
+        "leaveType": "Sick Leave",
+        "totalLeave": 10,
+        "remainingLeave": 8
+      },
+      {
+        "leaveType": "Annual Leave",
+        "totalLeave": 15,
+        "remainingLeave": 7
+      },
+      {
+        "leaveType": "Personal Leave",
+        "totalLeave": 6,
+        "remainingLeave": 6
+      },
+      {
+        "leaveType": "Maternity Leave",
+        "totalLeave": 12,
+        "remainingLeave": 12
+      },
+      {
+        "leaveType": "Study Leave",
+        "totalLeave": 5,
+        "remainingLeave": 4
+      }
+    ]
+  }

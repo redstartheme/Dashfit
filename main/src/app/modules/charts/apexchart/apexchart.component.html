@@ -1,0 +1,635 @@
+<app-page-header></app-page-header>
+
+<h3>Column Chart</h3>
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Column Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicColumnChart.series!" [chart]="basicColumnChart.chart!"
+                    [dataLabels]="basicColumnChart.dataLabels!" [plotOptions]="basicColumnChart.plotOptions!"
+                    [yaxis]="basicColumnChart.yaxis!" [legend]="basicColumnChart.legend!"
+                    [fill]="basicColumnChart.fill!" [stroke]="basicColumnChart.stroke!"
+                    [tooltip]="basicColumnChart.tooltip!" [grid]="basicColumnChart.grid!"
+                    [xaxis]="basicColumnChart.xaxis!">
+                </apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Column Chart With Datalabels</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="columnDatalabel.series!" [chart]="columnDatalabel.chart!"
+                    [dataLabels]="columnDatalabel.dataLabels!" [plotOptions]="columnDatalabel.plotOptions!"
+                    [yaxis]="columnDatalabel.yaxis!" [xaxis]="columnDatalabel.xaxis!" [fill]="columnDatalabel.fill!"
+                    [title]="columnDatalabel.title!" [tooltip]="columnDatalabel.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Dumbbell Column Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="dumbbellColumn.series!" [chart]="dumbbellColumn.chart!"
+                    [dataLabels]="dumbbellColumn.dataLabels!" [plotOptions]="dumbbellColumn.plotOptions!"
+                    [xaxis]="dumbbellColumn.xaxis!" [colors]="dumbbellColumn.colors!" [fill]="dumbbellColumn.fill!"
+                    [yaxis]="dumbbellColumn.yaxis!" [legend]="dumbbellColumn.legend!"
+                    [grid]="dumbbellColumn.grid!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Grouped Stacked Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="groupStackedColumn.series!" [chart]="groupStackedColumn.chart!"
+                    [stroke]="groupStackedColumn.stroke!" [dataLabels]="groupStackedColumn.dataLabels!"
+                    [plotOptions]="groupStackedColumn.plotOptions!" [xaxis]="groupStackedColumn.xaxis!"
+                    [colors]="groupStackedColumn.colors!" [fill]="groupStackedColumn.fill!"
+                    [yaxis]="groupStackedColumn.yaxis!" [tooltip]="groupStackedColumn.tooltip!"
+                    [legend]="groupStackedColumn.legend!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<h3>Line Chart</h3>
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Line Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicLine.series!" [chart]="basicLine.chart!" [xaxis]="basicLine.xaxis!"
+                    [dataLabels]="basicLine.dataLabels!" [grid]="basicLine.grid!" [stroke]="basicLine.stroke!"
+                    [title]="basicLine.title!" [tooltip]="basicLine.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Line with data label chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="lineWithDataLable.series!" [chart]="lineWithDataLable.chart!"
+                    [xaxis]="lineWithDataLable.xaxis!" [stroke]="lineWithDataLable.stroke!"
+                    [colors]="lineWithDataLable.colors!" [dataLabels]="lineWithDataLable.dataLabels!"
+                    [legend]="lineWithDataLable.legend!" [markers]="lineWithDataLable.markers!"
+                    [grid]="lineWithDataLable.grid!" [yaxis]="lineWithDataLable.yaxis!"
+                    [title]="lineWithDataLable.title!" [tooltip]="lineWithDataLable.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Gradient Line Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="gradientLineChart.series!" [chart]="gradientLineChart.chart!"
+                    [xaxis]="gradientLineChart.xaxis!" [dataLabels]="gradientLineChart.dataLabels!"
+                    [grid]="gradientLineChart.grid!" [stroke]="gradientLineChart.stroke!"
+                    [title]="gradientLineChart.title!" [markers]="gradientLineChart.markers!"
+                    [yaxis]="gradientLineChart.yaxis!" [fill]="gradientLineChart.fill!"
+                    [tooltip]="gradientLineChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Stepline chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="steplineChart.series!" [chart]="steplineChart.chart!"
+                    [markers]="steplineChart.markers!" [stroke]="steplineChart.stroke!"
+                    [dataLabels]="steplineChart.dataLabels!" [title]="steplineChart.title!"
+                    [tooltip]="steplineChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<h3>Area Chart</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Area Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicAreaChart.series!" [chart]="basicAreaChart.chart!"
+                    [xaxis]="basicAreaChart.xaxis!" [stroke]="basicAreaChart.stroke!"
+                    [dataLabels]="basicAreaChart.dataLabels!" [yaxis]="basicAreaChart.yaxis!"
+                    [labels]="basicAreaChart.labels!" [legend]="basicAreaChart.legend!" [title]="basicAreaChart.title!"
+                    [subtitle]="basicAreaChart.subtitle!" [tooltip]="basicAreaChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Spline Area Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="splineAreachart.series!" [chart]="splineAreachart.chart!"
+                    [xaxis]="splineAreachart.xaxis!" [stroke]="splineAreachart.stroke!"
+                    [tooltip]="splineAreachart.tooltip!" [dataLabels]="splineAreachart.dataLabels!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+
+<h3>Bar Chart</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Bar Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicBarChart.series!" [chart]="basicBarChart.chart!"
+                    [dataLabels]="basicBarChart.dataLabels!" [plotOptions]="basicBarChart.plotOptions!"
+                    [xaxis]="basicBarChart.xaxis!" [tooltip]="basicBarChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Group Bar Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="groupBarChart.series!" [chart]="groupBarChart.chart!"
+                    [stroke]="groupBarChart.stroke!" [dataLabels]="groupBarChart.dataLabels!"
+                    [plotOptions]="groupBarChart.plotOptions!" [xaxis]="groupBarChart.xaxis!"
+                    [colors]="groupBarChart.colors!" [fill]="groupBarChart.fill!" [yaxis]="groupBarChart.yaxis!"
+                    [legend]="groupBarChart.legend!" [tooltip]="groupBarChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<h3>Mixed Chart</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Line Column Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="lineColumnChart.series!" [chart]="lineColumnChart.chart!"
+                    [yaxis]="lineColumnChart.yaxis!" [xaxis]="lineColumnChart.xaxis!" [labels]="lineColumnChart.labels!"
+                    [stroke]="lineColumnChart.stroke!" [title]="lineColumnChart.title!"
+                    [dataLabels]="lineColumnChart.dataLabels!" [fill]="lineColumnChart.fill!"
+                    [tooltip]="lineColumnChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Multiple Yaxis Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="multipleYaxisChart.series!" [chart]="multipleYaxisChart.chart!"
+                    [xaxis]="multipleYaxisChart.xaxis!" [markers]="multipleYaxisChart.markers!"
+                    [stroke]="multipleYaxisChart.stroke!" [yaxis]="multipleYaxisChart.yaxis!"
+                    [dataLabels]="multipleYaxisChart.dataLabels!" [title]="multipleYaxisChart.title!"
+                    [fill]="multipleYaxisChart.fill!" [tooltip]="multipleYaxisChart.tooltip!"
+                    [legend]="multipleYaxisChart.legend!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Line Column Area Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="lineColumnAreaChart.series!" [chart]="lineColumnAreaChart.chart!"
+                    [yaxis]="lineColumnAreaChart.yaxis!" [xaxis]="lineColumnAreaChart.xaxis!"
+                    [labels]="lineColumnAreaChart.labels!" [stroke]="lineColumnAreaChart.stroke!"
+                    [plotOptions]="lineColumnAreaChart.plotOptions!" [markers]="lineColumnAreaChart.markers!"
+                    [fill]="lineColumnAreaChart.fill!" [tooltip]="lineColumnAreaChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<h3>Timeline Chart</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Timeline Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicTimelineChart.series!" [chart]="basicTimelineChart.chart!"
+                    [plotOptions]="basicTimelineChart.plotOptions!" [xaxis]="basicTimelineChart.xaxis!"
+                    [tooltip]="basicTimelineChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Multi-series Timeline Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="multiseriesTimeline.series!" [chart]="multiseriesTimeline.chart!"
+                    [dataLabels]="multiseriesTimeline.dataLabels!" [plotOptions]="multiseriesTimeline.plotOptions!"
+                    [xaxis]="multiseriesTimeline.xaxis!" [legend]="multiseriesTimeline.legend!"
+                    [tooltip]="multiseriesTimeline.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Dumbbell Timeline Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="dumbbellTimelineChart.series!" [chart]="dumbbellTimelineChart.chart!"
+                    [stroke]="dumbbellTimelineChart.stroke!" [dataLabels]="dumbbellTimelineChart.dataLabels!"
+                    [plotOptions]="dumbbellTimelineChart.plotOptions!" [xaxis]="dumbbellTimelineChart.xaxis!"
+                    [colors]="dumbbellTimelineChart.colors!" [fill]="dumbbellTimelineChart.fill!"
+                    [yaxis]="dumbbellTimelineChart.yaxis!" [legend]="dumbbellTimelineChart.legend!"
+                    [grid]="dumbbellTimelineChart.grid!" [title]="dumbbellTimelineChart.title!"
+                    [tooltip]="dumbbellTimelineChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<h3>Funnel Charts</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Funnel Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="funnelChart.series!" [chart]="funnelChart.chart!"
+                    [dataLabels]="funnelChart.dataLabels!" [plotOptions]="funnelChart.plotOptions!"
+                    [xaxis]="funnelChart.xaxis!" [colors]="funnelChart.colors!" [title]="funnelChart.title!"
+                    [legend]="funnelChart.legend!" [tooltip]="funnelChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Pyramid Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="pyramidChart.series!" [chart]="pyramidChart.chart!"
+                    [dataLabels]="pyramidChart.dataLabels!" [plotOptions]="pyramidChart.plotOptions!"
+                    [xaxis]="pyramidChart.xaxis!" [colors]="pyramidChart.colors!" [title]="pyramidChart.title!"
+                    [legend]="pyramidChart.legend!" [tooltip]="pyramidChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<h3>Candlestick Charts</h3>
+
+<div class="row">
+    <div class="col-sm-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Candlestick Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicCandlestickChart.series!" [chart]="basicCandlestickChart.chart!"
+                    [xaxis]="basicCandlestickChart.xaxis!" [yaxis]="basicCandlestickChart.yaxis!"
+                    [title]="basicCandlestickChart.title!" [tooltip]="basicCandlestickChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<h3>Box & Whisker Charts</h3>
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Box & Whisker Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicBoxWhisker.series!" [chart]="basicBoxWhisker.chart!"
+                    [plotOptions]="basicBoxWhisker.plotOptions!" [title]="basicBoxWhisker.title!"
+                    [tooltip]="basicBoxWhisker.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Horizontal BoxPlot Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="horizontalBoxplotChart.series!" [chart]="horizontalBoxplotChart.chart!"
+                    [plotOptions]="horizontalBoxplotChart.plotOptions!" [title]="horizontalBoxplotChart.title!"
+                    [stroke]="horizontalBoxplotChart.stroke!" [tooltip]="horizontalBoxplotChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<h3>Bubble Charts</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Simple Bubble Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="simpleBubbleChart.series!" [chart]="simpleBubbleChart.chart!"
+                    [xaxis]="simpleBubbleChart.xaxis!" [fill]="simpleBubbleChart.fill!"
+                    [dataLabels]="simpleBubbleChart.dataLabels!" [title]="simpleBubbleChart.title!"
+                    [yaxis]="simpleBubbleChart.yaxis!" [tooltip]="simpleBubbleChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>3D Bubble Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="threeDBubbleChart.series!" [chart]="threeDBubbleChart.chart!"
+                    [xaxis]="threeDBubbleChart.xaxis!" [fill]="threeDBubbleChart.fill!"
+                    [dataLabels]="threeDBubbleChart.dataLabels!" [title]="threeDBubbleChart.title!"
+                    [yaxis]="threeDBubbleChart.yaxis!" [tooltip]="threeDBubbleChart.tooltip!"
+                    [theme]="threeDBubbleChart.theme!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<h3>Scatter Charts</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Scatter Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicScatterChart.series!" [chart]="basicScatterChart.chart!"
+                    [xaxis]="basicScatterChart.xaxis!" [yaxis]="basicScatterChart.yaxis!"
+                    [tooltip]="basicScatterChart.tooltip!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<h3>Pie Charts</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Simple Pie Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="simplePieChart.pieSeries!" [chart]="simplePieChart.chart!"
+                    [labels]="simplePieChart.labels!" [responsive]="simplePieChart.responsive!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Simple Donut Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="simpleDonutChart.pieSeries!" [chart]="simpleDonutChart.chart!"
+                    [labels]="simpleDonutChart.labels!" [responsive]="simpleDonutChart.responsive!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Monochrome Pie Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="monochromePieChart.pieSeries!" [chart]="monochromePieChart.chart!"
+                    [labels]="monochromePieChart.labels!" [title]="monochromePieChart.title!"
+                    [theme]="monochromePieChart.theme!" [responsive]="monochromePieChart.responsive!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Gradient Donut Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="gradientDonutChart.pieSeries!" [chart]="gradientDonutChart.chart!"
+                    [labels]="gradientDonutChart.labels!" [fill]="gradientDonutChart.fill!"
+                    [dataLabels]="gradientDonutChart.dataLabels!"
+                    [responsive]="gradientDonutChart.responsive!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Pattern Donut Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="patternDonutChart.pieSeries!" [chart]="patternDonutChart.chart!"
+                    [labels]="patternDonutChart.labels!" [dataLabels]="patternDonutChart.dataLabels!"
+                    [title]="patternDonutChart.title!" [fill]="patternDonutChart.fill!"
+                    [states]="patternDonutChart.states!" [plotOptions]="patternDonutChart.plotOptions!"
+                    [stroke]="patternDonutChart.stroke!" [theme]="patternDonutChart.theme!"
+                    [responsive]="patternDonutChart.responsive!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<h3>RadialBar Charts</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Radial Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicRadialChart.pieSeries!" [chart]="basicRadialChart.chart!"
+                    [plotOptions]="basicRadialChart.plotOptions!" [labels]="basicRadialChart.labels!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Multiple Radial Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="multipleRadialChart.pieSeries!" [chart]="multipleRadialChart.chart!"
+                    [plotOptions]="multipleRadialChart.plotOptions!" [labels]="multipleRadialChart.labels!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Gradient Circle Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="gradientCirleChart.pieSeries!" [chart]="gradientCirleChart.chart!"
+                    [plotOptions]="gradientCirleChart.plotOptions!" [labels]="gradientCirleChart.labels!"
+                    [stroke]="gradientCirleChart.stroke!" [fill]="gradientCirleChart.fill!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Semi Circle Gauge Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="semiCircleGauge.pieSeries!" [chart]="semiCircleGauge.chart!"
+                    [plotOptions]="semiCircleGauge.plotOptions!" [labels]="semiCircleGauge.labels!"
+                    [fill]="semiCircleGauge.fill!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<h3>Radar Charts</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Radar Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicRadarChart.series!" [chart]="basicRadarChart.chart!"
+                    [xaxis]="basicRadarChart.xaxis!" [title]="basicRadarChart.title!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Multiple Series Radar Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="multipleSeriesRadarChart.series!" [chart]="multipleSeriesRadarChart.chart!"
+                    [xaxis]="multipleSeriesRadarChart.xaxis!" [stroke]="multipleSeriesRadarChart.stroke!"
+                    [markers]="multipleSeriesRadarChart.markers!" [fill]="multipleSeriesRadarChart.fill!"
+                    [title]="multipleSeriesRadarChart.title!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+
+<h3>Polar Area Charts</h3>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Basic Polar Area Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="basicPolarAreaChart.pieSeries!" [chart]="basicPolarAreaChart.chart!"
+                    [labels]="basicPolarAreaChart.labels!" [fill]="basicPolarAreaChart.fill!"
+                    [stroke]="basicPolarAreaChart.stroke!" [legend]="basicPolarAreaChart.legend!"
+                    [responsive]="basicPolarAreaChart.responsive!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Monochrome Polar Area Charts</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart [series]="monochromePolarAreaChart.pieSeries!" [chart]="monochromePolarAreaChart.chart!"
+                    [labels]="monochromePolarAreaChart.labels!" [title]="monochromePolarAreaChart.title!"
+                    [theme]="monochromePolarAreaChart.theme!" [fill]="monochromePolarAreaChart.fill!"
+                    [yaxis]="monochromePolarAreaChart.yaxis!" [stroke]="monochromePolarAreaChart.stroke!"
+                    [legend]="monochromePolarAreaChart.legend!"
+                    [plotOptions]="monochromePolarAreaChart.plotOptions!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

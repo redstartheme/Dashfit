@@ -1,0 +1,99 @@
+<app-page-header></app-page-header>
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Bar chart with line</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div echarts [options]="line_bar_chart" class="echart-height"></div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Line Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div echarts [options]="line_chart" class="echart-height"></div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Bar chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div echarts [options]="bar_chart" class="echart-height"></div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Graph Line Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div echarts [options]="graph_line_chart" class="echart-height"></div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Pie Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div echarts [options]="pie_chart" class="echart-height"></div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Aria Line Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div echarts [options]="area_line_chart" class="echart-height"></div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Pie Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div echarts [options]="pie_chart2" class="echart-height"></div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Sunburst Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div echarts [options]="sunburst_chart" class="echart-height"></div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
