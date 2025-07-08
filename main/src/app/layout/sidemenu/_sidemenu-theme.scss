@@ -47,7 +47,7 @@
       }
 
       &.expanded {
-        background: map.get($background, hover);
+        // background: map.get($background, hover);
         padding: 0px;
       }
       .menu-badge-color {

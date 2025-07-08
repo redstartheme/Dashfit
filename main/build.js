@@ -5,7 +5,7 @@ const path = require("path");
 // Define different build configurations
 const builds = [
   {
-    baseHref: "/templates/admin/luxuria/source/light/",
+    baseHref: "/templates/admin/dashfit/source/light/",
     settings: {
       theme: "light",
       dir: "ltr",
@@ -13,7 +13,7 @@ const builds = [
     },
   },
   {
-    baseHref: "/templates/admin/luxuria/source/dark/",
+    baseHref: "/templates/admin/dashfit/source/dark/",
     settings: {
       theme: "dark",
       dir: "ltr",
@@ -21,7 +21,7 @@ const builds = [
     },
   },
   {
-    baseHref: "/templates/admin/luxuria/source/rtl/",
+    baseHref: "/templates/admin/dashfit/source/rtl/",
     settings: {
       theme: "light",
       dir: "rtl",
@@ -29,7 +29,7 @@ const builds = [
     },
   },
   {
-    baseHref: "/templates/admin/luxuria/source/top/",
+    baseHref: "/templates/admin/dashfit/source/top/",
     settings: {
       theme: "light",
       dir: "ltr",
